@@ -25,6 +25,15 @@ public class Market {
 		}
 	}
 	
+	Item getItem(int itemId){
+		for(Item item:items){
+			if(item.getItemId()==itemId){
+				return item;
+			}
+		}
+		return null;
+	}
+	
 	void displayItems(){
 		System.out.println("Id\tname\t\tprice\tIn Stock\tDescription");
 		for(Item item:items){
@@ -32,29 +41,35 @@ public class Market {
 		}
 	}
 	
-	Item getItem(int itemId,int quantity){
-		Item selectedItem = null;
-		for(Item item:items){
-			if(item.getItemId()==itemId){
-				selectedItem = item;
-				break;
-			}
+	void updateStockAfterRemove(int itemId,int quantity){
+		Item item = getItem(itemId);
+		int currentQuant = item.getItemQuantity();
+		item.setItemQuantity(currentQuant+quantity);
 		}
-		int current_stock = selectedItem.getItemQuantity();
-		if(current_stock==0)
-			return null;
-		if(quantity>current_stock){
-			System.out.println("Sorry only "+current_stock+" pieces are available");
-			quantity = current_stock;
+	String addToCart(int itemId,int quantity,Cart cart){
+		Item selectedItem = getItem(itemId);
+		if(selectedItem==null){
+			return "Inavlid Product id";
+		}
+		int currentStock = selectedItem.getItemQuantity();
+		if(currentStock==0){
+			System.out.println("Currently this product is out of stock");
+		}
+		if(quantity>currentStock){
+			System.out.println("Sorry only "+currentStock+" pieces are available");
+			quantity = currentStock;
 		}
 		Item item = new Item();
-		
-		selectedItem.setItemQuantity(current_stock-quantity);
+		selectedItem.setItemQuantity(currentStock-quantity);
 		item.setItemId(itemId);
 		item.setItemName(selectedItem.getItemName());
 		item.setItemPrice(selectedItem.getItemPrice());
 		item.setItemQuantity(quantity);
-		return item;
+		if(cart.addItem(item)==null){
+			selectedItem.setItemQuantity(currentStock);
+			return "Fail to Add";
+		}
+		return "Success";
 	}
 	
 }

@@ -15,13 +15,13 @@ public class MainClass {
 				System.out.println("Enter Item Id and Quantity respectively :");
 				itemId =sc.nextInt();
 				quantity = sc.nextInt();
-				System.out.println(cart.addToCart(market.getItem(itemId,quantity)));
+				System.out.println(market.addToCart(itemId,quantity,cart));
 				break;
 			case 2:
 				System.out.println("Enter Item Id and Quantity respectively :");
 				itemId = sc.nextInt();
 				quantity = sc.nextInt();
-				System.out.println(cart.removeFromCart(itemId, quantity));
+				System.out.println(cart.removeFromCart(itemId, quantity,market));
 				break;
 			case 3:
 				cart.displayCart();
