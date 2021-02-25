@@ -1,0 +1,36 @@
+package shoppingCart;
+import java.util.ArrayList;
+public class Cart {
+private ArrayList<Item> items = new ArrayList<>();
+
+
+void display_cart(){
+	int sno=1;
+	if(items.size()==0){
+		System.out.println("Cart is Empty");
+		return;
+	}
+	System.out.println("S.no\tname\tprice\tQuantity\ttotal");
+	for(Item I:items){
+		double t_price = I.get_item_price()*I.get_item_quantity();
+		System.out.println(sno+++"\t"+I.get_item_name()+"\t"+I.get_item_price()+"\t"+I.get_item_quantity()+"\t"+t_price);
+	}
+}
+
+String add_to_cart(Item item){
+	int total_items = items.size();
+	if(total_items>10)
+		return "Can't add More than 10";
+	if(item.get_item_quantity()==0)
+		return "Sorry!Item is out of stock";
+	items.add(item);
+	return "Success";
+}
+String remove_from_cart(Item item){
+	int total_items = items.size();
+	if(total_items==0)
+		return "Cart is already Empty";
+	items.remove(item);
+	return "Success";
+}
+}
