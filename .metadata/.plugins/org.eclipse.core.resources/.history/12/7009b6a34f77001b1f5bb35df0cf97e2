@@ -40,7 +40,7 @@ public class MainClass {
 		Cart cart = new Cart();
 		Scanner sc = new Scanner(System.in);
 		while(true){
-			System.out.println("\n1.Show Items\n2.Display Cart\n3.Generate Bill\n4.Exit");
+			System.out.println("\n1.Show Items\n2.Display Cart\n3.Generate Bill4.Exit");
 			option_Choice = sc.nextInt();
 			switch(option_Choice){
 				case 1:
@@ -64,7 +64,7 @@ public class MainClass {
 
 	private static void generate_bill(Cart cart) {
 		double total = cart.display_cart();
-		System.out.println("\nTotal "+total);
+		System.out.println("\n\nTotal "+total);
 		
 	}
 

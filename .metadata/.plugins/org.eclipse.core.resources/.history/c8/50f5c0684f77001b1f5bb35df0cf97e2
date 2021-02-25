@@ -4,20 +4,17 @@ public class Cart {
 private ArrayList<Item> items = new ArrayList<>();
 
 
-double display_cart(){
+void display_cart(){
 	int sno=1;
-	double bill_total=0;
 	if(items.size()==0){
 		System.out.println("Cart is Empty");
-		return 0;
+		return;
 	}
 	System.out.println("S.no\tname\tprice\tQuantity\ttotal");
 	for(Item I:items){
 		double t_price = I.get_item_price()*I.get_item_quantity();
 		System.out.println(sno+++"\t"+I.get_item_name()+"\t"+I.get_item_price()+"\t"+I.get_item_quantity()+"\t\t"+t_price);
-		bill_total+=t_price;
 	}
-	return bill_total;
 }
 
 String add_to_cart(Item item){

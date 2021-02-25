@@ -64,7 +64,7 @@ public class MainClass {
 
 	private static void generate_bill(Cart cart) {
 		double total = cart.display_cart();
-		System.out.println("\nTotal "+total);
+		System.out.println("\n\nTotal "+total);
 		
 	}
 

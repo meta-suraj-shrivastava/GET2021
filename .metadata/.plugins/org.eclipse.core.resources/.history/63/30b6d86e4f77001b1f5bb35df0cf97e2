@@ -9,7 +9,7 @@ double display_cart(){
 	double bill_total=0;
 	if(items.size()==0){
 		System.out.println("Cart is Empty");
-		return 0;
+		return;
 	}
 	System.out.println("S.no\tname\tprice\tQuantity\ttotal");
 	for(Item I:items){
