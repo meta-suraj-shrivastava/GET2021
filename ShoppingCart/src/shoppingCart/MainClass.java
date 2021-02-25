@@ -3,28 +3,28 @@ import java.util.Scanner;
 
 public class MainClass {
 	
-	private static void display_items(Market market,Cart cart){
-		int option_Choice,item_no,quantity;
+	private static void displayItems(Market market,Cart cart){
+		int optionChoice,itemId,quantity;
 		Scanner sc = new Scanner(System.in);
-		market.display_Items();
+		market.displayItems();
 		while(true){
 			System.out.println("\n1.Add item to cart\n2.Remove Item\n3.Display Cart\n4.Exit");	
-			option_Choice = sc.nextInt();
-			switch(option_Choice){
+			optionChoice = sc.nextInt();
+			switch(optionChoice){
 			case 1:
 				System.out.println("Enter Item no and number of packets respectively :");
-				item_no =sc.nextInt();
+				itemId =sc.nextInt();
 				quantity = sc.nextInt();
-				System.out.println(cart.add_to_cart(market.get_item(item_no,quantity)));
+				System.out.println(cart.addToCart(market.getItem(itemId,quantity)));
 				break;
 			case 2:
 				System.out.println("Enter Item no and number of packets respectively :");
-				item_no = sc.nextInt();
+				itemId = sc.nextInt();
 				quantity = sc.nextInt();
-				System.out.println(cart.remove_from_cart(item_no, quantity));
+				System.out.println(cart.removeFromCart(itemId, quantity));
 				break;
 			case 3:
-				cart.display_cart();
+				cart.displayCart();
 				break;
 			case 4:
 			default:
@@ -35,22 +35,22 @@ public class MainClass {
 	}
 	
 	public static void main(String[] args){
-		int option_Choice;
+		int optionChoice;
 		Market market = new Market();
 		Cart cart = new Cart();
 		Scanner sc = new Scanner(System.in);
 		while(true){
 			System.out.println("\n1.Show Items\n2.Display Cart\n3.Generate Bill\n4.Exit");
-			option_Choice = sc.nextInt();
-			switch(option_Choice){
+			optionChoice = sc.nextInt();
+			switch(optionChoice){
 				case 1:
-					display_items(market,cart);
+					displayItems(market,cart);
 					break;
 				case 2:
-					cart.display_cart();
+					cart.displayCart();
 					break;
 				case 3:
-					generate_bill(cart);
+					generateBill(cart);
 					break;
 				case 4:
 				default:
@@ -62,8 +62,8 @@ public class MainClass {
 		
 	}
 
-	private static void generate_bill(Cart cart) {
-		double total = cart.display_cart();
+	private static void generateBill(Cart cart) {
+		double total = cart.displayCart();
 		System.out.println("\nTotal "+total);
 		
 	}

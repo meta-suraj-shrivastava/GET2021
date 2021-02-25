@@ -7,30 +7,30 @@ private int item_quantity;
 private double item_price;
 
 
-void set_item_name(String name){
+void setItemName(String name){
 	item_name = name;
 }
-void set_item_price(double price){
+void setItemPrice(double price){
 	item_price = price;
 }
-void set_item_desc(String desc){
+void setItemDesc(String desc){
 	item_desc = desc;
 }
-void set_item_quantity(int quantity){
+void setItemQuantity(int quantity){
 	item_quantity = quantity;
 }
 
-String get_item_name(){
+String getItemName(){
 	return item_name;
 }
-double get_item_price(){
+double getItemPrice(){
 	return item_price;
 }
-int get_item_quantity(){
+int getItemQuantity(){
 	return item_quantity;
 }
 
-String get_item_desc(){
+String getItemDesc(){
 	return item_desc;
 }
 }

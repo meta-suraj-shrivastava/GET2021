@@ -15,37 +15,37 @@ public class Market {
 	Market(){
 		for(int i=0;i<total_item;i++){
 			Item item = new Item();
-			item.set_item_name(dummy_items[i]);
-			item.set_item_price(dummy_price[i]);
-			item.set_item_quantity(dummy_quant[i]);
-			item.set_item_desc(dummy_desc[i]);
+			item.setItemName(dummy_items[i]);
+			item.setItemPrice(dummy_price[i]);
+			item.setItemQuantity(dummy_quant[i]);
+			item.setItemDesc(dummy_desc[i]);
 			items.add(item);
 		}
 	}
 	
-	void display_Items(){
+	void displayItems(){
 		int sno=1;
 		System.out.println("S.no\tname\t\tprice\tIn Stock\tDescription");
-		for(Item I:items){
-			System.out.println(sno+++"\t"+I.get_item_name()+"\t\t"+I.get_item_price()+"\t"+I.get_item_quantity()+"\t"+I.get_item_desc());
+		for(Item item:items){
+			System.out.println(sno+++"\t"+item.getItemName()+"\t\t"+item.getItemPrice()+"\t"+item.getItemQuantity()+"\t"+item.getItemDesc());
 		}
 	}
 	
-	Item get_item(int item_no,int no_of_packs){
-		Item selected_item = items.get(item_no-1);
-		int current_stock = selected_item.get_item_quantity();
+	Item getItem(int itemNo,int quantity){
+		Item selected_item = items.get(itemNo-1);
+		int current_stock = selected_item.getItemQuantity();
 		if(current_stock==0)
 			return null;
-		if(no_of_packs>current_stock){
+		if(quantity>current_stock){
 			System.out.println("Sorry only "+current_stock+" pieces are available");
-			no_of_packs = current_stock;
+			quantity = current_stock;
 		}
 		Item item = new Item();
 		
-		selected_item.set_item_quantity(current_stock-no_of_packs);
-		item.set_item_name(selected_item.get_item_name());
-		item.set_item_price(selected_item.get_item_price());
-		item.set_item_quantity(no_of_packs);
+		selected_item.setItemQuantity(current_stock-quantity);
+		item.setItemName(selected_item.getItemName());
+		item.setItemPrice(selected_item.getItemPrice());
+		item.setItemQuantity(quantity);
 		return item;
 	}
 	
