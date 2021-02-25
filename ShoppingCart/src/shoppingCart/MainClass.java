@@ -12,13 +12,13 @@ public class MainClass {
 			optionChoice = sc.nextInt();
 			switch(optionChoice){
 			case 1:
-				System.out.println("Enter Item no and number of packets respectively :");
+				System.out.println("Enter Item Id and Quantity respectively :");
 				itemId =sc.nextInt();
 				quantity = sc.nextInt();
 				System.out.println(cart.addToCart(market.getItem(itemId,quantity)));
 				break;
 			case 2:
-				System.out.println("Enter Item no and number of packets respectively :");
+				System.out.println("Enter Item Id and Quantity respectively :");
 				itemId = sc.nextInt();
 				quantity = sc.nextInt();
 				System.out.println(cart.removeFromCart(itemId, quantity));

@@ -6,20 +6,28 @@ static final int MAX_ITEMS = 10;
 
 
 double displayCart(){
-	int sno=1;
-	double bill_total=0;
+	double billTotal=0;
 	if(items.size()==0){
 		System.out.println("Cart is Empty");
 		return 0;
 	}
-	System.out.println("S.no\tname\tprice\tQuantity\ttotal");
+	System.out.println("Id\tname\tprice\tQuantity\ttotal");
 	for(Item item:items){
 		double t_price = item.getItemPrice()*item.getItemQuantity();
-		System.out.println(sno+++"\t"+item.getItemName()+"\t"+item.getItemPrice()+"\t"+item.getItemQuantity()+"\t\t"+t_price);
-		bill_total+=t_price;
+		System.out.println(item.getItemId()+"\t"+item.getItemName()+"\t"+item.getItemPrice()+"\t"+item.getItemQuantity()+"\t\t"+t_price);
+		billTotal+=t_price;
 	}
-	return bill_total;
+	return billTotal;
 }
+
+Item getItemFromCart(int id){
+	for(Item item:items){
+		if(item.getItemId()==id)
+			return item;
+	}
+	return null;
+}
+
 
 String addToCart(Item item){
 	int totalItems = items.size();
@@ -30,16 +38,15 @@ String addToCart(Item item){
 	items.add(item);
 	return "Success";
 }
-String removeFromCart(int item_no,int quantity){
-	int totalItems = items.size();
-	if(totalItems==0)
-		return "Cart is already Empty";
-	Item selected_item =items.get(item_no-1);
-	int itemQuantity = selected_item.getItemQuantity();
+String removeFromCart(int itemId,int quantity){
+	Item selectedItem = getItemFromCart(itemId);
+	if(selectedItem==null)
+		return "This Item is not in cart";
+	int itemQuantity = selectedItem.getItemQuantity();
 	if(itemQuantity<=quantity)
-		items.remove(selected_item);
+		items.remove(selectedItem);
 	else
-		selected_item.setItemQuantity(itemQuantity-quantity);
+		selectedItem.setItemQuantity(itemQuantity-quantity);
 	return "Success";
 }
 }

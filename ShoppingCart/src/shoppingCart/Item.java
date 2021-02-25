@@ -1,36 +1,44 @@
 package shoppingCart;
 
 public class Item {
-private String item_name;
-private String item_desc;
-private int item_quantity;
-private double item_price;
+private int itemId;
+private String itemName;
+private String itemDesc;
+private int itemQuantity;
+private double itemPrice;
 
+
+void setItemId(int id){
+	itemId = id;
+}
 
 void setItemName(String name){
-	item_name = name;
+	itemName = name;
 }
 void setItemPrice(double price){
-	item_price = price;
+	itemPrice = price;
 }
 void setItemDesc(String desc){
-	item_desc = desc;
+	itemDesc = desc;
 }
 void setItemQuantity(int quantity){
-	item_quantity = quantity;
+	itemQuantity = quantity;
 }
 
 String getItemName(){
-	return item_name;
+	return itemName;
 }
 double getItemPrice(){
-	return item_price;
+	return itemPrice;
 }
 int getItemQuantity(){
-	return item_quantity;
+	return itemQuantity;
 }
 
 String getItemDesc(){
-	return item_desc;
+	return itemDesc;
+}
+int getItemId(){
+	return itemId;
 }
 }

@@ -5,35 +5,42 @@ import java.util.ArrayList;
 public class Market {
 
 	private ArrayList<Item> items = new ArrayList<>();
-	final int total_item = 5;
-	final String[] dummy_items = {"Milk","Biscuit","Bread","Pulse","Wheat_Flour"};
-	final double[] dummy_price = {56.0,20.0,12.0,98.0,450.0};
-	final int[] dummy_quant = {10,10,10,10,10};
-	final String[] dummy_desc = {"1L gold","Parle-G","Brown_Bread","Arhar Daal","10kg pack."};
+	final int totalItem = 5;
+	final int[] dummyIds ={1,2,3,4,5};
+	final String[] dummyItems = {"Milk","Biscuit","Bread","Pulse","Wheat_Flour"};
+	final double[] dummyPrice = {56.0,20.0,12.0,98.0,450.0};
+	final int[] dummyQuant = {10,10,10,10,10};
+	final String[] dummyDesc = {"1L gold","Parle-G","Brown_Bread","Arhar Daal","10kg pack."};
 	
 	//creating a fake products list
 	Market(){
-		for(int i=0;i<total_item;i++){
+		for(int i=0;i<totalItem;i++){
 			Item item = new Item();
-			item.setItemName(dummy_items[i]);
-			item.setItemPrice(dummy_price[i]);
-			item.setItemQuantity(dummy_quant[i]);
-			item.setItemDesc(dummy_desc[i]);
+			item.setItemId(dummyIds[i]);
+			item.setItemName(dummyItems[i]);
+			item.setItemPrice(dummyPrice[i]);
+			item.setItemQuantity(dummyQuant[i]);
+			item.setItemDesc(dummyDesc[i]);
 			items.add(item);
 		}
 	}
 	
 	void displayItems(){
-		int sno=1;
-		System.out.println("S.no\tname\t\tprice\tIn Stock\tDescription");
+		System.out.println("Id\tname\t\tprice\tIn Stock\tDescription");
 		for(Item item:items){
-			System.out.println(sno+++"\t"+item.getItemName()+"\t\t"+item.getItemPrice()+"\t"+item.getItemQuantity()+"\t"+item.getItemDesc());
+			System.out.println(item.getItemId()+"\t"+item.getItemName()+"\t\t"+item.getItemPrice()+"\t"+item.getItemQuantity()+"\t"+item.getItemDesc());
 		}
 	}
 	
-	Item getItem(int itemNo,int quantity){
-		Item selected_item = items.get(itemNo-1);
-		int current_stock = selected_item.getItemQuantity();
+	Item getItem(int itemId,int quantity){
+		Item selectedItem = null;
+		for(Item item:items){
+			if(item.getItemId()==itemId){
+				selectedItem = item;
+				break;
+			}
+		}
+		int current_stock = selectedItem.getItemQuantity();
 		if(current_stock==0)
 			return null;
 		if(quantity>current_stock){
@@ -42,9 +49,10 @@ public class Market {
 		}
 		Item item = new Item();
 		
-		selected_item.setItemQuantity(current_stock-quantity);
-		item.setItemName(selected_item.getItemName());
-		item.setItemPrice(selected_item.getItemPrice());
+		selectedItem.setItemQuantity(current_stock-quantity);
+		item.setItemId(itemId);
+		item.setItemName(selectedItem.getItemName());
+		item.setItemPrice(selectedItem.getItemPrice());
 		item.setItemQuantity(quantity);
 		return item;
 	}
