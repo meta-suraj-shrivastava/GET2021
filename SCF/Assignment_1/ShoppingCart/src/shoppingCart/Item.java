@@ -7,7 +7,7 @@ private String itemDesc;
 private int itemQuantity;
 private double itemPrice;
 
-
+//-----------setters----------------------
 void setItemId(int id){
 	itemId = id;
 }
@@ -24,7 +24,7 @@ void setItemDesc(String desc){
 void setItemQuantity(int quantity){
 	itemQuantity = quantity;
 }
-
+//-----------getters----------------------
 String getItemName(){
 	return itemName;
 }

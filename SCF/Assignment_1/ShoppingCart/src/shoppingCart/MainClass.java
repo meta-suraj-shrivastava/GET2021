@@ -1,30 +1,42 @@
 package shoppingCart;
 import java.util.Scanner;
 
+/*Main Class contains following method :-
+ 1. displayItems :- parms(market,cart)
+ 2. generateBill :- params(cart)
+ 3. main  
+ */
+
 public class MainClass {
 	
 	private static void displayItems(Market market,Cart cart){
 		int optionChoice,itemId,quantity;
 		Scanner sc = new Scanner(System.in);
-		market.displayItems();
+		market.displayItems(); //Displaying Market Items
 		while(true){
-			System.out.println("\n1.Add item to cart\n2.Remove Item\n3.Display Cart\n4.Exit");	
+			//Showing all options for the above displayed items
+			System.out.println("1.Add item to cart");
+			System.out.println("2.Remove Item from cart");
+			System.out.println("3.Display Cart");
+			System.out.println("4.Exit");	
 			optionChoice = sc.nextInt();
 			switch(optionChoice){
 			case 1:
-				System.out.println("Enter Item Id and Quantity respectively :");
+				System.out.println("Enter Item Id ");
 				itemId =sc.nextInt();
+				System.out.println("Enter Quantity ");
 				quantity = sc.nextInt();
 				System.out.println(market.addToCart(itemId,quantity,cart));
 				break;
 			case 2:
-				System.out.println("Enter Item Id and Quantity respectively :");
+				System.out.println("Enter Item Id ");
+				System.out.println("Enter Quantity ");
 				itemId = sc.nextInt();
 				quantity = sc.nextInt();
 				System.out.println(cart.removeFromCart(itemId, quantity,market));
 				break;
 			case 3:
-				cart.displayCart();
+				cart.displayCart(); //Displaying cart Items
 				break;
 			case 4:
 			default:
@@ -40,7 +52,10 @@ public class MainClass {
 		Cart cart = new Cart();
 		Scanner sc = new Scanner(System.in);
 		while(true){
-			System.out.println("\n1.Show Items\n2.Display Cart\n3.Generate Bill\n4.Exit");
+			System.out.println("1.Display Store Items");
+			System.out.println("2.Display Cart");
+			System.out.println("3.Generate Bill");
+			System.out.println("4.Exit");
 			optionChoice = sc.nextInt();
 			switch(optionChoice){
 				case 1:
@@ -62,6 +77,7 @@ public class MainClass {
 		
 	}
 
+	//generate the bill
 	private static void generateBill(Cart cart) {
 		double total = cart.displayCart();
 		System.out.println("\nTotal "+total);

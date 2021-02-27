@@ -1,5 +1,13 @@
 package shoppingCart;
 import java.util.ArrayList;
+
+
+/*Cart Class contains following method :-
+1. displayCart :- Display the cart items
+2. getItemFromCart :- params(itemId) return Item of given id
+3. addItem :- params(item) return "success" on successFull added to cart
+4. Remove from cart :- params(itemId,Quantity,market) return "Sucess" on successFull removal of item
+*/
 public class Cart {
 private ArrayList<Item> items = new ArrayList<>();
 static final int MAX_ITEMS = 10;
@@ -13,14 +21,15 @@ double displayCart(){
 	}
 	System.out.println("Id\tname\tprice\tQuantity\ttotal");
 	for(Item item:items){
-		double t_price = item.getItemPrice()*item.getItemQuantity();
-		System.out.println(item.getItemId()+"\t"+item.getItemName()+"\t"+item.getItemPrice()+"\t"+item.getItemQuantity()+"\t\t"+t_price);
-		billTotal+=t_price;
+		double totalPrice = item.getItemPrice()*item.getItemQuantity();
+		System.out.println(item.getItemId()+"\t"+item.getItemName()+"\t"+item.getItemPrice()+"\t"+item.getItemQuantity()+"\t\t"+totalPrice);
+		billTotal+=totalPrice;
 	}
 	return billTotal;
 }
 
 Item getItemFromCart(int id){
+	//Finding an item is already present in cart or not
 	for(Item item:items){
 		if(item.getItemId()==id)
 			return item;
@@ -28,7 +37,7 @@ Item getItemFromCart(int id){
 	return null;
 }
 
-
+//Will add an item to cart
 String addItem(Item item){
 	int newQuantity = item.getItemQuantity();
 	if(currentItems+newQuantity>MAX_ITEMS){
@@ -45,9 +54,10 @@ String addItem(Item item){
 		selectedItem.setItemQuantity(currentQuantity+newQuantity);
 		currentItems+=newQuantity;
 		}
-	System.out.println("CI "+currentItems);
 	return "Success";
 }
+
+//Will Remove an item from cart
 String removeFromCart(int itemId,int quantity,Market market){
 	Item selectedItem = getItemFromCart(itemId);
 	if(selectedItem==null)
@@ -60,7 +70,6 @@ String removeFromCart(int itemId,int quantity,Market market){
 		selectedItem.setItemQuantity(itemQuantity-quantity);
 	}
 	currentItems-=quantity;
-	System.out.println("CI "+currentItems);
 	market.updateStockAfterRemove(itemId, quantity);
 	return "Success";
 }
