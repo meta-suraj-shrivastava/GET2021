@@ -1,5 +1,16 @@
 package hexCalc;
 
+/*
+ * Perform basic arithmetic operations between two hexa decimal numbers
+ * with the help of following methods :-
+ * 1.add :- return addition of two hexa decimal number
+ * 2.subtract :- return difference    ""    ""
+ * 3.multiply :- return multiplication  ""    ""
+ * 4.divide :- return division  ""     ""
+ * 5.equals :- return true if both are equal
+ * 6.isGreater :- return true if first arg. is greater 
+ * 7.isLesser :- return true if first arg. is lesser
+ */
 public class HexCalc {
 	
 String add(String numberOne,String numberTwo){

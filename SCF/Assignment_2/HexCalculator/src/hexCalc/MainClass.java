@@ -10,7 +10,16 @@ public class MainClass {
 		while(true){
 			Scanner sc = new Scanner(System.in);
 			System.out.println("-------------Hexa Calculator----------");
-			System.out.println("1.Add\n2.Multiply\n3.Subtract\n4.Division\n5.Is Equal\n6.Is Greater\n7.Is Less\n8.Convert Decimal To Hex\n9.Convert Hex to Decimal\n10.Exit");
+			System.out.println("1.Add");
+			System.out.println("2.Multiply");
+			System.out.println("3.Subtract");
+			System.out.println("4.Division");
+			System.out.println("5.Is Equal");
+			System.out.println("6.Is Greater");
+			System.out.println("7.Is Less");
+			System.out.println("8.Convert Decimal To Hex");
+			System.out.println("9.Convert Hex to Decimal");
+			System.out.println("10.Exit");
 			System.out.println("\n\nEnter Choice ");
 			choice = sc.nextInt();
 			switch(choice){
