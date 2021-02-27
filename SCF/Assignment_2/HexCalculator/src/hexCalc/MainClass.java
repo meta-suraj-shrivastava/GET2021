@@ -1,12 +1,19 @@
 package hexCalc;
 import java.util.Scanner;
 public class MainClass {
+	static String numOne,numTwo;
+	
+	static void takeInput(Scanner sc){
+		System.out.println("Enter Number one");
+		numOne = sc.next();
+		System.out.println("Enter Number Two");
+		numTwo = sc.next();
+	}
 
 	public static void main(String[] args){
 		HexCalc hexCalc = new HexCalc();
 		Convertor Con = new Convertor();
 		int choice;
-		String numOne,numTwo;
 		while(true){
 			Scanner sc = new Scanner(System.in);
 			System.out.println("-------------Hexa Calculator----------");
@@ -24,45 +31,31 @@ public class MainClass {
 			choice = sc.nextInt();
 			switch(choice){
 			case 1:
-				System.out.println("Enter Two Hex Number ");
-				numOne = sc.next();
-				numTwo = sc.next();
+				takeInput(sc);
 				System.out.println(hexCalc.add(numOne, numTwo));
 				break;
 			case 2:
-				System.out.println("Enter Two Hex Number ");
-				numOne = sc.next();
-				numTwo = sc.next();
+				takeInput(sc);
 				System.out.println(hexCalc.multiply(numOne, numTwo));
 				break;
 			case 3:
-				System.out.println("Enter Two Hex Number ");
-				numOne = sc.next();
-				numTwo = sc.next();
+				takeInput(sc);
 				System.out.println(hexCalc.subtract(numOne, numTwo));
 				break;
 			case 4:
-				System.out.println("Enter Two Hex Number ");
-				numOne = sc.next();
-				numTwo = sc.next();
+				takeInput(sc);
 				System.out.println(hexCalc.divide(numOne, numTwo));
 				break;
 			case 5:
-				System.out.println("Enter Two Hex Number ");
-				numOne = sc.next();
-				numTwo = sc.next();
+				takeInput(sc);
 				System.out.println(hexCalc.equals(numOne, numTwo));
 				break;
 			case 6:
-				System.out.println("Enter Two Hex Number ");
-				numOne = sc.next();
-				numTwo = sc.next();
+				takeInput(sc);
 				System.out.println(hexCalc.isGreater(numOne, numTwo));
 				break;
 			case 7:
-				System.out.println("Enter Two Hex Number ");
-				numOne = sc.next();
-				numTwo = sc.next();
+				takeInput(sc);
 				System.out.println(hexCalc.isLesser(numOne, numTwo));
 				break;
 			case 8:
@@ -77,7 +70,7 @@ public class MainClass {
 				break;
 			case 10:
 			default:
-				return ;
+				return;
 			}
 		}
 	}
