@@ -6,7 +6,10 @@ package stringsMethods;
 
 public class StrMethods {
 	
-//returns 1 if both strings are equal else 0
+/*
+ * params :- two strings
+ * returns :- 1 if both strings are equal else 0
+ */
 int equals(String one,String two){
 	int lenOne = one.length();
 	int lenTwo = two.length();
@@ -23,7 +26,10 @@ int equals(String one,String two){
 	}
 }
 
-//return reverse of string
+/*
+ * params :- string
+ * return:- reverse of string
+ */
 String reverse(String str){
 	int len = str.length();
 	String rev = "";
@@ -32,7 +38,10 @@ String reverse(String str){
 	return rev;
 }
 
-//Interchange the letter case of a string
+/*
+ * params :- string
+ * return :- string with Interchanged letter case
+ */
 String interChangeCase(String str){
 	String result = "";
 	for(int i=0;i<str.length();i++){
@@ -49,7 +58,10 @@ String interChangeCase(String str){
 	return result;
 }
 
-//return the largest word in a string
+/*
+ * param :-  string
+ * return:- the largest word in a string
+ */
 String largestWord(String line){
 	String largestWord = "";
 	String[] words = line.split(" ");
