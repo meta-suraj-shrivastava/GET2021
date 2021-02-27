@@ -1,5 +1,14 @@
 package fcfs;
-
+/*
+ This class contains following methods:-
+ 1.sortAccArivalTime :- sort the processes acc. to arrival time
+ 2.printArray :-params(array) it will print the given array
+ 3.calculateCompletionTime :- Calculate completion time
+ 4.calculateTurnAroundTime :- Calculate turnaround time
+ 5.calculateWaitingTime :- Calculate waiting time for all processes
+ 6.maxWaitingTime :- return maximum waiting time
+ 7.avgWaitingTime :- Return avg. waiting time
+ */
 import java.util.Scanner;
 public class MainClass {
 
@@ -7,8 +16,12 @@ public class MainClass {
 	static int[] completionTime = new int[10];
 	static int[] turnaroundTime = new int[10];
 	static int[] waitingTime = new int[10];
+	static String[] inputString = {"arrival time","burst time"};
 	static int processes;
+	
+	
 static void sortAccArivalTime(){
+	//bubble sorting
 	for(int i=0;i<processes;i++){
 		for(int j=1;j<processes-i;j++){
 			if(processData[j][0]<processData[j-1][0]){
@@ -32,11 +45,11 @@ static void printArray(int[] arr){
 	
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter Number of Processes Max 10 ");
+		System.out.println("Enter Number of Processes(Max 10) ");
 		processes = sc.nextInt();
-		System.out.println("Enter arrival Time and Burst Time respectively\n ");
 		for(int i=0;i<processes;i++){
 			for(int j=0;j<2;j++){
+				System.out.println("Enter "+inputString[j]);
 				processData[i][j] = sc.nextInt();
 				
 			}
@@ -59,6 +72,7 @@ static void printArray(int[] arr){
 	static void calculateCompletionTime(){
 		completionTime[0]=processData[0][1];
 		for(int i=1;i<processes;i++){
+			//condition for non continuous arrival time
 			if(processData[i][0]<=completionTime[i-1])
 				completionTime[i]=completionTime[i-1]+processData[i][1];
 			else
