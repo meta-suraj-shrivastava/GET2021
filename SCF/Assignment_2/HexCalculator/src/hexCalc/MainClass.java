@@ -44,7 +44,9 @@ public class MainClass {
 				break;
 			case 4:
 				takeInput(sc);
-				System.out.println(hexCalc.divide(numOne, numTwo));
+				String[] result = hexCalc.divide(numOne, numTwo);
+				System.out.println("Quotient :"+result[0]);
+				System.out.println("Remainder :"+result[1]);
 				break;
 			case 5:
 				takeInput(sc);

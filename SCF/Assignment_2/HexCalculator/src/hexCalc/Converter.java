@@ -18,27 +18,29 @@ public class Converter {
 	 * }
 	 */
 	Converter(){
-		for(int i=10;i<16;i++){ // Converting 10 to 16 to hexadecimal 
+		for(int number=10;number<16;number++){ // Converting number 10 to 16 to hexadecimal 
 			char key;
-			key = (char)(65+i%10);
-			hexCodeToDecimal.put(key, i);
+			key = (char)(65+number%10);
+			hexCodeToDecimal.put(key, number);
 				
 		}
 	}
 	
+	//taking hexadecimal digit as string and returning decimal representation 
 	int hexToDecimal(String digit){
 		int length = digit.length();
 		int result=0;
-		for(int i=0;i<length;i++){
-		if(digit.charAt(i)>='0' && digit.charAt(i)<= '9'){
-			result+=(digit.charAt(i)-'0')*Math.pow(base, length-i-1);
+		for(int index=0;index<length;index++){
+		if(digit.charAt(index)>='0' && digit.charAt(index)<= '9'){
+			result+=(digit.charAt(index)-'0')*Math.pow(base, length-index-1);
 		}
 		else
-			result+=hexCodeToDecimal.get(digit.charAt(i))*Math.pow(base,length-i-1);
+			result+=hexCodeToDecimal.get(digit.charAt(index))*Math.pow(base,length-index-1);
 		}
 		return result;
 	}
 	
+	//taking decimal digit of integer type and returning hexadecimal representation
 	String decimalToHex(int digit){
 		String result="";
 		while(digit>0){
