@@ -1,14 +1,4 @@
 package fcfs;
-/*
- This class contains following methods:-
- 1.sortAccArivalTime :- sort the processes acc. to arrival time
- 2.printArray :-params(array) it will print the given array
- 3.calculateCompletionTime :- Calculate completion time
- 4.calculateTurnAroundTime :- Calculate turnaround time
- 5.calculateWaitingTime :- Calculate waiting time for all processes
- 6.maxWaitingTime :- return maximum waiting time
- 7.avgWaitingTime :- Return avg. waiting time
- */
 import java.util.Scanner;
 public class MainClass {
 
@@ -20,28 +10,29 @@ public class MainClass {
 	static int processes;
 	
 	
-static void sortAccArivalTime(){
+// sort the processes according to arrival time
+	static void sortAccArivalTime(){
 	//bubble sorting
-	for(int i=0;i<processes;i++){
-		for(int j=1;j<processes-i;j++){
-			if(processData[j][0]<processData[j-1][0]){
-				int temp = processData[j-1][0];
-				processData[j-1][0] = processData[j][0];
-				processData[j][0] = temp;
-				temp = processData[j-1][1];
-				processData[j-1][1] = processData[j][1];
-				processData[j][1] = temp;
+		for(int i=0;i<processes;i++){
+			for(int j=1;j<processes-i;j++){
+				if(processData[j][0]<processData[j-1][0]){
+					int temp = processData[j-1][0];
+					processData[j-1][0] = processData[j][0];
+					processData[j][0] = temp;
+					temp = processData[j-1][1];
+					processData[j-1][1] = processData[j][1];
+					processData[j][1] = temp;
+				}
 			}
 		}
 	}
-}
 
-
-static void printArray(int[] arr){
-	for(int i=0;i<processes;i++ )
-		System.out.print(arr[i]+" ");
-	System.out.println();
-}
+//take the array of integer type and print that array
+	static void printArray(int[] arr){
+		for(int i=0;i<processes;i++ )
+			System.out.print(arr[i]+" ");
+		System.out.println();
+	}
 	
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
@@ -69,6 +60,8 @@ static void printArray(int[] arr){
 		
 	}
 	
+	
+	// Calculate completion time
 	static void calculateCompletionTime(){
 		completionTime[0]=processData[0][1];
 		for(int i=1;i<processes;i++){
@@ -80,17 +73,22 @@ static void printArray(int[] arr){
 		}
 		
 	}
+	//Calculate turnaround time
 	static void calculateTurnAroundTime(){
 		for(int i=0;i<processes;i++){
 			turnaroundTime[i]=completionTime[i]-processData[i][0];
 		}
 		
 	}
+	
+	//Calculate waiting time for all processes
 	static void calculateWaitingTime(){
 		for(int i=0;i<processes;i++){
 			waitingTime[i]=turnaroundTime[i]-processData[i][1];
 		}	
 	}
+	
+	//return maximum waiting time
 	static int maxWaitingTime(){
 		int max = waitingTime[0];
 		for(int i=1;i<processes;i++){
@@ -99,6 +97,8 @@ static void printArray(int[] arr){
 		}
 		return max;
 	}
+	
+	//Return avg. waiting time
 	static float avgWaitingTime(){
 		int totalTime = 0;
 		for(int i=0;i<processes;i++){
