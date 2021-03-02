@@ -2,7 +2,7 @@ package hexCalc;
 import java.util.Scanner;
 public class MainClass {
 	static String numOne,numTwo;
-	
+	//Takes two input from user whenever required
 	static void takeInput(Scanner sc){
 		System.out.println("Enter Number one");
 		numOne = sc.next();
@@ -12,7 +12,7 @@ public class MainClass {
 
 	public static void main(String[] args){
 		HexCalc hexCalc = new HexCalc();
-		Convertor Con = new Convertor();
+		Converter Con = new Converter();
 		int choice;
 		while(true){
 			Scanner sc = new Scanner(System.in);
