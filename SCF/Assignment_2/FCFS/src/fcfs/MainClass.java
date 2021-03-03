@@ -1,11 +1,11 @@
 package fcfs;
 import java.util.Scanner;
 public class MainClass {
-
-	static int[][] processData = new int[10][10];
-	static int[] completionTime = new int[10];
-	static int[] turnaroundTime = new int[10];
-	static int[] waitingTime = new int[10];
+	static final int MAX_SIZE = 10;
+	static int[][] processData = new int[MAX_SIZE][MAX_SIZE];
+	static int[] completionTime = new int[MAX_SIZE];
+	static int[] turnaroundTime = new int[MAX_SIZE];
+	static int[] waitingTime = new int[MAX_SIZE];
 	static String[] inputString = {"arrival time","burst time"};
 	static int processes;
 	
