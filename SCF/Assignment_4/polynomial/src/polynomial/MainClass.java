@@ -3,13 +3,14 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class MainClass {
 
+	static Polynomial polyOne,polyTwo;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter degree of Polynomial");
 		int deg =  sc.nextInt();
 		int []  pol = new int[deg+1];
-		for(int i=0;i<deg+1;i++)
-			pol[i]=sc.nextInt();
+		for(int index=0;index<deg+1;index++)
+			pol[index]=sc.nextInt();
 		Polynomial poly = new Polynomial(pol);
 		while(true){
 			System.out.println("1.Evaluate");
@@ -28,8 +29,12 @@ public class MainClass {
 				System.out.println(poly.degree());
 				break;
 			case 3:
-				addTwoPoly(sc,poly);
+				takeTwoPoly(sc);
+				printPoly(poly.addPoly(polyOne, polyTwo));
 				break;
+			case 4:
+				takeTwoPoly(sc);
+				printPoly(poly.multiply(polyOne, polyTwo));
 			default:
 				return;
 			}
@@ -37,14 +42,16 @@ public class MainClass {
 
 	}
 	
+	//print the coefficient of polynomial
 	static void printPoly(int[] poly){
 		for(int data:poly)
 			System.out.print(data+" ");
 		System.out.println();
 		
 	}
-
-	private static void addTwoPoly(Scanner sc, Polynomial poly) {
+	
+	//take two polynomial input for further operation
+	private static void takeTwoPoly(Scanner sc){
 		System.out.println("Enter degree of first Polynomial ");
 		int deg =  sc.nextInt();
 		int []  polOne = new int[deg+1];
@@ -57,11 +64,9 @@ public class MainClass {
 		System.out.println("Enter Coff. :");
 		for(int i=0;i<deg+1;i++)
 			polTwo[i]=sc.nextInt();
-		Polynomial polyOne = new Polynomial(polOne);
-		Polynomial polyTwo = new Polynomial(polTwo);
-		printPoly(poly.addPoly(polyOne, polyTwo));
-		
-		
+		polyOne = new Polynomial(polOne);
+		polyTwo = new Polynomial(polTwo);
 	}
+
 
 }

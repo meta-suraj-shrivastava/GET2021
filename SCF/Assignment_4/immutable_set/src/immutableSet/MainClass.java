@@ -4,28 +4,31 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class MainClass {
 
+	//handle the subset related actions
 	static boolean isSubset(IntSet immutableSet,Scanner sc ){
 		ArrayList<Integer> subset = new ArrayList<>();
 		System.out.println("Enter number of elements");
 		int totalElement = sc.nextInt();
 		System.out.println("Enter the set elements :");
-		for(int i=0;i<totalElement;i++)
+		for(int index=0;index<totalElement;index++)
 			subset.add(sc.nextInt());
 		IntSet immutableSubset = new IntSet(subset);
 		return immutableSet.isSubset(immutableSubset);
 	}
+	
+	//handle the union related actions like taking two set inputs
 	static void union(IntSet immutableSet,Scanner sc){
 		ArrayList<Integer> setOne = new ArrayList<>();
 		ArrayList<Integer> setTwo = new ArrayList<>();
 		System.out.println("Enter number of elements for first set");
 		int totalElement = sc.nextInt();
 		System.out.println("Enter the elements of first set :");
-		for(int i=0;i<totalElement;i++)
+		for(int index=0;index<totalElement;index++)
 			setOne.add(sc.nextInt());
 		System.out.println("Enter number of elements for second set");
 		totalElement = sc.nextInt();
 		System.out.println("Enter the elements of second set :");
-		for(int i=0;i<totalElement;i++)
+		for(int index=0;index<totalElement;index++)
 			setTwo.add(sc.nextInt());
 		IntSet immutableSetOne= new IntSet(setOne);
 		IntSet immutableSetTwo= new IntSet(setTwo);
@@ -46,7 +49,7 @@ public class MainClass {
 		System.out.println("Enter the number of element :");
 		int totalElement = sc.nextInt();
 		System.out.println("Enter the set elements :");
-		for(int i=0;i<totalElement;i++)
+		for(int index=0;index<totalElement;index++)
 			set.add(sc.nextInt());
 		IntSet immutableSet = new IntSet(set);
 		while(true){

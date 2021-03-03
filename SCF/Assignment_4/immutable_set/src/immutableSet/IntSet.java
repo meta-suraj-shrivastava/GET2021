@@ -4,6 +4,8 @@ import java.util.ArrayList;
 public final class IntSet {
 
 	private ArrayList<Integer> set = new ArrayList<>();
+	
+	//constructor initializing the set with given data
 	IntSet(ArrayList<Integer> arr){
 		for(int data:arr){
 			if(!set.contains(data))
@@ -11,9 +13,12 @@ public final class IntSet {
 		}
 	}
 	
+	//return the set
 	ArrayList<Integer> getSet(){
 		return set;
 	}
+	
+	//take a integer argument and check it is a part of set or not
 	boolean isMember(int element){
 		for(int data:set){
 			if(data==element)
@@ -21,31 +26,36 @@ public final class IntSet {
 		}
 		return false;
 	}
+	
+	//return the size of the set
 	int size(){
 		return set.size();
 	}
 	
+	//return boolean value true if given set is a subset or vice-versa
 	boolean isSubset(IntSet s){
 		return set.containsAll(s.getSet());
 	}
 	
-	
+	//Complement of the set taking union set from 1 to 1000
 	ArrayList<Integer> getComplement(){
 		ArrayList<Integer> complementSet = new ArrayList<>();
-		for(int i=0;i<=1000;i++){
-			if(!set.contains(i))
-				complementSet.add(i);
+		for(int index=0;index<=1000;index++){
+			if(!set.contains(index))
+				complementSet.add(index);
 		}
 		return complementSet;
 	}
 	
+	//take two set and return union
 	ArrayList<Integer> union(IntSet s1,IntSet s2){
 		ArrayList<Integer> union = new ArrayList<>();
-		for(int el:s1.getSet()){
-				union.add(el);
+		for(int data:s1.getSet()){
+				union.add(data);
 		}
-		for(int el:s2.getSet()){
-			union.add(el);
+		for(int data:s2.getSet()){
+			if(!union.contains(data))
+				union.add(data);
 	}
 		return union;
 	}
