@@ -7,8 +7,8 @@ public class MainClass {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter degree of Polynomial");
 		int deg =  sc.nextInt();
-		int []  pol = new int[deg];
-		for(int i=0;i<deg;i++)
+		int []  pol = new int[deg+1];
+		for(int i=0;i<deg+1;i++)
 			pol[i]=sc.nextInt();
 		Polynomial poly = new Polynomial(pol);
 		while(true){
@@ -37,7 +37,7 @@ public class MainClass {
 
 	}
 	
-	static void printPoly(ArrayList<Integer> poly){
+	static void printPoly(int[] poly){
 		for(int data:poly)
 			System.out.print(data+" ");
 		System.out.println();
@@ -47,15 +47,15 @@ public class MainClass {
 	private static void addTwoPoly(Scanner sc, Polynomial poly) {
 		System.out.println("Enter degree of first Polynomial ");
 		int deg =  sc.nextInt();
-		int []  polOne = new int[deg];
+		int []  polOne = new int[deg+1];
 		System.out.println("Enter Coff. :");
-		for(int i=0;i<deg;i++)
+		for(int i=0;i<deg+1;i++)
 			polOne[i]=sc.nextInt();
 		System.out.println("Enter degree of second Polynomial ");
 		deg =  sc.nextInt();
-		int []  polTwo = new int[deg];
+		int []  polTwo = new int[deg+1];
 		System.out.println("Enter Coff. :");
-		for(int i=0;i<deg;i++)
+		for(int i=0;i<deg+1;i++)
 			polTwo[i]=sc.nextInt();
 		Polynomial polyOne = new Polynomial(polOne);
 		Polynomial polyTwo = new Polynomial(polTwo);

@@ -13,30 +13,34 @@ final ArrayList<Integer> poly = new ArrayList<>();
 	}
 	float evaluate(float value){
 		float result = 0;
-		int deg = poly.size();
+		int deg = degree();
 		for(int coff : poly)
 			result+=coff*Math.pow(value, deg--);
 		return result;
 	}
 	
 	int degree(){
-		return poly.size();
+		return poly.size()-1;
 	}
 	
-	ArrayList<Integer> addPoly(Polynomial p1, Polynomial p2){
+	int[] addPoly(Polynomial p1, Polynomial p2){
 		ArrayList<Integer> polyOne = p1.getPoly();
 		ArrayList<Integer> polyTwo = p2.getPoly();
-		if(p1.degree()>=p2.degree()){
-			for(int i=p2.degree()-1;i>=0;i--){
-				polyOne.set(i, polyOne.get(i)+polyTwo.get(i));
-			}
-			return polyOne;
+		int degOne = p1.degree();
+		int degTwo = p2.degree();
+		int max = degOne>=degTwo?degOne:degTwo;
+		int[] result = new int[max+1];
+		while(degOne>-1 && degTwo>-1){
+			result[max--]=polyOne.get(degOne--)+polyTwo.get(degTwo--);
 		}
-		else{
-			for(int i=p1.degree()-1;i>=0;i--){
-				polyTwo.set(i, polyOne.get(i)+polyTwo.get(i));
-			}
-			return polyTwo;
+		while(degOne>-1){
+			result[max--]=polyOne.get(degOne--);
 		}
+		while(degTwo>-1){
+			result[max--]=polyOne.get(degTwo--);
+		}
+		return result;
+		
 	}
 }
+ 
