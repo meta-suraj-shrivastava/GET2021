@@ -7,8 +7,8 @@ public class GradeCalculation {
  */
 	float average(int[] marks,int students){
 		float sum=0;
-		for(int i=0;i<students;i++){
-			sum+=marks[i];
+		for(int index=0;index<students;index++){
+			sum+=marks[index];
 		}
 		return sum/(float)students;
 	}
@@ -20,9 +20,9 @@ public class GradeCalculation {
 	
 	int maximum(int[] marks,int students){
 		int max=marks[0];
-		for(int i=1;i<students;i++){
-			if(marks[i]>max)
-				max = marks[i];
+		for(int index=1;index<students;index++){
+			if(marks[index]>max)
+				max = marks[index];
 		}
 		return max;
 	}
@@ -32,9 +32,9 @@ public class GradeCalculation {
 	 */
 	int minimum(int[] marks,int students){
 		int min=marks[0];
-		for(int i=1;i<students;i++){
-			if(marks[i]<min)
-				min = marks[i];
+		for(int index=1;index<students;index++){
+			if(marks[index]<min)
+				min = marks[index];
 		}
 		return min;
 	}
@@ -44,8 +44,8 @@ public class GradeCalculation {
 	 */
 	float passingPer(int[] marks,int students){
 		int noOfPassedStudents = 0;
-		for(int i=0;i<students;i++){
-			if(marks[i]>=40)
+		for(int index=0;index<students;index++){
+			if(marks[index]>=40)
 				noOfPassedStudents++;
 		}
 		return ((float)noOfPassedStudents/(float)students)*100;

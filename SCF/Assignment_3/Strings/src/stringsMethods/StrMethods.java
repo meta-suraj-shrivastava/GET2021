@@ -17,8 +17,8 @@ int equals(String one,String two){
 		return 0;
 	}
 	else{
-		for(int i=0;i<lenOne;i++){
-			if(one.charAt(i)!=two.charAt(i)){
+		for(int index=0;index<lenOne;index++){
+			if(one.charAt(index)!=two.charAt(index)){
 				return 0;
 			}
 		}
@@ -33,8 +33,8 @@ int equals(String one,String two){
 String reverse(String str){
 	int len = str.length();
 	String rev = "";
-	for(int i=len-1;i>=0;i--)
-		rev+=str.charAt(i);
+	for(int index=len-1;index>=0;index--)
+		rev+=str.charAt(index);
 	return rev;
 }
 
@@ -44,15 +44,15 @@ String reverse(String str){
  */
 String interChangeCase(String str){
 	String result = "";
-	for(int i=0;i<str.length();i++){
-		if(str.charAt(i)==' '){
+	for(int index=0;index<str.length();index++){
+		if(str.charAt(index)==' '){
 			result+=" ";
 		}
-		else if(str.charAt(i)>='a' && str.charAt(i)<='z'){
-			result += (char)(str.charAt(i)-32);
+		else if(str.charAt(index)>='a' && str.charAt(index)<='z'){
+			result += (char)(str.charAt(index)-32);
 		}
 		else{
-			result += (char)(str.charAt(i)+32);
+			result += (char)(str.charAt(index)+32);
 		}
 	}
 	return result;

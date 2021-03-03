@@ -10,8 +10,8 @@ public class MainClass {
 		students = sc.nextInt();
 		int [] marks = new int[students];
 		System.out.println("Enter Marks of "+students+" Studenst ");
-		for(int i=0;i<students;i++)
-			marks[i] = sc.nextInt();
+		for(int index=0;index<students;index++)
+			marks[index] = sc.nextInt();
 		//calling average function and formatting double value upto 2 decimal places
 		System.out.format("Average : %.2f\n",gradeCal.average(marks, students));
 		System.out.println("Maximum :"+gradeCal.maximum(marks, students));

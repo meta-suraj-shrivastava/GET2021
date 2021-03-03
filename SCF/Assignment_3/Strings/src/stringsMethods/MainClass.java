@@ -1,11 +1,23 @@
 package stringsMethods;
 import java.util.Scanner;
 public class MainClass {
+	
+	static String strOne,strTwo;
+	
+	static void singleInput(Scanner sc){
+		System.out.println("Enter String ");
+		strOne = sc.nextLine();
+	}
+	static void doubleInput(Scanner sc){
+		System.out.println("Enter String one ");
+		strOne = sc.nextLine();
+		System.out.println("Enter String Two ");
+		strTwo = sc.nextLine();
+	}
 
 	public static void  main(String[] args){
 		StrMethods str = new StrMethods();
 		Scanner sc = new Scanner(System.in);
-		String strOne,strTwo;
 		while(true){
 			//options for the user
 			System.out.println("1.Comapre Two Strings ");
@@ -18,26 +30,19 @@ public class MainClass {
 			sc.nextLine();
 			switch(option){
 				case 1:
-					System.out.println("Enter String one ");
-					strOne = sc.nextLine();
-					System.out.println("Enter String Two ");
-					strTwo = sc.nextLine();
+					doubleInput(sc);
 					System.out.println(str.equals(strOne,strTwo));
 					break;
 				case 2:
-					System.out.println("Enter String ");
-					strOne = sc.nextLine();
+					singleInput(sc);
 					System.out.println(str.reverse(strOne));
 					break;
 				case 3:
-					System.out.println("Enter String ");
-					strOne = sc.nextLine();
+					singleInput(sc);
 					System.out.println(str.interChangeCase(strOne));
 					break;
 				case 4:
-					System.out.println("Enter String ");
-					strOne = sc.nextLine();
-					System.out.println("You Entered ,"+strOne);
+					singleInput(sc);
 					System.out.println(str.largestWord(strOne));
 					break;
 				default:
