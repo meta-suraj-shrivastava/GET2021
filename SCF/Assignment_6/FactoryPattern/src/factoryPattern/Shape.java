@@ -11,5 +11,8 @@ public interface Shape {
 	double getArea();
 	double getParameter();
 	Point getOrigin();
+	String getTimestamp();
 	boolean isPointClosed();
+	int getId();
+	void setId(int shapeId);
 }
