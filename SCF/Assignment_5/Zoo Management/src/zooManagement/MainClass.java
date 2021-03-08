@@ -52,6 +52,7 @@ public class MainClass {
 		}
 	}
 
+	//takes animal Id as input and remove the animal from the zoo
 	private static void removeAnimal(int deadId) {
 		boolean success = false;
 		for(Zone zone:zones){

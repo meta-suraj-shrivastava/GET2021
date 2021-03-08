@@ -25,10 +25,6 @@ public class Owl extends Bird {
 	void setWeight(double inputWeight){
 		weight = inputWeight;
 	}
-	@Override
-	void setDead(boolean isDead){
-		dead = isDead;
-	}
 	
 	//**************getters*******************
 	@Override

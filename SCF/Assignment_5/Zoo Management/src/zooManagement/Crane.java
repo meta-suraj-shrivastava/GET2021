@@ -22,10 +22,6 @@ public class Crane extends Bird {
 		weight = inputWeight;
 	}
 	@Override
-	void setDead(boolean isDead){
-		dead = isDead;
-	}
-	@Override
 	void setName(String nameInp){
 		name = nameInp;
 	}

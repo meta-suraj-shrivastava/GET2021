@@ -22,10 +22,6 @@ public class Monkey extends Mammal {
 		weight = inputWeight;
 	}
 	@Override
-	void setDead(boolean isDead){
-		dead = isDead;
-	}
-	@Override
 	void setName(String nameInp){
 		name = nameInp;
 	}

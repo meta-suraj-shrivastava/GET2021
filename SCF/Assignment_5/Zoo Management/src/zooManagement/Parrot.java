@@ -27,13 +27,7 @@ public class Parrot extends Bird {
 	void setName(String nameInp){
 		name = nameInp;
 	}
-	
-	@Override
-	void setDead(boolean isDead){
-		dead = isDead;
-	}
-	
-	
+		
 	//**************getters*******************
 	@Override
 	String getName(){
