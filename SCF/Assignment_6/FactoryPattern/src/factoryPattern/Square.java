@@ -43,9 +43,13 @@ public class Square implements Shape {
 	}
 
 	@Override
-	public boolean isPointClosed() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean isPointClosed(Point point) {
+		if(point.getX()>coordinates.getX() &&
+				point.getX()<coordinates.getX()+side &&
+				point.getY()>coordinates.getY() &&
+				point.getY()<coordinates.getY()+side)
+				return true;
+			return false;
 	}
 
 	//return area of square

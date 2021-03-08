@@ -56,8 +56,12 @@ public class Rectangle implements Shape {
 
 
 	@Override
-	public boolean isPointClosed() {
-		// TODO Auto-generated method stub
+	public boolean isPointClosed(Point point) {
+		if(point.getX()>coordinates.getX() &&
+			point.getX()<coordinates.getX()+width &&
+			point.getY()>coordinates.getY() &&
+			point.getY()<coordinates.getY()+height)
+			return true;
 		return false;
 	}
 

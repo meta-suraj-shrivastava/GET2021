@@ -42,8 +42,12 @@ public class Circle implements Shape {
 	
 	
 	@Override
-	public boolean isPointClosed() {
-		// TODO Auto-generated method stub
+	public boolean isPointClosed(Point point) {
+		if(point.getX()<coordinates.getX()+radius && 
+				point.getX()>coordinates.getX()-radius &&
+				point.getY()<coordinates.getY()+radius &&
+				point.getY()>coordinates.getY()-radius)
+			return true;
 		return false;
 	}
 	//return area of Circle

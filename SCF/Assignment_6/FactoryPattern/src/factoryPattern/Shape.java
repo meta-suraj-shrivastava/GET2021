@@ -15,5 +15,5 @@ public interface Shape {
 	int getId();
 	Point getOrigin();
 	String getTimestamp();
-	boolean isPointClosed();
+	boolean isPointClosed(Point point);
 }

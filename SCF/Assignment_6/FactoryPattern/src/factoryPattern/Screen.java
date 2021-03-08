@@ -63,6 +63,8 @@ public class Screen {
 			System.out.println("1.Add shape");
 			System.out.println("2.Remove shape");
 			System.out.println("3.Display shapes");
+			System.out.println("4.Check weather given point is enclosed or not");
+			System.out.println("5.Sort acc. to timestamp latest to old");
 			int option = sc.nextInt();
 			switch(option){
 			case 1:
@@ -74,12 +76,46 @@ public class Screen {
 			case 3:
 				displayShapes();
 				break;
+			case 4:
+				isEnclosed(sc);
+				break;
+			case 5:
+				sortAndDisplay();
+				break;
 			}
+			
 			
 		}
 	}
 	
 	
+	//display the latest added shape first and first at bottom
+	private static void sortAndDisplay() {
+		for(int index=shapes.size()-1;index>=0;index--){
+			System.out.println(shapes.get(index).getId()+"\t"+shapes.get(index).getClass().getSimpleName()+
+					"\t ("+shapes.get(index).getOrigin().getX()+","+shapes.get(index).getOrigin().getY()+") \t"+shapes.get(index).getTimestamp());
+		}
+		
+	}
+
+	//takes the scanner Object and print all the shapes that enclosed the given points
+	private static void isEnclosed(Scanner sc) {
+		System.out.println("Enter x Coordinate");
+		int x = sc.nextInt();
+		System.out.println("Enter Y coordinate");
+		int y = sc.nextInt();
+		Point point = new Point(x,y);
+		System.out.println("Given point is enclosed in follwing shapes :");
+		for(Shape shape:shapes){
+			if(shape.isPointClosed(point)){
+				System.out.println(shape.getClass().getSimpleName()+"\t"+shape.getTimestamp());
+			}
+		}
+		System.out.println("\n");
+		
+		
+	}
+
 	//Remove shapes from the screen and takes Scanner object as argument
 	private static void removeShape(Scanner sc) {
 		System.out.println("1.Remove a shape from screen");
@@ -120,10 +156,10 @@ public class Screen {
 			System.out.println("Screen is Empty");
 		}
 		else{
-			System.out.println("id\tshape\t\tscreen Coordinate");
+			System.out.println("id\tshape\t\tscreen Coordinate\ttimestamp");
 			for(Shape shape:shapes){
 				System.out.println(shape.getId()+"\t"+shape.getClass().getSimpleName()+
-				"\t("+shape.getOrigin().getX()+","+shape.getOrigin().getY()+")");
+				"\t ("+shape.getOrigin().getX()+","+shape.getOrigin().getY()+") \t"+shape.getTimestamp());
 			}
 		}
 		
