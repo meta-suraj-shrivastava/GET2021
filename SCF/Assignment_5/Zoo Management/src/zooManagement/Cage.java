@@ -4,9 +4,8 @@ import java.util.ArrayList;
 
 public class Cage {
 	private final int MAX_CAP = 3;
-	private int currentCap = 0;
 	String type;
-	ArrayList<Animal> animals = new ArrayList<>();
+	private ArrayList<Animal> animals = new ArrayList<>();
 	
 	
 	//***********setter***************
@@ -23,22 +22,23 @@ public class Cage {
 	}
 	
 	int getCurrentCap(){
-		return currentCap;
+		return animals.size();
 	}
-
+	ArrayList<Animal> getAnimals(){
+		return animals;
+	}
 	//takes an animal as an argument and add to the cage
 	public void addAnimal(Animal animal) {
 		setType(animal.getAnimalName());
 		animals.add(animal);
-		currentCap++;
 		
 	}
 
 	//show all the animals present in the cage
 	public void showAnimals() {
-		int count=0;
+		System.out.println("ID\tName\tSound");
 		for(Animal animal:animals){
-			System.out.println(++count+"."+animal.getName());
+			System.out.println(animal.getId()+"\t"+animal.getName()+"\t"+animal.getSound());
 		}
 		
 	}

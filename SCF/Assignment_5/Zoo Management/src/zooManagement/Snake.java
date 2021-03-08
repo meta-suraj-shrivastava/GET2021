@@ -10,6 +10,10 @@ public class Snake extends Reptile {
 
 	//**********setters**************
 	@Override
+	void setId(int animalId) {
+		id = animalId;
+	}
+	@Override
 	void setAge(double inputAge){
 		age = inputAge;
 	}
@@ -41,8 +45,7 @@ public class Snake extends Reptile {
 	}
 	@Override
 	int getId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return id;
 	}
 	@Override
 	String getSound() {

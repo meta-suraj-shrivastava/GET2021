@@ -7,7 +7,7 @@ public class Zone {
 	String category;
 	boolean hasPark;
 	boolean hasCanteen;
-	ArrayList<Cage> cages = new ArrayList<>();
+	private ArrayList<Cage> cages = new ArrayList<>();
 	
 	//setter
 	void setCategory(String cat){
@@ -16,6 +16,9 @@ public class Zone {
 	//getter
 	String getCategory(){
 		return category;
+	}
+	ArrayList<Cage> getCages(){
+		return cages;
 	}
 	
 	//takes animal object as an argument and add to the specific type of cage
@@ -43,7 +46,7 @@ public class Zone {
 	//display all the cages in the zone
 	public void dispayCages() {
 		for(Cage cage:cages){
-			System.out.println("CageType---->"+cage.getType());
+			System.out.println("*********CAGE :"+cage.getType()+"*********");
 			cage.showAnimals();
 		}
 		

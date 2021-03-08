@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class MainClass {
 	static ArrayList<Zone> zones = new ArrayList<>();
+	static int animalId = 0;
 	
 	
 	//takes animal Object and add the animal to its type of zone and it also
@@ -16,6 +17,7 @@ public class MainClass {
 		animal.setAge(sc.nextDouble());
 		System.out.println("Enter "+animal.getAnimalName()+" weight");
 		animal.setWeight(sc.nextDouble());
+		animal.setId(animalId++);
 		boolean success = false;
 		for(Zone zone:zones){
 			if(zone.getCategory()==animal.getType()){
@@ -31,14 +33,53 @@ public class MainClass {
 	}
 	
 	//display all the zones in the zoo
-	public static void displayZoo(){
+	public static void displayZoo(Scanner sc){
 		if(zones.size()==0){
-			System.out.println("Zoo is empty");
+			System.out.println("\nZoo is empty\n");
+			return;
 		}
 		for(Zone zone:zones){
-			System.out.println("************"+zone.getCategory()+"************");
+			System.out.println("##########ZONE : "+zone.getCategory()+"###########");
 			zone.dispayCages();
 		}
+		System.out.println("\n\n");
+		System.out.print("Remove dead Animal(Y/N) :");
+		char choice = sc.next().toCharArray()[0];
+		if(choice=='y'||choice=='Y'){
+			System.out.println("Enter Dead Animal ID");
+			int deadId = sc.nextInt();
+			removeAnimal(deadId);
+		}
+	}
+
+	private static void removeAnimal(int deadId) {
+		boolean success = false;
+		for(Zone zone:zones){
+			ArrayList<Cage> cages = zone.getCages();
+			for(Cage cage:cages){
+				ArrayList<Animal> animals = cage.getAnimals();
+				for(Animal animal:animals){
+					if(animal.getId()==deadId){
+						success = animals.remove(animal);
+						break;
+					}
+					
+				}
+				if(success){
+					if(cage.getCurrentCap()==0){
+						cages.remove(cage);
+					}
+					break;
+				}
+			}
+			if(success){
+				if(zone.getCages().size()==0){
+					zones.remove(zone);
+				}
+				break;
+			}
+		}
+		
 	}
 
 	public static void main(String[] args){
@@ -94,7 +135,7 @@ public class MainClass {
 				addAnimal(owl,sc);
 				break;
 			case 10:
-				displayZoo();
+				displayZoo(sc);
 				break;
 			default:
 				return;

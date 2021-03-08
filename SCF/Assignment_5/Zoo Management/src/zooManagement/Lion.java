@@ -9,6 +9,12 @@ public class Lion extends Mammal {
 	}
 	//***********setters******************
 	@Override
+	void setId(int animalId) {
+		id = animalId;
+	}
+		
+	
+	@Override
 	void setName(String nameInp) {
 		name = nameInp;
 		
@@ -41,7 +47,7 @@ public class Lion extends Mammal {
 	}
 	@Override
 	int getId() {
-		return 0;
+		return id;
 	}
 	@Override
 	String getSound() {

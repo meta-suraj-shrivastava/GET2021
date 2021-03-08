@@ -10,6 +10,10 @@ public class Owl extends Bird {
 
 	//************setters******************
 	@Override
+	void setId(int animalId) {
+		id = animalId;
+	}
+	@Override
 	void setName(String nameInp){
 		name = nameInp;
 	}
@@ -47,6 +51,6 @@ public class Owl extends Bird {
 	@Override
 	int getId() {
 		// TODO Auto-generated method stub
-		return 0;
+		return id;
 	}
 }

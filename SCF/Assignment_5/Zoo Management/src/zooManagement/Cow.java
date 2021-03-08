@@ -25,6 +25,12 @@ public class Cow extends Mammal {
 	void setName(String nameInp){
 		name = nameInp;
 	}
+
+	@Override
+	void setId(int animalId) {
+		id = animalId;
+		
+	}
 	//************getters*************
 	@Override
 	String getName(){
@@ -40,7 +46,7 @@ public class Cow extends Mammal {
 	}
 	@Override
 	int getId() {
-		return 0;
+		return id;
 	}
 	
 	@Override
