@@ -8,11 +8,12 @@ public interface Shape {
 	 SQUARE,
 	 TRIANGLE,
 	} 
+	
+	void setId(int shapeId);
 	double getArea();
 	double getParameter();
+	int getId();
 	Point getOrigin();
 	String getTimestamp();
 	boolean isPointClosed();
-	int getId();
-	void setId(int shapeId);
 }

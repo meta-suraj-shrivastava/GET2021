@@ -13,6 +13,8 @@ public class Screen {
 	static ShapeFactory shapeFactory = new ShapeFactory();
 	static List<Shape> shapes = new ArrayList<>();
 	static List<Integer> list = new ArrayList<>();
+	
+	//Add the shape to the screen and takes Scanner object as argument
 	static void addShape(Scanner sc){
 		System.out.println("Enter shape name :");
 		String shapeType = sc.next();
@@ -27,6 +29,9 @@ public class Screen {
 		shapes.add(shape);
 		
 	}
+	
+	//takes the input of the parameter of a particular shape type and take 
+	// two arguments shapeType of string type and Scanner object
 	private static void getParameter(String shapeType,Scanner sc) {
 		if(shapeType.equalsIgnoreCase("circle")){
 			System.out.println("Enter radius");
@@ -73,6 +78,9 @@ public class Screen {
 			
 		}
 	}
+	
+	
+	//Remove shapes from the screen and takes Scanner object as argument
 	private static void removeShape(Scanner sc) {
 		System.out.println("1.Remove a shape from screen");
 		System.out.println("2.Remove all shape from screen of a specific type");
@@ -105,6 +113,8 @@ public class Screen {
 		}		
 		
 	}
+	
+	//display all the shapes present on the screen
 	private static void displayShapes() {
 		if(shapes.size()==0){
 			System.out.println("Screen is Empty");

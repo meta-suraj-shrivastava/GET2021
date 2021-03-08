@@ -8,35 +8,32 @@ public class Rectangle implements Shape {
 	Point coordinates;
 	String timestamp;
 	int id;
+	
+	/*
+	 * Constructor takes two argument point object(Screen coordinates)
+	 * and list object(Parameter of shapes) 
+	 */
 	public Rectangle(Point point, List<Integer> list) {
 		coordinates = new Point(point.getX(),point.getY());
 		width = list.get(0);
 		height = list.get(1);
 		timestamp = new Date().toString();
 	}
-
+	
+	//****************setters****************
+	
 	@Override
-	public double getArea() {
-		return width*height;
+	public void setId(int shapeId) {
+		id = shapeId;
+		
 	}
-
-	@Override
-	public double getParameter() {
-		return 2*(width+height);
-	}
-
+	
+	//*****************getters************
 	@Override
 	public Point getOrigin() {
 
 		return coordinates;
 	}
-
-	@Override
-	public boolean isPointClosed() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 	@Override
 	public String getTimestamp() {
 		return timestamp;
@@ -45,11 +42,24 @@ public class Rectangle implements Shape {
 	public int getId() {
 		return id;
 	}
+	
+	//return area of rectangle 
+	@Override
+	public double getArea() {
+		return width*height;
+	}
+	//return parameter of rectangle 
+	@Override
+	public double getParameter() {
+		return 2*(width+height);
+	}
+
 
 	@Override
-	public void setId(int shapeId) {
-		id = shapeId;
-		
+	public boolean isPointClosed() {
+		// TODO Auto-generated method stub
+		return false;
 	}
+
 
 }
