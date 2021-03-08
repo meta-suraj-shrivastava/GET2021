@@ -1,28 +1,37 @@
 package zooManagement;
 
 public class Lion extends Mammal {
+	
+	//Constructor initializing the animalName
 	Lion(){
 		super();
 		animalName = "lion";
 	}
+	//***********setters******************
 	@Override
-	String getSound() {
-		return "Roar";
+	void setName(String nameInp) {
+		name = nameInp;
+		
 	}
+	@Override
 	void setAge(double inputAge){
 		age = inputAge;
 	}
+	@Override
 	void setWeight(double inputWeight){
 		weight = inputWeight;
 	}
-	
+	@Override
 	void setDead(boolean isDead){
 		dead = isDead;
 	}
+	
+	//**************getters****************
+	@Override
 	String getName(){
 		return name;
 	}
-	
+	@Override
 	String getType(){
 		return type;
 	}
@@ -35,8 +44,7 @@ public class Lion extends Mammal {
 		return 0;
 	}
 	@Override
-	void setName(String nameInp) {
-		name = nameInp;
-		
+	String getSound() {
+		return "Roar";
 	}
 }

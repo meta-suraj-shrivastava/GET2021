@@ -9,13 +9,17 @@ public class Zone {
 	boolean hasCanteen;
 	ArrayList<Cage> cages = new ArrayList<>();
 	
+	//setter
 	void setCategory(String cat){
 		category  = cat;
 	}
-	
+	//getter
 	String getCategory(){
 		return category;
 	}
+	
+	//takes animal object as an argument and add to the specific type of cage
+	//will assign new cage if cage is Full
 	boolean addAnimal(Animal animal){
 		if(cages.size()==MAX_CAGE){
 			return false;
@@ -36,6 +40,7 @@ public class Zone {
 		return true;
 	}
 
+	//display all the cages in the zone
 	public void dispayCages() {
 		for(Cage cage:cages){
 			System.out.println("CageType---->"+cage.getType());

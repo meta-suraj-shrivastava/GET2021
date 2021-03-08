@@ -8,10 +8,12 @@ public class Cage {
 	String type;
 	ArrayList<Animal> animals = new ArrayList<>();
 	
+	
+	//***********setter***************
 	void setType(String animalType){
 		type = animalType;
 	}
-	
+	//***********getters***************
 	String getType(){
 		return type;
 		
@@ -24,6 +26,7 @@ public class Cage {
 		return currentCap;
 	}
 
+	//takes an animal as an argument and add to the cage
 	public void addAnimal(Animal animal) {
 		setType(animal.getAnimalName());
 		animals.add(animal);
@@ -31,6 +34,7 @@ public class Cage {
 		
 	}
 
+	//show all the animals present in the cage
 	public void showAnimals() {
 		int count=0;
 		for(Animal animal:animals){

@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class MainClass {
 	static ArrayList<Zone> zones = new ArrayList<>();
+	
+	
+	//takes animal Object and add the animal to its type of zone and it also
+	//takes the scanner object as second argument
 	public static void addAnimal(Animal animal,Scanner sc){
 		System.out.println("Enter "+animal.getAnimalName()+" name");
 		animal.setName(sc.next());
@@ -26,6 +30,7 @@ public class MainClass {
 		}
 	}
 	
+	//display all the zones in the zoo
 	public static void displayZoo(){
 		if(zones.size()==0){
 			System.out.println("Zoo is empty");

@@ -16,5 +16,6 @@ abstract String getName();
 abstract void setName(String nameInp);
 abstract void setAge(double age);
 abstract void setWeight(double weight);
+abstract void setDead(boolean isDead);
 abstract int getId();
 }
