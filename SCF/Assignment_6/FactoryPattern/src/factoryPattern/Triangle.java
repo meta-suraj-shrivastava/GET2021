@@ -62,8 +62,10 @@ public class Triangle implements Shape {
 		double hypo = Math.sqrt((base*base) + (height*height));
 		return hypo+base+height;
 	}
+	
+	//return true if point is inside the triangle and false if not
 	@Override
-	public boolean isPointClosed(Point point) {
+	public boolean isPointEnclosed(Point point) {
 		int x = point.getX();
 		int y = point.getY();
 		double A = area (x1, y1, x2, y2, x3, y3); 

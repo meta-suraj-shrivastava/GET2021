@@ -25,6 +25,10 @@ public class Screen {
 		Point point = new Point(xCord,yCord);
 		getParameter(shapeType,sc);
 		Shape shape = shapeFactory.careateShape(shapeType, point, list);
+		if(shape==null){
+			System.out.println("This shape is not supported");
+			return;
+		}
 		shape.setId(shapeId++);
 		shapes.add(shape);
 		
@@ -107,7 +111,7 @@ public class Screen {
 		Point point = new Point(x,y);
 		System.out.println("Given point is enclosed in follwing shapes :");
 		for(Shape shape:shapes){
-			if(shape.isPointClosed(point)){
+			if(shape.isPointEnclosed(point)){
 				System.out.println(shape.getClass().getSimpleName()+"\t"+shape.getTimestamp());
 			}
 		}

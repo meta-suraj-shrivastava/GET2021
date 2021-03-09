@@ -42,7 +42,7 @@ public class Circle implements Shape {
 	
 	
 	@Override
-	public boolean isPointClosed(Point point) {
+	public boolean isPointEnclosed(Point point) {
 		if(point.getX()<coordinates.getX()+radius && 
 				point.getX()>coordinates.getX()-radius &&
 				point.getY()<coordinates.getY()+radius &&
