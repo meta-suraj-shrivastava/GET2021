@@ -12,7 +12,9 @@ public class SplitArrayTest {
 	  public ExpectedException exception = ExpectedException.none();
 
 	ArrayOperation arrayOp = new ArrayOperation();
-	// Return the size of the largest mirror section found in the input array.
+	
+	
+		// Return the size of the largest mirror section found in the input array.
 		@Test 
 		public void MirrorEmptyArrayTest() throws ArrayIndexOutOfBoundsException{
 			exception.expect(ArrayIndexOutOfBoundsException.class);
@@ -95,7 +97,7 @@ public class SplitArrayTest {
 		
 		
 		
-		// SplitArray
+		//return the index by which we can split the array SplitArray
 		@Test
 		public void SplitArrayTest() {
 			int arr[] = {1, 1, 1, 2, 1};

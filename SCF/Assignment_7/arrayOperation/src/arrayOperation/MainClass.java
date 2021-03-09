@@ -6,6 +6,7 @@ public class MainClass {
 	
 	static int [] array;
 	
+	//takes the array Input from the user
 	static void getArrayInput(Scanner sc){
 		System.out.println("Enter size of Array");
 		int size = sc.nextInt();
@@ -54,6 +55,7 @@ public class MainClass {
 		}
 	}
 
+	//display the array
 	private static void displayArray() {
 		int index = -1;
 		while(++index<array.length){

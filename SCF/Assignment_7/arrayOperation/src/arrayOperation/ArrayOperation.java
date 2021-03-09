@@ -7,10 +7,10 @@ public class ArrayOperation {
 	      int max=0;
 	      if(arr.length == 0)
 	    	  throw new ArrayIndexOutOfBoundsException("Array is empty");
-	      for(int i = 0; i < arr.length; i++) {
+	      for(int indexI = 0; indexI < arr.length; indexI++) {
 	              int count = 0;
-	              for(int j = arr.length - 1; j >= 0 && i + count < arr.length; j--) {
-	                      if(arr[i + count] == arr[j]) {
+	              for(int indexJ = arr.length - 1; indexJ >= 0 && indexI + count < arr.length; indexJ--) {
+	                      if(arr[indexI + count] == arr[indexJ]) {
 	                             count++;
 	                      } 
 	                      else {
