@@ -4,6 +4,9 @@ public class SplitArray {
 
 	int getSplitIndex(int[] array,int size){
 		int sum = 0;
+		if(size == 0 ){
+			throw new AssertionError("Array is Empty");
+		}
 		for(int index=0;index<size;index++){
 			sum += array[index];
 		}
@@ -15,6 +18,9 @@ public class SplitArray {
 			int index=0;
 			while(halfSum != sum/2){
 				halfSum += array[index++];
+				if(index==size){
+					return -1;
+				}
 			}
 			return index;
 		}
