@@ -6,10 +6,13 @@ import org.junit.Test;
 
 public class RecursionTest {
 	Recursion rec = new Recursion();
+	
+	
+	//test method to search an element in the middle of the array
 	@Test
 	public void binarySearchTestAtMiddle() {
 		int [] arr = {0,1,5,6,10};
-		int dataToSearch = 1;
+		int dataToSearch = 5;
 		int lowerBound = 0;
 		int upperBound = arr.length-1;
 		rec.sort(arr);
@@ -17,6 +20,7 @@ public class RecursionTest {
 		
 	}
 	
+	//test method to search an element at the end of the array
 	@Test
 	public void binarySearchTestAtEnd() {
 		int [] arr = {0,1,5,6,10};
@@ -28,6 +32,7 @@ public class RecursionTest {
 		
 	}
 	
+	//test method to search an element at start of the array
 	@Test
 	public void binarySearchTestAtStart() {
 		int [] arr = {0,1,5,6,10};
@@ -39,6 +44,9 @@ public class RecursionTest {
 		
 	}
 	
+	
+	
+	//test method for negative test case
 	@Test
 	public void binarySearchTestNotFound() {
 		int [] arr = {0,1,5,6,10};
@@ -50,6 +58,8 @@ public class RecursionTest {
 		
 	}
 	
+	
+	//test method for negative test case for linear search
 	@Test
 	public void linearSearchTestNotFound() {
 		int [] arr = {0,1,5,6,10};
@@ -58,6 +68,7 @@ public class RecursionTest {
 		
 	}
 	
+	//test method for positive test case for linear search
 	@Test
 	public void linearSearchTest() {
 		int [] arr = {0,1,5,6,10};
@@ -65,6 +76,7 @@ public class RecursionTest {
 		assertTrue(rec.linearSearch(arr, dataToSearch));
 		
 	}
+	
 	
 	@Test
 	public void lcmTest() {
@@ -95,5 +107,20 @@ public class RecursionTest {
 		assertEquals(4,actual);
 		
 	}
+	
+	//positive nQueen testCase
+	@Test
+	public void nQueenTestSuccess() {
+		int numberOfQueens = 4;
+		assertTrue(rec.nQueen(numberOfQueens));
+		
+	}
 
+	//negative nQueen testCase
+	@Test
+	public void nQueenTestFail() {
+		int numberOfQueens = 3;
+		assertFalse(rec.nQueen(numberOfQueens));
+		
+	}
 }
