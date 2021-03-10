@@ -31,6 +31,7 @@ public class Screen {
 		}
 		shape.setId(shapeId++);
 		shapes.add(shape);
+		list.clear();
 		
 	}
 	
@@ -97,7 +98,8 @@ public class Screen {
 	private static void sortAndDisplay() {
 		for(int index=shapes.size()-1;index>=0;index--){
 			System.out.println(shapes.get(index).getId()+"\t"+shapes.get(index).getClass().getSimpleName()+
-					"\t ("+shapes.get(index).getOrigin().getX()+","+shapes.get(index).getOrigin().getY()+") \t"+shapes.get(index).getTimestamp());
+					"\t ("+shapes.get(index).getOrigin().getX()+","+shapes.get(index).getOrigin().getY()+") \t"+shapes.get(index).getTimestamp()+
+					" "+shapes.get(index).getArea());
 		}
 		
 	}
