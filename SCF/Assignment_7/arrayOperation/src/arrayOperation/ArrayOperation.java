@@ -7,10 +7,10 @@ public class ArrayOperation {
 	      int max=0;
 	      if(arr.length == 0)
 	    	  throw new ArrayIndexOutOfBoundsException("Array is empty");
-	      for(int indexI = 0; indexI < arr.length; indexI++) {
+	      for(int outerIndex = 0; outerIndex < arr.length; outerIndex++) {
 	              int count = 0;
-	              for(int indexJ = arr.length - 1; indexJ >= 0 && indexI + count < arr.length; indexJ--) {
-	                      if(arr[indexI + count] == arr[indexJ]) {
+	              for(int innerIndex = arr.length - 1; innerIndex >= 0 && outerIndex + count < arr.length; innerIndex--) {
+	                      if(arr[outerIndex + count] == arr[innerIndex]) {
 	                             count++;
 	                      } 
 	                      else {
@@ -41,7 +41,7 @@ public class ArrayOperation {
 			throw new ArrayIndexOutOfBoundsException("Array is empty");
 		}
 		
-		int xIndex=-1,yIndex=-1;
+		int xIndex=-1, yIndex=-1;
 		while(xIndex<array.length-1 && yIndex<array.length-1){
 			while(++xIndex<array.length && array[xIndex]!=x);
 			if(xIndex==array.length-1 && array[xIndex]==x){
