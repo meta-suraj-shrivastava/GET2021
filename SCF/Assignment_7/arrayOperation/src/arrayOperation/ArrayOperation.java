@@ -1,5 +1,8 @@
 package arrayOperation;
 
+/*
+ * This class provide various methods to perform operation on an array
+ */
 public class ArrayOperation {
 	
 	//Return the size of the largest mirror section found in the input array.

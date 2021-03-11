@@ -47,19 +47,19 @@ public class Recursion {
 
 	//sort the array for binary search , insertion sort implemented
 	void sort(int[] arr) {
-		for(int index=1;index<arr.length;index++){
+		for(int outerIndex=1;outerIndex<arr.length;outerIndex++){
 			
-			int currentNumber = arr[index];
-			int indexJ = index-1;
-			for(indexJ=index-1;indexJ>=0;indexJ--){
-				if(currentNumber<arr[indexJ]){
-					arr[indexJ+1] = arr[indexJ];
+			int currentNumber = arr[outerIndex];
+			int innerIndex = outerIndex-1;
+			for(innerIndex=outerIndex-1;innerIndex>=0;innerIndex--){
+				if(currentNumber<arr[innerIndex]){
+					arr[innerIndex+1] = arr[innerIndex];
 				}
 				else{
 					break;
 				}
 			}
-			arr[indexJ+1]=currentNumber;
+			arr[innerIndex+1]=currentNumber;
 		}
 		
 	}
@@ -67,21 +67,21 @@ public class Recursion {
 	//return true if the current place is safe or not for the queen
 	 private boolean isSafe(int board[][], int row, int col,int numberOfQueens) 
 	    { 
-	        int indexI, indexJ; 
+	        int rowIndex, colIndex; 
 	  
 	        //Check this row on left side 
-	        for (indexI = 0; indexI < col; indexI++) 
-	            if (board[row][indexI] == 1) 
+	        for (rowIndex = 0; rowIndex < col; rowIndex++) 
+	            if (board[row][rowIndex] == 1) 
 	                return false; 
 	  
 	        //Check upper diagonal on left side
-	        for (indexI = row, indexJ = col; indexI >= 0 && indexJ >= 0; indexI--, indexJ--) 
-	            if (board[indexI][indexJ] == 1) 
+	        for (rowIndex = row, colIndex = col; rowIndex >= 0 && colIndex >= 0; rowIndex--, colIndex--) 
+	            if (board[rowIndex][colIndex] == 1) 
 	                return false; 
 	  
 	        //Check lower diagonal on left side
-	        for (indexI = row, indexJ = col; indexJ >= 0 && indexI < numberOfQueens; indexI++, indexJ--) 
-	            if (board[indexI][indexJ] == 1) 
+	        for (rowIndex = row, colIndex = col; colIndex >= 0 && rowIndex < numberOfQueens; rowIndex++, colIndex--) 
+	            if (board[rowIndex][colIndex] == 1) 
 	                return false; 
 	  
 	        return true; 
