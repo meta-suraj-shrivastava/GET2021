@@ -30,7 +30,7 @@ public final class SparseMatrixOp {
 	boolean isSymmetric(){
 		int[][] transpose = transposeOfMatrix();
 		for(int row=0;row<transpose.length;row++){
-			if(!Arrays.equals(sparseMatrix, transpose)){
+			if(!Arrays.equals(sparseMatrix[row], transpose[row])){
 				return false;
 			}
 		}
@@ -40,8 +40,7 @@ public final class SparseMatrixOp {
 	
 	//return addition of two matrix
 	int[][] addTwoMatrix(int[][] matrix){
-		if(matrix.length!=sparseMatrix.length) return null;
-		if(matrix[0].length!=sparseMatrix[0].length) return null;
+		if(matrix.length!=sparseMatrix.length || matrix[0].length!=sparseMatrix[0].length ) return null;
 		int[][] result = new int[matrix.length][matrix.length];
 		
 		for(int row=0;row<matrix.length;row++){
