@@ -1,9 +1,15 @@
 package linkedList;
 
+import java.util.HashMap;
+
 //Node class contains the data and address of the next node
 class Node{
 	int data;
-	Node nextNode = null;
+	Node nextNode ;
+	Node(int data){
+		this.data = data;
+		nextNode = null;
+	}
 }
 
 
@@ -18,8 +24,7 @@ public class MyLinkedList {
    
    //add data to the linked list
 	void add(int data){
-		Node newNode = new Node();
-		newNode.data = data;
+		Node newNode = new Node(data);
 		if(start == null){
 			start = newNode;
 		}
@@ -47,7 +52,40 @@ public class MyLinkedList {
 		System.out.println();
 	}
 	
-	void rotateSubList(int left,int right,int numberOfroation){
+	//this function rotates the sublist by numberOfRotation
+	void rotateSubList(int left,int right,int numberOfRotation){
+		Node leftAddr = start;
+		Node rightAddr =  start;
+		Node rotationAddr = start;
+		int rotationIndex = right - (numberOfRotation%(right-left));
+		while(--left>1){
+			leftAddr = leftAddr.nextNode;
+		}
+		while(--right>0){
+			rightAddr = rightAddr.nextNode;
+		}		
+		while(--rotationIndex>0){
+			rotationAddr = rotationAddr.nextNode;
+		}
 		
+		Node tempAddr = rotationAddr.nextNode;
+		rotationAddr.nextNode = rightAddr.nextNode;
+		rightAddr.nextNode = leftAddr.nextNode;
+		leftAddr.nextNode = tempAddr;
+		
+			}
+	
+	
+	boolean detectLoop(){
+		HashMap<Node,Integer> map =  new HashMap();
+		Node start  = this.start;
+		while(start.nextNode!=null){
+			if(map.containsKey(start)){
+				return true;
+			}
+			map.put(start, 1);
+			start = start.nextNode;
+		}
+		return false;
 	}
 }

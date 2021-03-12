@@ -83,7 +83,7 @@ public class Triangle implements Shape {
 		return (A == A1 + A2 + A3);
 	}
 	
-	private double area(int x12, int y12, int x22, int y22, int x32, int y32) {
+	private double area(int x1, int y1, int x2, int y2, int x3, int y3) {
 		return Math.abs((x1*(y2-y3) + x2*(y3-y1)+ x3*(y1-y2))/2.0); 
 	}
 

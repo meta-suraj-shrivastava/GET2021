@@ -8,7 +8,9 @@ public class MainClass {
 		while(true){
 		System.out.println("1.Add data to list");
 		System.out.println("2.Display List");
-		System.out.println("3.Exit");
+		System.out.println("3.Rotate SubList");
+		System.out.println("4.Detect Loop");
+		System.out.println("5.Exit");
 		int choice = sc.nextInt();
 		switch(choice){
 		case 1:
@@ -20,6 +22,18 @@ public class MainClass {
 			break;
 		case 2:
 			list.displayList();
+			break;
+		case 3:
+			System.out.println("Enter Left");
+			int left = sc.nextInt();
+			System.out.println("Enter right");
+			int right = sc.nextInt();
+			System.out.println("Enter number of Rotation");
+			int numberOfRotation = sc.nextInt();
+			list.rotateSubList(left, right, numberOfRotation);
+			break;
+		case 4:
+			System.out.println(list.detectLoop());
 			break;
 		default:
 			return;
