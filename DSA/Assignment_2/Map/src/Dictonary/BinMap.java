@@ -1,14 +1,18 @@
 package Dictonary;
 
+import java.util.Iterator;
+
+import javax.json.JsonValue;
+
 /*
  * this class provide the node of the binary tree
  */
 class Node{
-	int key;
+	String key;
 	String value;
 	Node left;
 	Node right;
-	Node(int key,String value){
+	Node(String key,String value){
 		this.key = key;
 		this.value = value;
 		left = null;
@@ -22,40 +26,47 @@ class Node{
  */
 public class BinMap { 
 	Node root;
-	BinMap(){
+	BinMap(Iterator<String> keys,Iterator<JsonValue> values){
 		root = null;
-	}
-	
-	
-	//insert Node to the binary tree contains key value pair ,required key and value
-	void insert(int key,String value){
-		Node newNode = new Node(key,value);
-		if(root == null){
-			root = newNode;
-			return;
+		while(keys.hasNext()){
+//			System.out.println(keys.next()+":"+values.next().toString());
+			insert(keys.next(),values.next().toString());
 		}
-		Node temp = root;
-		while(temp.left!=null && temp.right!=null && temp.key != key){
-			System.out.println("Printing"+temp.key);
-			if(temp.key<key){
-				temp = temp.right;
+	}
+
+
+	//insert Node to the binary tree contains key value pair ,required key and value
+	private Node insert(Node rootNode,Node newNode){
+		if(rootNode == null){
+			return newNode;
+		}
+		System.out.println("inserting "+newNode.key);
+		if(newNode.key.compareTo(rootNode.key)> 0){
+			System.out.println("Going right");
+				return rootNode.right = insert(rootNode.right,newNode);
 			}
 			else{
-				temp = temp.left;
+				System.out.println("Going left");
+				return rootNode.left =  insert(rootNode.left,newNode);
 			}
-		}
-		if(key < temp.key) temp.left = newNode;
-		else if (key > temp.key) temp.right = newNode;
-		else temp.value = value;
+		
+	}
+	
+	void insert(String key,String value){
+//		System.out.println("Insert\n"+key+":"+value);
+		Node newNode = new Node(key,value);
+		if(root == null) root = newNode;
+		else insert(root,newNode);
+		
 	}
 	
 	//return the value of the node having the same key as provided
-	String getValue(int key){
+	String getValue(String key){
 		if(root == null) return "Dictonary is empty";
 		Node temp = root;
 		while(temp!=null){
-			if(temp.key == key) return temp.value;
-			else if(key<temp.key) temp = temp.left;
+			if(temp.key.compareTo(key) == 0) return temp.value;
+			else if(key.compareTo(temp.key) < 0) temp = temp.left;
 			else temp = temp.right;
 		}
 		return "Not found";
@@ -77,16 +88,16 @@ public class BinMap {
 		display(root);
 	}
 	
-	private Node delete(Node root, int key)
+	private Node delete(Node root, String key)
     {
         /* Base Case: If the tree is empty */
         if (root == null)
             return root;
  
         /* Otherwise, recur down the tree */
-        if (key < root.key)
+        if (key.compareTo(root.key) < 0)
             root.left = delete(root.left, key);
-        else if (key > root.key)
+        else if (key.compareTo(root.key) > 0)
             root.right = delete(root.right, key);
  
         // if key is same as root's 
@@ -110,9 +121,9 @@ public class BinMap {
         return root;
     }
  
-    private int minValue(Node root)
+    private String minValue(Node root)
     {
-        int minv = root.key;
+        String minv = root.key;
         while (root.left != null) 
         {
             minv = root.left.key;
@@ -121,7 +132,7 @@ public class BinMap {
         return minv;
     }
     
-    Node delete(int key){
+    Node delete(String key){
     	return delete(root,key);
     }
 }
