@@ -43,7 +43,7 @@ public class BinMap {
 		System.out.println("inserting "+newNode.key);
 		if(newNode.key.compareTo(rootNode.key)> 0){
 			System.out.println("Going right");
-				return rootNode.right = insert(rootNode.right,newNode);
+				return	 rootNode.right = insert(rootNode.right,newNode);
 			}
 			else{
 				System.out.println("Going left");
