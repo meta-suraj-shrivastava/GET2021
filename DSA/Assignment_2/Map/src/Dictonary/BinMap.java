@@ -36,27 +36,25 @@ public class BinMap {
 
 
 	//insert Node to the binary tree contains key value pair ,required key and value
-	private Node insert(Node rootNode,Node newNode){
+	private Node insert(Node rootNode,String key, String value){
 		if(rootNode == null){
-			return newNode;
+			rootNode = new Node(key,value);
+			return rootNode;
 		}
-		System.out.println("inserting "+newNode.key);
-		if(newNode.key.compareTo(rootNode.key)> 0){
-			System.out.println("Going right");
-				return	 rootNode.right = insert(rootNode.right,newNode);
+		if(key.compareTo(rootNode.key)> 0){
+				rootNode.right = insert(rootNode.right,key,value);
 			}
 			else{
-				System.out.println("Going left");
-				return rootNode.left =  insert(rootNode.left,newNode);
+				rootNode.left =  insert(rootNode.left,key,value);
 			}
+		return rootNode;
 		
 	}
 	
+	
+	//insert Node to the BST
 	void insert(String key,String value){
-//		System.out.println("Insert\n"+key+":"+value);
-		Node newNode = new Node(key,value);
-		if(root == null) root = newNode;
-		else insert(root,newNode);
+		root =  insert(root,key,value);
 		
 	}
 	
@@ -88,6 +86,9 @@ public class BinMap {
 		display(root);
 	}
 	
+	
+	//Delete node from the BST
+	//@params - root:Node , key:String
 	private Node delete(Node root, String key)
     {
         /* Base Case: If the tree is empty */
@@ -121,6 +122,7 @@ public class BinMap {
         return root;
     }
  
+	//return the minValue of the right subTree
     private String minValue(Node root)
     {
         String minv = root.key;
@@ -132,7 +134,33 @@ public class BinMap {
         return minv;
     }
     
-    Node delete(String key){
-    	return delete(root,key);
+    //Delete the node from the user
+    //@param - Key:String
+    void delete(String key){
+    	root = delete(root,key);
     }
+
+
+    //print all the key Value pairs of map lies between upperBound and LowerBound both inclusive 
+    //@param - lowerBound:String ,upperBound:String
+	public void getKeyPairsBetween(String lowerBound, String upperBound) {
+		getKeyPairsBetween(root,lowerBound,upperBound);
+		
+	}
+
+
+	//method overloading to provide the root node of the tree as an argument
+	private void getKeyPairsBetween(Node root, String lowerBound, String upperBound) {
+		if(root == null) return;
+		else{
+				getKeyPairsBetween(root.left, lowerBound, upperBound);
+				if(root.key.compareTo(lowerBound) >= 0 && root.key.compareTo(upperBound) <= 0)
+					System.out.println(root.key+":"+root.value);
+				getKeyPairsBetween(root.right, lowerBound, upperBound);
+				
+				
+			
+		}
+		
+	}
 }
