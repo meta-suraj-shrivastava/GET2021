@@ -72,7 +72,7 @@ public class MainClass {
                      tokens[i] == '*' || 
                         tokens[i] == '/')
             {
-                while (!ops.opEmpty() && hasPrecedence(tokens[i],ops.opPeek()))
+                while (!ops.isEmpty() && hasPrecedence(tokens[i],ops.opPeek()))
                 		values.push(applyOp(ops.opPop(),values.intPop(),values.intPop()));
  
                 // Push current token to 'ops'.
@@ -83,7 +83,7 @@ public class MainClass {
         // Entire expression has been 
         // parsed at this point, apply remaining
         // ops to remaining values
-        while (!ops.opEmpty())
+        while (!ops.isEmpty())
             values.push(applyOp(ops.opPop(), 
                              values.intPop(), 
                            values.intPop()));
