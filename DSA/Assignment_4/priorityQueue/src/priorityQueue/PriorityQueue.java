@@ -84,4 +84,12 @@ public class PriorityQueue implements PriorityQueueInt {
 			System.out.print(priorityQueue[index]+" ");
 		System.out.println();
 	}
+	
+	
+	//Special Display function to display the queue for virat kohli problem
+	public void displayForVkohli(){
+		for(int index = front;index<=rear;index++)
+			System.out.println("Bowler with "+priorityQueue[index]+" left");
+		System.out.println();
+	}
 }
