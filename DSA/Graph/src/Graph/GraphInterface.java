@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public interface GraphInterface {
 
+	void addNode(int weight,char nodeName,char connectedFrom);
 	boolean isConnected();
 	ArrayList<Character> reachable(char a);
 	ArrayList<Node> mst();
