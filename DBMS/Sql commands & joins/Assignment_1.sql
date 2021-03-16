@@ -1,6 +1,11 @@
 create database eCommerce;
 use eCommerce;
 
+
+
+/*
+creating all the required tables
+*/
 create table user(
     userID int primary key AUTO_INCREMENT,
     name char(30),
@@ -21,6 +26,7 @@ create table categories(
     parent bool
 );
 create table childCategories(
+    childCatID int primary key AUTO_INCREMENT,
     categoryID int,
     categoryName varchar(20),
     foreign key (categoryID)
@@ -66,10 +72,21 @@ create table images(
         references products (productID)
 );
 
+
+
+/*
+setting constraint check false before deletion of products table because it has child tables
+and after deleting set contraint to true again
+*/
 set FOREIGN_KEY_CHECKS = 0;
 drop table products;
 set FOREIGN_KEY_CHECKS = 1;
 
+
+
+/*
+creating products table again 
+*/
 create table products(
     productID int AUTO_INCREMENT,
     name varchar(20),
