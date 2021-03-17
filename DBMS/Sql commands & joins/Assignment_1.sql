@@ -1,8 +1,5 @@
 create database eCommerce;
 use eCommerce;
-
-
-
 /*
 creating all the required tables
 */
@@ -20,18 +17,17 @@ create table addresses(
     foreign key (userID)
         references user (userID)
 );
+create table parentCategories(
+    parentCatId int primary key AUTO_INCREMENT,
+    parentcategoryName varchar(20)
+);
 create table categories(
     categoryID int primary key AUTO_INCREMENT,
     categoryName varchar(20),
-    parent bool
+    parentCatId int,
+    foreign key(parentCatId) references parentCategories(parentCatId)
 );
-create table childCategories(
-    childCatID int primary key AUTO_INCREMENT,
-    categoryID int,
-    categoryName varchar(20),
-    foreign key (categoryID)
-        references categories(categoryID)
-);
+
 create table products(
     productID int AUTO_INCREMENT,
     name varchar(20),
@@ -40,9 +36,9 @@ create table products(
     quantity int,
     addedOn timestamp NOT NULL,
     categoryID int,
+    sales int,
     foreign key (categoryID)
         references categories (categoryID),
-    sales int,
     primary key (productID)
 );
 create table orders(

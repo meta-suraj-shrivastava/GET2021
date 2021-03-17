@@ -16,40 +16,40 @@ insert into user(name,contactNo,email,DOB,admin) values("swati pancholi",9876654
 /*
 inserting values in categories and childcategories table 
 */
-insert into categories(categoryName,parent) values("mobile",true);
-insert into childcategories(categoryID,categoryName) values(1,"smartphone");
-insert into childcategories(categoryID,categoryName) values(1,"keypad");
-insert into categories(categoryName,parent) values("grocery",true);
-insert into childcategories(categoryID,categoryName) values(2,"vegetables & fruits");
-insert into childcategories(categoryID,categoryName) values(2,"pules");
-insert into childcategories(categoryID,categoryName) values(2,"soaps");
-insert into childcategories(categoryID,categoryName) values(2,"spices");
-insert into categories(categoryName,parent) values("gadgets",true);
-insert into childcategories(categoryID,categoryName) values(3,"smartwatches & bands");
-insert into childcategories(categoryID,categoryName) values(3,"speakers");
-insert into childcategories(categoryID,categoryName) values(3,"headphones");
-insert into childcategories(categoryID,categoryName) values(3,"tablets");
-insert into categories(categoryName,parent) values("cosmetics",false);
+insert into parentCategories(parentcategoryName) values("mobile");
+insert into categories(categoryName,parentCatId) values("smartphone",1);
+insert into categories(categoryName,parentCatId) values("keypad",1);
+insert into parentCategories(parentcategoryName) values("grocery");
+insert into categories(categoryName,parentCatId) values("vegetables & fruits",2);
+insert into categories(categoryName,parentCatId) values("pules",2);
+insert into categories(categoryName,parentCatId) values("soaps",2);
+insert into categories(categoryName,parentCatId) values("spices",2);
+insert into parentCategories(parentcategoryName) values("gadgets");
+insert into categories(categoryName,parentCatId) values("smartwatches & bands",3);
+insert into categories(categoryName,parentCatId) values("speakers",3);
+insert into categories(categoryName,parentCatId) values("headphones",3);
+insert into categories(categoryName,parentCatId) values("tablets",3);
+insert into categories(categoryName) values("cosmetics");
 
-
+select * from parentCategories;
 /*
 inserting values in products table 
 */
 insert into products(name,price,description,quantity,categoryID) values("I-Phone 12",90000,"designed by apple in california",12,1);
 insert into products(name,price,description,quantity,categoryID) values("One plus 9",49000,"get your oxygen now",2,1);
-insert into products(name,price,description,quantity,categoryID) values("Nokia 310",2500,"No to smartphones",120,1);
-insert into products(name,price,description,quantity,categoryID) values("Loki",23,"health",560,2);
-insert into products(name,price,description,quantity,categoryID) values("Potato",15,"health",250,2);
-insert into products(name,price,description,quantity,categoryID) values("mango",45,"health",560,2);
-insert into products(name,price,description,quantity,categoryID) values("watermelon",30,"health",50,2);
-insert into products(name,price,description,quantity,categoryID) values("Mi Band",2400,"monitor health",560,3);
-insert into products(name,price,description,quantity,categoryID) values("JBL",98000,"feel the music",160,3);
-insert into products(name,price,description,quantity,categoryID) values("Sony 12XT",2400,"live the music",12,3);
-insert into products(name,price,description,quantity,categoryID) values("Samsung Tab 12",18000,"make your work easy",139,3);
-insert into products(name,price,description,quantity,categoryID) values("Lipstick",1200,"be confident",50,4);
-insert into products(name,price,description,quantity,categoryID) values("Eye Liner",1800,"see the world with your beautiful eyes",60,4);
-insert into products(name,price,description,quantity,categoryID) values("Kajal",200,"be classic like black",590,4);
-insert into products(name,price,description,quantity,categoryID) values("powder",260,"smell go away",590,4);
+insert into products(name,price,description,quantity,categoryID) values("Nokia 310",2500,"No to smartphones",120,2);
+insert into products(name,price,description,quantity,categoryID) values("Loki",23,"health",560,3);
+insert into products(name,price,description,quantity,categoryID) values("Potato",15,"health",250,3);
+insert into products(name,price,description,quantity,categoryID) values("mango",45,"health",560,3);
+insert into products(name,price,description,quantity,categoryID) values("watermelon",30,"health",50,3);
+insert into products(name,price,description,quantity,categoryID) values("Mi Band",2400,"monitor health",560,7);
+insert into products(name,price,description,quantity,categoryID) values("JBL",98000,"feel the music",160,8);
+insert into products(name,price,description,quantity,categoryID) values("Sony 12XT",2400,"live the music",12,9);
+insert into products(name,price,description,quantity,categoryID) values("Samsung Tab 12",18000,"make your work easy",139,10);
+insert into products(name,price,description,quantity,categoryID) values("Lipstick",1200,"be confident",50,11);
+insert into products(name,price,description,quantity,categoryID) values("Eye Liner",1800,"see the world with your beautiful eyes",60,11);
+insert into products(name,price,description,quantity,categoryID) values("Kajal",200,"be classic like black",590,11);
+insert into products(name,price,description,quantity,categoryID) values("powder",260,"smell go away",590,11);
 
 
 /*
@@ -86,6 +86,13 @@ insert into orderdetails(orderID,shipped,cancelled,returned,productID) values(6,
 insert into orderdetails(orderID,shipped,cancelled,returned,productID) values(6,true,false,false,4);
 insert into orderdetails(orderID,shipped,cancelled,returned,productID) values(6,false,false,false,6);
 
+insert into orderdetails(orderID,shipped,cancelled,returned,productID) values(7,false,false,false,2);
+insert into orderdetails(orderID,shipped,cancelled,returned,productID) values(8,false,false,false,4);
+insert into orderdetails(orderID,shipped,cancelled,returned,productID) values(9,false,false,false,1);
+insert into orderdetails(orderID,shipped,cancelled,returned,productID) values(10,false,false,false,2);
+insert into orderdetails(orderID,shipped,cancelled,returned,productID) values(11,false,false,false,4);
+insert into orderdetails(orderID,shipped,cancelled,returned,productID) values(12,false,false,false,8);
+
 
 /*
 return product details and their categories which are in stock and sorted by their adding time.
@@ -119,13 +126,13 @@ return the all the categories and group them and sorted them up with parent cate
 */
  
 select 
-    cc.childcatID, cc.categoryName, c.categoryName
+    c.categoryId, c.categoryName, pc.parentCategoryName
 from
-    childcategories cc,
-    categories c
+    categories c,
+    parentCategories pc
 where
-    cc.categoryID = c.categoryID
-group by c.categoryName order by c.categoryName;
+    pc.parentCatId = c.parentCatId
+order by pc.parentCategoryName asc;
 
 
 /*
@@ -133,30 +140,30 @@ return the list of categories who don't have any child categories
 */
 
 select 
-    categoryID, categoryName
+    parentCatId, parentCategoryName
 from
-    categories
+    parentcategories pc
 where
-    categoryID not in (select 
-        categoryID
+    pc.parentCatId not in (select 
+        parentCatId
     from
-        childcategories);
+        categories);
 
 
 /*
 return the list of the products who lies in the mobile category
 */
 select 
-    name, price, description
+    p.name, p.price, p.description
 from
-    products
+    products p,categories c
 where
-    products.categoryId in (select 
-        categoryId
+    p.categoryId = c.categoryId and c.parentCatId in (select 
+        pc.parentCatId
     from
-        categories
+        parentCategories pc
     where
-        categoryName = 'mobile');
+        pc.parentCategoryName = 'mobile');
 
 
 /*

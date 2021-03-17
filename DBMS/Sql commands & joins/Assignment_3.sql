@@ -27,9 +27,7 @@ from
     orders o,
     orderdetails od
 where
-    o.orderId = od.orderID and DATEDIFF(o.orderDate, now()) > 10 and od.shipped = 0  ;
-
-
+    o.orderId = od.orderID and DATEDIFF(o.orderDate, now()) > 10 and od.shipped = 0;
 
 /*
 return list of shoppers which haven't ordered anything since last month
@@ -37,8 +35,9 @@ return list of shoppers which haven't ordered anything since last month
 select 
     user.userID, user.name
 from
-    orders left join user
-on user.userID = orders.userID and DATEDIFF(orders.orderDate, now()) > 30;
+    user where
+user.userId not in(select user.userId from user,orders where
+user.userID = orders.userID and DATEDIFF(orders.orderDate, now()) < 30 group by user.userID);
 
 
 /*
@@ -65,7 +64,7 @@ from
     products p,
     orderdetails od
 where
-    od.productID = p.productID and od.shipped = true and od.orderID = 6;
+    od.productID = p.productID and od.shipped = true and od.orderID = 3;
     
 /*
 Display list of order items along with order placed date which fall between Rs 20 to Rs 50 price.
