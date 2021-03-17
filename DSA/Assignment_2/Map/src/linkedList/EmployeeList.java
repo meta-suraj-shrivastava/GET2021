@@ -2,11 +2,11 @@ package linkedList;
 
 
 //Employee node  contains salary and age of employee
-class EmployeeNode{
+class Node{
 	int salary;
 	int age;
-	EmployeeNode next;
-	EmployeeNode(int salary,int age){
+	Node next;
+	Node(int salary,int age){
 		this.salary = salary;
 		this.age = age;
 		this.next = null;
@@ -18,13 +18,13 @@ class EmployeeNode{
 //this class provide method to sort linked list using insertion sort
 public class EmployeeList {
 
-	EmployeeNode head = null,tail = null,sortedList;
+	Node head = null,tail = null,sortedList;
 	
 	
 	//method to insert node in linked list 
 	//@param - salary:int ,age:int
 	public void insert(int salary,int age){
-		EmployeeNode node = new EmployeeNode(salary,age);
+		Node node = new Node(salary,age);
 		if(head == null){
 			head = node;
 			tail = node;
@@ -38,7 +38,7 @@ public class EmployeeList {
 	
 	//display the linked list
 	public void display(){
-		EmployeeNode tempNode = head;
+		Node tempNode = head;
 		while(tempNode != null){
 			System.out.println("Salary :"+tempNode.salary+" Age :"+tempNode.age);
 			tempNode = tempNode.next;
@@ -51,14 +51,14 @@ public class EmployeeList {
 	    { 
 	        // Initialize sorted linked list 
 	        sortedList = null; 
-	        EmployeeNode current = head; 
+	        Node current = head; 
 	        
 	        // Traverse the given linked list and insert every 
 	        // node to sorted 
 	        while (current != null)  
 	        { 
 	            // Store next for next iteration 
-	        	EmployeeNode next = current.next; 
+	        	Node next = current.next; 
 	            // insert current in sorted linked list 
 	            sortedInsert(current); 
 	            // Update current 
@@ -68,7 +68,7 @@ public class EmployeeList {
 	        head = sortedList; 
 	    }
 
-	private void sortedInsert(EmployeeNode newNode) {
+	private void sortedInsert(Node newNode) {
 		 /* Special case for the head end */
         if (sortedList == null || sortedList.salary < newNode.salary)  
         { 
@@ -77,7 +77,7 @@ public class EmployeeList {
         } 
         else 
         { 
-            EmployeeNode current = sortedList; 
+            Node current = sortedList; 
             /* Locate the node before the point of insertion */
             while (current.next != null && (current.next.salary > newNode.salary || 
             		(current.next.salary == newNode.salary  && newNode.age > current.next.age )))  
