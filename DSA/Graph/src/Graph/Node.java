@@ -8,5 +8,6 @@ public class Node {
 	Node(int weight,char nodeName){
 		this.weight = weight;
 		this.nodeName = nodeName;
+		this.next = null;
 	}
 }
