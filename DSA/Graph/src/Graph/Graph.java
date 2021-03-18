@@ -70,7 +70,8 @@ public class Graph implements GraphInterface {
 	@Override
 	public Set<String> mst() {
 		HashMap<String,Integer> mst = new HashMap<>();
-		ArrayList<Character> traversed = new ArrayList<>();
+		ArrayList<Character> source = new ArrayList<>();
+		ArrayList<Character> destination = new ArrayList<>();
 		for(Node node:graph){
 			String path = node.nodeName + " to ";
 			if(node.next == null) continue;
@@ -78,14 +79,16 @@ public class Graph implements GraphInterface {
 			int weight = node.next.weight;
 			node = node.next;
 			while(node!=null){
-				if(node.weight < weight && !traversed.contains(node.nodeName)){
+				if(node.weight < weight && destination.indexOf(node.nodeName)!=source.indexOf(nearestNode)){
 					nearestNode = node.nodeName;
 					weight = node.weight;
 				}
+				node = node.next;
 			}
 			path+=nearestNode;
 			mst.put(path,weight);
-			traversed.add(node.nodeName);
+			source.add(node.nodeName);
+			destination.add(nearestNode);
 		}
 		if(mst.size() == graph.size()-1) return mst.keySet();
 		

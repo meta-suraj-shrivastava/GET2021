@@ -75,14 +75,10 @@ select p.name,
 select 
     p.name, p.price, p.description
 from
-    products p,categories c
+    products p,categories c,productCategory pc
 where
-    p.categoryId = c.categoryId and c.parentCatId in (select 
-        categoryId
-    from
-        categories
-    where
-        categories.categoryName = 'mobile');
+    p.productId = pc.productId and c.categoryId = pc.categoryId and 
+        c.categoryName = 'cosmetics';
         
 /*return the top 10 Items which were cancelled most.*/    
 select 

@@ -3,7 +3,12 @@ use eCommerce;
 /*
 return the list of products (Id, Title, Count of Categories) which fall in more than one Categories.
 */
-select p.productId,p.name,count(p.categoryId) as count from products p group by p.name;
+select 
+    p.productId, p.name, result.category_count
+from
+    products p
+        inner join (select productId,count(categoryId) as category_count from
+    productCategory group by productId) as result on p.productId = result.productId and result.category_count > 1;
 
 
 /*
@@ -30,9 +35,12 @@ group by `Range in rs`;
 return the Categories along with number of products under each category
 */
 select 
-    c.categoryName, count(c.categoryName) as NoOfProducts
+    c.categoryName, result.No_of_products
 from
-    products p
-        right join
-    categories c ON c.categoryId = p.categoryId
-group by c.categoryName  ;
+    categories c
+        inner join
+    (select 
+        pc.categoryId, count(p.productId) as No_of_products
+    from
+        productCategory pc
+    inner join products p ON pc.productId = p.productId group by pc.categoryId) as result ON c.categoryId = result.categoryId;

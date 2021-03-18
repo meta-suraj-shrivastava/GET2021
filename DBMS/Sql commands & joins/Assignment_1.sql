@@ -17,10 +17,8 @@ create table addresses(
     foreign key (userID)
         references user (userID)
 );
-create table parentCategories(
-    parentCatId int primary key AUTO_INCREMENT,
-    parentcategoryName varchar(20)
-);
+
+
 create table categories(
     categoryID int primary key AUTO_INCREMENT,
     categoryName varchar(20),
@@ -29,17 +27,23 @@ create table categories(
 );
 
 create table products(
-    productID int AUTO_INCREMENT,
+    productID int AUTO_INCREMENT primary key,
     name varchar(20),
     price float(25),
     description varchar(200),
     quantity int,
     addedOn timestamp NOT NULL,
     categoryID int,
-    sales int,
-    foreign key (categoryID)
-        references categories (categoryID),
-    primary key (productID)
+    sales int
+);
+
+create table productCategory(
+    productId int,
+    categoryId int,
+    foreign key (productId)
+        references products (productId),
+    foreign key (categoryId)
+        references categories (categoryId)
 );
 create table orders(
     orderID int not null primary key AUTO_INCREMENT,

@@ -34,26 +34,56 @@ insert into categories(categoryName) values("cosmetics");
 /*
 inserting values in products table 
 */
-insert into products(name,price,description,quantity,categoryID) values("I-Phone 12",90000,"designed by apple in california",12,2);
-insert into products(name,price,description,quantity,categoryID) values("One plus 9",49000,"get your oxygen now",2,2);
-insert into products(name,price,description,quantity,categoryID) values("Nokia 310",2500,"No to smartphones",120,3);
-insert into products(name,price,description,quantity,categoryID) values("Loki",23,"health",560,5);
-insert into products(name,price,description,quantity,categoryID) values("Potato",15,"health",250,5);
-insert into products(name,price,description,quantity,categoryID) values("mango",45,"health",560,5);
-insert into products(name,price,description,quantity,categoryID) values("watermelon",30,"health",50,5);
-insert into products(name,price,description,quantity,categoryID) values("Mi Band",2400,"monitor health",560,10);
-insert into products(name,price,description,quantity,categoryID) values("JBL",98000,"feel the music",160,11);
-insert into products(name,price,description,quantity,categoryID) values("Sony 12XT",2400,"live the music",12,12);
-insert into products(name,price,description,quantity,categoryID) values("Samsung Tab 12",18000,"make your work easy",139,13);
-insert into products(name,price,description,quantity,categoryID) values("Lipstick",1200,"be confident",50,14);
-insert into products(name,price,description,quantity,categoryID) values("Eye Liner",1800,"see the world with your beautiful eyes",60,14);
-insert into products(name,price,description,quantity,categoryID) values("Kajal",200,"be classic like black",590,14);
-insert into products(name,price,description,quantity,categoryID) values("powder",260,"smell go away",590,14);
+insert into products(name,price,description,quantity) values("I-Phone 12",90000,"designed by apple in california",12);
+insert into products(name,price,description,quantity) values("One plus 9",49000,"get your oxygen now",2);
+insert into products(name,price,description,quantity) values("Nokia 310",2500,"No to smartphones",120);
+insert into products(name,price,description,quantity) values("Loki",23,"health",560);
+insert into products(name,price,description,quantity) values("Potato",15,"health",250);
+insert into products(name,price,description,quantity) values("mango",45,"health",560);
+insert into products(name,price,description,quantity) values("watermelon",30,"health",50);
+insert into products(name,price,description,quantity) values("Mi Band",2400,"monitor health",560);
+insert into products(name,price,description,quantity) values("JBL",98000,"feel the music",160);
+insert into products(name,price,description,quantity) values("Sony 12XT",2400,"live the music",12);
+insert into products(name,price,description,quantity) values("Samsung Tab 12",18000,"make your work easy",139);
+insert into products(name,price,description,quantity) values("Lipstick",1200,"be confident",50);
+insert into products(name,price,description,quantity) values("Eye Liner",1800,"see the world with your beautiful eyes",60);
+insert into products(name,price,description,quantity) values("Kajal",200,"be classic like black",590);
+insert into products(name,price,description,quantity) values("powder",260,"smell go away",590);
+
+/*Inserting product categories*/
+insert into productCategory values(1,1);
+insert into productCategory values(1,2);
+insert into productCategory values(2,1);
+insert into productCategory values(2,2);
+insert into productCategory values(3,1);
+insert into productCategory values(3,3);
+insert into productCategory values(4,4);
+insert into productCategory values(4,5);
+insert into productCategory values(5,4);
+insert into productCategory values(5,5);
+insert into productCategory values(6,4);
+insert into productCategory values(6,5);
+insert into productCategory values(7,4);
+insert into productCategory values(7,5);
+insert into productCategory values(8,9);
+insert into productCategory values(8,10);
+insert into productCategory values(9,9);
+insert into productCategory values(9,11);
+insert into productCategory values(10,9);
+insert into productCategory values(10,12);
+insert into productCategory values(11,9);
+insert into productCategory values(11,13);
+insert into productCategory values(12,14);
+insert into productCategory values(13,14);
+insert into productCategory values(14,14);
+insert into productCategory values(15,14);
+
 
 
 /*
 inserting values in orders table 
 */
+select * from categories;
 insert into orders(userID,orderTotal) values(1,78000);
 insert into orders(userID,orderTotal) values(1,2000);
 insert into orders(userID,orderTotal) values(1,30000);
