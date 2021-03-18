@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+
+//MAIN class have all the driver function to successfully run this program
 public class Main {
 
 	
@@ -39,6 +41,10 @@ public class Main {
 				break;
 			case 3:
 				System.out.println("Deleted "+jdbc.deletUnorderdProd()+" products");
+				break;
+			case 4:
+				printcatDeails(jdbc.getChildCategoryCount());
+				break;
 			default:
 				sc.close();
 				return;
@@ -46,6 +52,21 @@ public class Main {
 		}
 	}
 	
+	
+	//print the categoryDetails
+	private static void printcatDeails(
+			ArrayList<CategoryDetails> childCategoryCount) {
+		if(childCategoryCount.size()==0) return;
+		System.out.println("parent \tchild count");
+		
+		for(CategoryDetails catDetail:childCategoryCount){
+			System.out.println(catDetail.getCategory()+" \t"+catDetail.getChildCategoryCount());
+		}
+		
+	}
+
+	
+	//print orders details
 	static void printOrders(ArrayList<Order> orders){
 		if(orders.size()==0) return;
 		System.out.println("OrderId\tOrderTotal \t OrderDate");
