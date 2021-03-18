@@ -1,6 +1,9 @@
 package Graph;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Graph implements GraphInterface {
 
@@ -23,6 +26,9 @@ public class Graph implements GraphInterface {
 			}
 		}
 		if(tempNode!=null){
+			while(tempNode.next!=null){
+				tempNode = tempNode.next;
+			}
 			tempNode.next = newNode;
 		}
 		if(!present){
@@ -62,10 +68,35 @@ public class Graph implements GraphInterface {
 	}
 
 	@Override
-	public ArrayList<Node> mst() {
-		ArrayList<Node> mst = new ArrayList<>();
+	public Set<String> mst() {
+		HashMap<String,Integer> mst = new HashMap<>();
+		ArrayList<Character> traversed = new ArrayList<>();
+		for(Node node:graph){
+			String path = node.nodeName + " to ";
+			if(node.next == null) continue;
+			char nearestNode = node.next.nodeName;
+			int weight = node.next.weight;
+			node = node.next;
+			while(node!=null){
+				if(node.weight < weight && !traversed.contains(node.nodeName)){
+					nearestNode = node.nodeName;
+					weight = node.weight;
+				}
+			}
+			path+=nearestNode;
+			mst.put(path,weight);
+			traversed.add(node.nodeName);
+		}
+		if(mst.size() == graph.size()-1) return mst.keySet();
 		
-		return null;
+		String key = path;
+		int minWeight = mst.get(path);
+		
+		
+		for(String path:mst.keySet()){
+		}
+		
+		return mst.keySet();
 	}
 
 	@Override

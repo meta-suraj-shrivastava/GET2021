@@ -16,40 +16,39 @@ insert into user(name,contactNo,email,DOB,admin) values("swati pancholi",9876654
 /*
 inserting values in categories and childcategories table 
 */
-insert into parentCategories(parentcategoryName) values("mobile");
+insert into categories(categoryName) values("mobile");
 insert into categories(categoryName,parentCatId) values("smartphone",1);
 insert into categories(categoryName,parentCatId) values("keypad",1);
-insert into parentCategories(parentcategoryName) values("grocery");
-insert into categories(categoryName,parentCatId) values("vegetables & fruits",2);
-insert into categories(categoryName,parentCatId) values("pules",2);
-insert into categories(categoryName,parentCatId) values("soaps",2);
-insert into categories(categoryName,parentCatId) values("spices",2);
-insert into parentCategories(parentcategoryName) values("gadgets");
-insert into categories(categoryName,parentCatId) values("smartwatches & bands",3);
-insert into categories(categoryName,parentCatId) values("speakers",3);
-insert into categories(categoryName,parentCatId) values("headphones",3);
-insert into categories(categoryName,parentCatId) values("tablets",3);
+insert into categories(categoryName) values("grocery");
+insert into categories(categoryName,parentCatId) values("vegetables & fruits",4);
+insert into categories(categoryName,parentCatId) values("pules",4);
+insert into categories(categoryName,parentCatId) values("soaps",4);
+insert into categories(categoryName,parentCatId) values("spices",4);
+insert into categories(categoryName) values("gadgets");
+insert into categories(categoryName,parentCatId) values("smartwatches & bands",9);
+insert into categories(categoryName,parentCatId) values("speakers",9);
+insert into categories(categoryName,parentCatId) values("headphones",9);
+insert into categories(categoryName,parentCatId) values("tablets",9);
 insert into categories(categoryName) values("cosmetics");
 
-select * from parentCategories;
 /*
 inserting values in products table 
 */
-insert into products(name,price,description,quantity,categoryID) values("I-Phone 12",90000,"designed by apple in california",12,1);
-insert into products(name,price,description,quantity,categoryID) values("One plus 9",49000,"get your oxygen now",2,1);
-insert into products(name,price,description,quantity,categoryID) values("Nokia 310",2500,"No to smartphones",120,2);
-insert into products(name,price,description,quantity,categoryID) values("Loki",23,"health",560,3);
-insert into products(name,price,description,quantity,categoryID) values("Potato",15,"health",250,3);
-insert into products(name,price,description,quantity,categoryID) values("mango",45,"health",560,3);
-insert into products(name,price,description,quantity,categoryID) values("watermelon",30,"health",50,3);
-insert into products(name,price,description,quantity,categoryID) values("Mi Band",2400,"monitor health",560,7);
-insert into products(name,price,description,quantity,categoryID) values("JBL",98000,"feel the music",160,8);
-insert into products(name,price,description,quantity,categoryID) values("Sony 12XT",2400,"live the music",12,9);
-insert into products(name,price,description,quantity,categoryID) values("Samsung Tab 12",18000,"make your work easy",139,10);
-insert into products(name,price,description,quantity,categoryID) values("Lipstick",1200,"be confident",50,11);
-insert into products(name,price,description,quantity,categoryID) values("Eye Liner",1800,"see the world with your beautiful eyes",60,11);
-insert into products(name,price,description,quantity,categoryID) values("Kajal",200,"be classic like black",590,11);
-insert into products(name,price,description,quantity,categoryID) values("powder",260,"smell go away",590,11);
+insert into products(name,price,description,quantity,categoryID) values("I-Phone 12",90000,"designed by apple in california",12,2);
+insert into products(name,price,description,quantity,categoryID) values("One plus 9",49000,"get your oxygen now",2,2);
+insert into products(name,price,description,quantity,categoryID) values("Nokia 310",2500,"No to smartphones",120,3);
+insert into products(name,price,description,quantity,categoryID) values("Loki",23,"health",560,5);
+insert into products(name,price,description,quantity,categoryID) values("Potato",15,"health",250,5);
+insert into products(name,price,description,quantity,categoryID) values("mango",45,"health",560,5);
+insert into products(name,price,description,quantity,categoryID) values("watermelon",30,"health",50,5);
+insert into products(name,price,description,quantity,categoryID) values("Mi Band",2400,"monitor health",560,10);
+insert into products(name,price,description,quantity,categoryID) values("JBL",98000,"feel the music",160,11);
+insert into products(name,price,description,quantity,categoryID) values("Sony 12XT",2400,"live the music",12,12);
+insert into products(name,price,description,quantity,categoryID) values("Samsung Tab 12",18000,"make your work easy",139,13);
+insert into products(name,price,description,quantity,categoryID) values("Lipstick",1200,"be confident",50,14);
+insert into products(name,price,description,quantity,categoryID) values("Eye Liner",1800,"see the world with your beautiful eyes",60,14);
+insert into products(name,price,description,quantity,categoryID) values("Kajal",200,"be classic like black",590,14);
+insert into products(name,price,description,quantity,categoryID) values("powder",260,"smell go away",590,14);
 
 
 /*
@@ -126,29 +125,25 @@ return the all the categories and group them and sorted them up with parent cate
 */
  
 select 
-    c.categoryId, c.categoryName, pc.parentCategoryName
+    child.categoryId, child.categoryName as child_category,parent.categoryName as parent_category
 from
-    categories c,
-    parentCategories pc
-where
-    pc.parentCatId = c.parentCatId
-order by pc.parentCategoryName asc;
-
+    categories parent inner join categories child
+    on
+    parent.categoryId = child.parentCatId
+order by parent_category asc;
 
 /*
 return the list of categories who don't have any child categories
 */
 
 select 
-    parentCatId, parentCategoryName
+    c.categoryName
 from
-    parentcategories pc
-where
-    pc.parentCatId not in (select 
-        parentCatId
+    categories c where c.categoryId not in
+    (select 
+        parentCatId as categoryId
     from
-        categories);
-
+        categories where parentCatId is not null) and c.parentCatId is null;
 
 /*
 return the list of the products who lies in the mobile category
@@ -159,11 +154,11 @@ from
     products p,categories c
 where
     p.categoryId = c.categoryId and c.parentCatId in (select 
-        pc.parentCatId
+        categoryId
     from
-        parentCategories pc
+        categories
     where
-        pc.parentCategoryName = 'mobile');
+        categories.categoryName = 'mobile');
 
 
 /*

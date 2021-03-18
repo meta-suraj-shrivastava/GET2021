@@ -25,7 +25,7 @@ create table categories(
     categoryID int primary key AUTO_INCREMENT,
     categoryName varchar(20),
     parentCatId int,
-    foreign key(parentCatId) references parentCategories(parentCatId)
+    foreign key(parentCatId) references categories(categoryId)
 );
 
 create table products(

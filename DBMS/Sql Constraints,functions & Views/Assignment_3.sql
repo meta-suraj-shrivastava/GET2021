@@ -78,11 +78,11 @@ from
     products p,categories c
 where
     p.categoryId = c.categoryId and c.parentCatId in (select 
-        pc.parentCatId
+        categoryId
     from
-        parentCategories pc
+        categories
     where
-        pc.parentCategoryName = 'mobile');
+        categories.categoryName = 'mobile');
         
 /*return the top 10 Items which were cancelled most.*/    
 select 
