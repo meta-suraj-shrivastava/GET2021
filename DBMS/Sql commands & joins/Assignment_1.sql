@@ -33,7 +33,6 @@ create table products(
     description varchar(200),
     quantity int,
     addedOn timestamp NOT NULL,
-    categoryID int,
     sales int
 );
 
