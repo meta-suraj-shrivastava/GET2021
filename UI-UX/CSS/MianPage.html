@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="collapseJs.js" ></script>
     <link href="style.css" rel="stylesheet">
     <title>Metacube Parking System</title>
 </head>
@@ -25,91 +24,120 @@
     <!-- Add employee section where user can add an employee -->
     <div id="addEmp">
         <center>
-           <div class="collapsible" onclick="expand()">
-            <h3 class="sectionHeading">Add Employee</h3>
-            <span class="show">+</span>
-        </div> 
-        <div class="content">
-            <input placeholder="Full name" type="text" class="textInput" /><br /><br />
-            <div class="radioContainer">
-                Gender &ThickSpace;&ThickSpace;&ThickSpace;
-                <label>Male<input type="radio" name="gender" value="male" /><span class="checkmark"></span>
-                </label>
-                <label>Female<input type="radio" name="gender" value="female" /><span class="checkmark"></span>
-                </label>
-            </div><br />
-            <input type="email" name="email" placeholder="Email" class="textInput" /><br /><br />
-            <input type="password" name="password" placeholder="Password" class="textInput" /><br /><br />
-            <input type="password" name="confirm" placeholder="Re-enter password" class="textInput" /><br /><br />
-            <input type="number" name="contact" placeholder="Contact Number" class="textInput" /><br /><br />
-            <button type="submit">Add Employee</button>
-        </div>
+            <div class="collapsible">
+                <h3 class="sectionHeading">Add Employee</h3>
+                <span class="show"></span>
+            </div>
+            <div class="content">
+                <input placeholder="Full name" type="text" class="textInput" /><br /><br />
+                <div class="radioContainer">
+                    Gender &ThickSpace;&ThickSpace;&ThickSpace;
+                    <label>Male<input type="radio" name="gender" value="male" /><span class="checkmark"></span>
+                    </label>
+                    <label>Female<input type="radio" name="gender" value="female" /><span class="checkmark"></span>
+                    </label>
+                </div><br />
+                <input type="email" name="email" placeholder="Email" class="textInput" /><br /><br />
+                <input type="password" name="password" placeholder="Password" class="textInput" /><br /><br />
+                <input type="password" name="confirm" placeholder="Re-enter password" class="textInput" /><br /><br />
+                <input type="number" name="contact" placeholder="Contact Number" class="textInput" /><br /><br />
+                <button type="submit">Add Employee</button>
+            </div>
         </center>
     </div>
 
     <!-- Here user can add vehicle of an employee -->
     <div id="addVeh">
         <center>
-            <h3 class="sectionHeading">Add Vehicle</h3>
-
-            <input placeholder="company Name" type="text" class="textInput" /><br /><br />
-            <input placeholder="Model Name" type="text" class="textInput" /><br /><br />
-            <input placeholder="Vehicle Type" type="text" class="textInput" /><br /><br />
-            <input placeholder="Vehicle Number" type="text" class="textInput" /><br /><br />
-            <input placeholder="Employee Id" type="text" class="textInput" /><br /><br />
-            <textarea rows="5" placeholder="Identification"></textarea><br /><br />
-            <button type="submit">Add Vehicle</button>
+            <div class="collapsible">
+                <h3 class="sectionHeading">Add Vehicle</h3>
+                <span class="show"></span>
+            </div>
+            <div class="content">
+                <input placeholder="company Name" type="text" class="textInput" /><br /><br />
+                <input placeholder="Model Name" type="text" class="textInput" /><br /><br />
+                <input placeholder="Vehicle Type" type="text" class="textInput" /><br /><br />
+                <input placeholder="Vehicle Number" type="text" class="textInput" /><br /><br />
+                <input placeholder="Employee Id" type="text" class="textInput" /><br /><br />
+                <textarea rows="5" placeholder="Identification"></textarea><br /><br />
+                <button type="submit">Add Vehicle</button>
+            </div>
         </center>
     </div>
     <!-- Here user can give the feedback to the parking system -->
     <div id="giveFeed">
         <center>
-            <h3 class="sectionHeading">Feedback</h3>
-            <input placeholder="Full name" type="text" class="textInput" /><br /><br />
-            <input placeholder="Email Id" type="email" class="textInput" /><br /><br />
-            <input placeholder="Vehicle Type" type="text" class="textInput" /><br /><br />
-            <select name="rating">
-                <option value="Rating">Rating</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br /><br />
-            <textarea rows="5" placeholder="Give your suggestion here..."></textarea><br /><br />
-            <button type="submit">Send</button>
+            <div class="collapsible">
+                <h3 class="sectionHeading">Feedback</h3>
+                <span class="show"></span>
+            </div>
+            <div class="content">
+                <input placeholder="Full name" type="text" class="textInput" /><br /><br />
+                <input placeholder="Email Id" type="email" class="textInput" /><br /><br />
+                <input placeholder="Vehicle Type" type="text" class="textInput" /><br /><br />
+                <select name="rating">
+                    <option value="Rating">Rating</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select><br /><br />
+                <textarea rows="5" placeholder="Give your suggestion here..."></textarea><br /><br />
+                <button type="submit">Send</button>
+            </div>
         </center>
     </div>
     <!-- Here employee can choose the package accor. to their convinience -->
     <center>
-        <h3 class="sectionHeading">Pricing</h3>
-        <div id="pricing" class="pricingSection">
-            <div class="priceCard">
-                <span class="vehicleType">Four Wheelers</span><br/><br/>
-                <div class="circle">
-                    <p style="font-size: 10px;"><span class="bestPrice">$100</span><br />/Month</p>
+        <div class="collapsible">
+            <h3 class="sectionHeading">Pricing</h3>
+            <span class="show"></span>
+        </div>
+        <div class=" content">
+            <div id="pricing" class="pricingSection">
+                <div class="priceCard">
+                    <span class="vehicleType">Four Wheelers</span><br /><br />
+                    <div class="circle">
+                        <p style="font-size: 10px;"><span class="bestPrice">$100</span><br />/Month</p>
+                    </div>
+                    <p class="allOffers">$5 daily<br />$100 Monthly<br />$500 yearly</p>
+                    <button type="submit">Purchase Now</button>
                 </div>
-                <p class="allOffers">$5 daily<br />$100 Monthly<br />$500 yearly</p>
-                <button type="submit">Purchase Now</button>
-            </div>
-            <div class="priceCard">
-                <span class="vehicleType">Four Wheelers</span><br/><br/>
-                <div class="circle">
-                    <p style="font-size: 10px;"><span class="bestPrice">$200</span><br />/Month</p>
+                <div class="priceCard">
+                    <span class="vehicleType">Four Wheelers</span><br /><br />
+                    <div class="circle">
+                        <p style="font-size: 10px;"><span class="bestPrice">$200</span><br />/Month</p>
+                    </div>
+                    <p class="allOffers">$10 daily<br />$200 Monthly<br />$1000 yearly</p>
+                    <button type="submit">Purchase Now</button>
                 </div>
-                <p class="allOffers">$10 daily<br />$200 Monthly<br />$1000 yearly</p>
-                <button type="submit">Purchase Now</button>
-            </div>
-            <div class="priceCard">
-                <span class="vehicleType">Four Wheelers</span><br/><br/>
-                <div class="circle">
-                    <p style="font-size: 10px;"><span class="bestPrice">$500</span><br />/Month</p>
+                <div class="priceCard">
+                    <span class="vehicleType">Four Wheelers</span><br /><br />
+                    <div class="circle">
+                        <p style="font-size: 10px;"><span class="bestPrice">$500</span><br />/Month</p>
+                    </div>
+                    <p class="allOffers">$20 daily<br />$500 Monthly<br />$3500 yearly</p>
+                    <button type="submit">Purchase Now</button>
                 </div>
-                <p class="allOffers">$20 daily<br />$500 Monthly<br />$3500 yearly</p>
-                <button type="submit">Purchase Now</button>
             </div>
         </div>
     </center>
 </body>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
 
 </html>

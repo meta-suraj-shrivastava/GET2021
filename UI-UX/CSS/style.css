@@ -6,6 +6,7 @@ body{
     margin: 0;
 }
 
+/* Style for nav Bar */
 nav{
     height: 65px;
     padding-left: 20px;
@@ -20,6 +21,7 @@ nav{
     z-index: 0;
 }
 
+/* style for navItems */
 .navItem {
     text-decoration: none;
     color: inherit;
@@ -30,12 +32,13 @@ a:hover{
     color: yellow;
 }
 
+/* Style for cover image */
 .cover{
     height: 400px;
     width: 100%;
 }
 
-
+/* Style for textinput box */
 .textInput{
     outline: none;
     border:2px solid teal;
@@ -46,7 +49,7 @@ a:hover{
     border-radius: 8px;
 }
 
-
+/* headind style of the four section */
 .sectionHeading{
     font-size: 23px;
     letter-spacing: 2px;
@@ -69,17 +72,6 @@ select{
     border:2px solid teal;
 
 }
-
-option:hover{
-    background-color: teal;
-}
-
-.radioContainer{
-    width: 20%;
-    display: flex;
-    justify-content: space-between;
-}
-
 button{
     outline: none;
     border: none;
@@ -102,6 +94,8 @@ textarea{
     resize: none;
 }
 
+
+/* Style for pricing section */
 .pricingSection{
 display: flex;
 flex:1;
@@ -141,6 +135,8 @@ justify-content: space-evenly;
     font-size: 20px;
 }
 
+
+/* styles for collapsible bars */
 .collapsible{
     background-color: teal;
     color: whitesmoke;
@@ -151,29 +147,29 @@ justify-content: space-evenly;
     border-radius: 10px;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
 }
 .show{
     font-size: 25px;
     font-weight: bolder;
     color: whitesmoke;
+    cursor: pointer ;
 }
 
 .active, .collapsible:hover {
     background-color:darkcyan;
   }
-
-
-  .content {
+.content {
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 1s ease-out;
   }
 
+  .collapsible>span:after{
+      content: '+';
+  }
 
-  .collapsible+span::after{
-      content:'\02795' ;
-  }
-  .active+span:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-  }
+  .active>span:after{
+    content: "-";
+}

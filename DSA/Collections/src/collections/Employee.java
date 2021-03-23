@@ -16,6 +16,10 @@ public class Employee  implements Comparable<Employee>{
 		return emp.empId - this.empId;
 	}
 	
+	@Override
+	public int equals(){
+		
+	}
 	
 	
 }
