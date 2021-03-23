@@ -4,9 +4,8 @@ public class Employee  implements Comparable<Employee>{
 	private int empId;
 	private String name;
 	private String address;
-	static int id = 0;
 	
-	Employee(String name,String address){
+	Employee(int id,String name,String address){
 		this.address = address;
 		this.name =  name;
 		this.empId = id++;

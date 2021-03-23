@@ -1,0 +1,33 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+}
+
+nav{
+    height: 65px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: cadetblue;
+    color: white;
+    box-sizing: border-box;
+    padding-top:20px;
+    position:sticky;
+    position: -webkit-sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navItem {
+    text-decoration: none;
+    color: inherit;
+    padding:10px;
+    font-size: 18px;
+}
+a:hover{
+    color: yellow;
+}
+
