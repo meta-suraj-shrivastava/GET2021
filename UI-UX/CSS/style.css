@@ -17,8 +17,7 @@ nav{
     position:sticky;
     position: -webkit-sticky;
     top: 0;
-    left: 0;
-    right: 0;
+    z-index: 0;
 }
 
 .navItem {
@@ -31,3 +30,150 @@ a:hover{
     color: yellow;
 }
 
+.cover{
+    height: 400px;
+    width: 100%;
+}
+
+
+.textInput{
+    outline: none;
+    border:2px solid teal;
+    width: 20%;
+    font-size: 15px;
+    padding: 5px;
+    height: 35px;
+    border-radius: 8px;
+}
+
+
+.sectionHeading{
+    font-size: 23px;
+    letter-spacing: 2px;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+select{
+    width: 21%;
+    height: 35px;
+    border:2px solid teal;
+
+}
+
+option:hover{
+    background-color: teal;
+}
+
+.radioContainer{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    outline: none;
+    border: none;
+    height: 27px;
+    background-color: teal;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 5px;
+}
+button:hover{
+    background-color:aquamarine;
+    color:black;
+}
+
+textarea{
+    width: 20%;
+    border: none;
+    border: 2px solid teal;
+    font-size:15px;
+    resize: none;
+}
+
+.pricingSection{
+display: flex;
+flex:1;
+justify-content: space-evenly;
+}
+
+.priceCard{
+    width: 18%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border:1px solid teal;
+    border-radius: 10px;
+}
+
+.circle{
+    border:1px solid teal;
+    display: inline-block;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 80px;
+}
+
+.allOffers{
+    color: gray;
+    font-size: 13px;
+}
+
+.vehicleType{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.bestPrice{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.collapsible{
+    background-color: teal;
+    color: whitesmoke;
+    display: flex;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin: 10px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+.show{
+    font-size: 25px;
+    font-weight: bolder;
+    color: whitesmoke;
+}
+
+.active, .collapsible:hover {
+    background-color:darkcyan;
+  }
+
+
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+
+  .collapsible+span::after{
+      content:'\02795' ;
+  }
+  .active+span:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+  }
