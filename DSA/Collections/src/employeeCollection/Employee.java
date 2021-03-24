@@ -1,5 +1,6 @@
-package collections;
+package employeeCollection;
 
+//this class contains information related to the Employee
 public class Employee{
 	private int empId;
 	private String name;
@@ -11,6 +12,7 @@ public class Employee{
 		this.empId = id;
 	}
 	
+	//************getters***********8
 	int getId(){
 		return this.empId;
 	}
