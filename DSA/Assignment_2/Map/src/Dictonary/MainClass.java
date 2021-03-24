@@ -25,7 +25,6 @@ public class MainClass {
 		JsonObject jsonObject = jsonReader.readObject(); //reading the json object
 		jsonReader.close();
 		file.close();
-		
 		Iterator<String> keys = jsonObject.keySet().iterator();  //get the set of the keys in JSON file
 		Iterator<JsonValue> values = jsonObject.values().iterator(); //get the values of the keys in JSON file
 		BinMap map = new BinMap(keys,values);  // initializing the BST

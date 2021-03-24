@@ -1,6 +1,6 @@
 package collections;
 
-public class Employee  implements Comparable<Employee>{
+public class Employee{
 	private int empId;
 	private String name;
 	private String address;
@@ -8,19 +8,19 @@ public class Employee  implements Comparable<Employee>{
 	Employee(int id,String name,String address){
 		this.address = address;
 		this.name =  name;
-		this.empId = id++;
-	}
-
-	@Override
-	public int compareTo(Employee emp) {
-		return emp.empId - this.empId;
+		this.empId = id;
 	}
 	
-	@Override
-	public int equals(){
-		
+	int getId(){
+		return this.empId;
 	}
 	
+	String getName(){
+		return this.name;
+	}
 	
+	String getAddress(){
+		return this.address;
+	}
 }
 

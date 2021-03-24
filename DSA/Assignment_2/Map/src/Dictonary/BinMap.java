@@ -25,7 +25,7 @@ class Node{
  * this class provide the basic methods to perform opertaion on map,like insertion,deletion of key value pair
  */
 public class BinMap { 
-	Node root;
+	static Node root;
 	BinMap(Iterator<String> keys,Iterator<JsonValue> values){
 		root = null;
 		while(keys.hasNext()){
