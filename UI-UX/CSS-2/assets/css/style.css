@@ -19,7 +19,7 @@ html * {
 
 .nav-bar{
     display: flex;
-    color: white;
+    color:#C8C8C8;
     align-items: center;
     padding-top: 30px;
     padding-bottom: 10px;
@@ -34,27 +34,29 @@ html * {
     font-weight: 900;
 }
 .nav-links{
-flex:1;
+flex:2;
 display: flex;
-justify-content: space-between;
+justify-content: center;
 }
 
 .nav-item{
 text-decoration: none;
-color: inherit;
+color: white;
 letter-spacing: 1px;
+font-size: 12px;
+padding-left:10px;
+padding-right: 10px;
 }
 
 .social-logos{
-color: white;
 flex:1;
+display: flex;
+align-items: center;
 }
 
-.facebook{
-    background-image: url('../fonts/bootstrapThemesCo-icon.svg');
-}
-.instagram{
-    background-image: url('../fonts/bootstrapThemesCo-icon.svg');
+.social-logos a{
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .jumbotron-content{
@@ -149,12 +151,175 @@ flex:1;
 }
 
 .feature-icon{
-    margin-right: 10px;
     height: 60px;
 }
 
 .feature-details{
     display: flex;
     flex-direction: column;
-    flex:1
+    flex:1;
+    margin-left: 20px;
+}
+
+.feature-name{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.feature-des{
+    margin-top: 8px;
+    font-size: 13px;
+    color: gray;
+    text-align: justify;
+    padding-right: 50px;
+}
+
+.carousel{
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    padding-right: 150px;
+    padding-left: 150px;
+    margin-bottom: 100px;
+}
+
+.carousel-item{
+    box-shadow: 2px 2px 19px 10px#ccc;
+    -moz-box-shadow:2px 2px 19px 10px #ccc;
+    -webkit-box-shadow:2px 2px 19px 10px #ccc;
+    -khtml-box-shadow:2px 2px 19px 10px#ccc;
+    height: 500px;
+}
+
+.carousel-item.left{
+    transform:translateX(90px);
+    z-index: -1;
+    transform: rotate3d(0,1,0,30deg);
+}
+
+.carousel-item.left-last{
+    height: 500px;
+}
+
+.carousel-item.right{
+    transform: rotateY(60);
+    z-index: -1;
+}
+
+.carousel-item.right.last{
+    height: 500px;
+    z-index: -2;
+}
+
+.screenshots .screen{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+.screenshots .screen .screenshot-image{
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.screenshots .screen .screenshot-image img{
+    height: 500px;
+}
+
+.screenshots .screen .screen-detail{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.screenshots .screen .screen-detail img{
+    width: 90px;
+}
+
+
+.screenshots .screen-title{
+    font-size: 25px;
+}
+
+.screenshots .screen-des{
+    color: gray;
+    margin: 0;    
+}
+
+.reviews{
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews .review-container{
+    display: flex;
+}
+
+.reviews .review-container .open-comma{
+    content: "\201D";
+    font-size: 90px;
+    color: rgb(58, 104, 255);
+}
+.reviews .review-container .close-comma{
+    font-size: 90px;
+    color: rgb(58, 104, 255);
+    height: 10px;
+}
+.reviews .review-container .review{
+    font-weight:600;
+    color: rgb(75, 73, 73);
+    font-size: 20px;
+    margin: 0;
+}
+
+.reviews .review-container .review .author{
+    font-weight: normal;
+    font-size: 15px;
+}
+
+
+.review-left{
+    padding-right:20px;
+    flex:1;
+}
+.review-right{
+    flex:1;
+}
+
+.footer{
+    background-image: url('../images/downloadbg.png');
+    display: flex;
+    padding-left: 150px;
+    padding-right: 150px;
+    position: relative;
+}
+
+.footer .section-link{
+flex:1;
+padding-top: 50px;
+}
+
+.footer .image-section{
+    flex:1;
+    padding-top: 50px;
+}
+
+.footer .image-section img{
+    height: 400px;
+}
+
+footer{
+    background-color: #383a53;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left:0;
+    padding-right: 150px;
+    padding-left: 150px;
+    color:#C8C8C8;
+}
+
+.social-logos img{
+    height: 13px;
 }
