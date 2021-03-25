@@ -1,0 +1,160 @@
+body{
+    margin: 0 auto;
+    background-color: rgb(245, 245, 245);
+    background-image: url('../images/bodybg.png');
+}
+
+html * {
+    font-family: 'Roboto', sans-serif;
+}
+.jumbotron{
+    background-image: url('../images/homebg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.nav-bar{
+    display: flex;
+    color: white;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+
+.logo{
+    text-transform: uppercase;
+    flex:1;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: 900;
+}
+.nav-links{
+flex:1;
+display: flex;
+justify-content: space-between;
+}
+
+.nav-item{
+text-decoration: none;
+color: inherit;
+letter-spacing: 1px;
+}
+
+.social-logos{
+color: white;
+flex:1;
+}
+
+.facebook{
+    background-image: url('../fonts/bootstrapThemesCo-icon.svg');
+}
+.instagram{
+    background-image: url('../fonts/bootstrapThemesCo-icon.svg');
+}
+
+.jumbotron-content{
+    display: flex;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.title{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.title p{
+    margin:0;
+    color:white;
+    font-size: 50px;
+    font-weight: bold; 
+}
+.btn-container{
+    display: flex;
+    margin-top: 25px;
+    
+}
+.title button{
+    outline: none;
+    height: 40px;
+    width: 100px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+.download-btn{
+    background-color:rgb(255, 83, 41);
+    margin-right: 10px;
+}
+
+
+.features-btn{
+    background-color: rgb(55, 89, 241);
+}
+
+.title-image{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.download-btn:hover{
+    background-color: rgb(243, 38, 38);
+}
+
+.features-btn:hover{
+    background-color: rgb(29, 79, 243);
+}
+.body{
+    margin-top: 20px;
+    padding-right: 150px;
+    padding-left: 150px;
+}
+.body-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-title .title{
+    font-size: 24px;
+    color:rgba(56, 101, 248, 0.842); 
+    font-weight: bold;
+}
+
+.body-title .subtitle{
+    font-size: 12px;
+    color: gray;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.features-section{
+    display: flex;
+    margin-top: 50px;
+}
+
+.feature{
+    display: flex;
+    flex:1;
+}
+
+.feature-icon{
+    margin-right: 10px;
+    height: 60px;
+}
+
+.feature-details{
+    display: flex;
+    flex-direction: column;
+    flex:1
+}
