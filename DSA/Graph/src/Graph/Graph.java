@@ -8,32 +8,34 @@ import java.util.Set;
 public class Graph implements GraphInterface {
 
 	private ArrayList<Node> graph;
+	private ArrayList<Character> nodeArray = new ArrayList<Character>();
 	
 	Graph(){
 		graph = new ArrayList<>();
 	}
 	@Override
-	public void addNode(int weight, char nodeName, char connectedFrom) {
-		Node newNode = new Node(weight,nodeName);
+	public void addNode(int weight, char source, char destination) {
+		Node destNode = new Node(weight, destination); ;
 		Node tempNode = null;
-		boolean present = false;
 		for(Node node:graph){
-			if(node.nodeName == connectedFrom){
+			if(node.nodeName == source){
 				tempNode = node;
-			}
-			if(node.nodeName == nodeName){
-				present = true;
+				break;
 			}
 		}
 		if(tempNode!=null){
 			while(tempNode.next!=null){
 				tempNode = tempNode.next;
 			}
-			tempNode.next = newNode;
+			tempNode.next = destNode;
 		}
-		if(!present){
-			graph.add(newNode);
+		else{
+			Node sourceNode = new Node(0, source);
+			sourceNode.next = destNode;
+			graph.add(sourceNode);
 		}
+		if(!nodeArray.contains(source)) nodeArray.add(source);
+		if(!nodeArray.contains(destination)) nodeArray.add(destination);
 		
 		
 	}
@@ -69,32 +71,23 @@ public class Graph implements GraphInterface {
 
 	@Override
 	public Set<String> mst() {
+		HashMap<Character,Character> parents = new HashMap<>();
 		HashMap<String,Integer> mst = new HashMap<>();
-		ArrayList<Character> source = new ArrayList<>();
-		ArrayList<Character> destination = new ArrayList<>();
 		for(Node node:graph){
 			String path = node.nodeName + " to ";
-			if(node.next == null) continue;
-			char nearestNode = node.next.nodeName;
-			int weight = node.next.weight;
-			node = node.next;
-			while(node!=null){
-				if(node.weight < weight && destination.indexOf(node.nodeName)!=source.indexOf(nearestNode)){
-					nearestNode = node.nodeName;
-					weight = node.weight;
+			Node tmpNode = node;
+			int min = Integer.MAX_VALUE;
+			while(tmpNode!=null){
+				if(!findCycle(parents,node.nodeName,tmpNode)){
+					if(tmpNode.weight<min){
+						
+					}
 				}
-				node = node.next;
+				tmpNode = tmpNode.next;
 			}
-			path+=nearestNode;
-			mst.put(path,weight);
-			source.add(node.nodeName);
-			destination.add(nearestNode);
 		}
 		if(mst.size() == graph.size()-1) return mst.keySet();
-		
-		String key = path;
-		int minWeight = mst.get(path);
-		
+
 		
 		for(String path:mst.keySet()){
 		}
@@ -102,10 +95,34 @@ public class Graph implements GraphInterface {
 		return mst.keySet();
 	}
 
+	private boolean findCycle(HashMap<Character,Character> parents,char nodeName, Node tmpNode) {
+		if((parents.containsKey(nodeName)
+				&& parents.get(nodeName)== tmpNode.nodeName) || nodeName == tmpNode.nodeName){
+			return true;
+		}
+		
+		return false;
+	}
 	@Override
 	public ArrayList<Node> shortestPath(Node start, Node end) {
-		// TODO Auto-generated method stub
+		
 		return null;
+	}
+	
+	int getTotalNode(){
+		return this.nodeArray.size();
+	}
+	
+	void displayGraph(){
+		for(Node node:graph){
+			System.out.print(node.nodeName);
+			node = node.next;
+			while(node!=null){
+				System.out.print("--->"+node.nodeName);
+				node = node.next;
+			}
+			System.out.println();
+		}
 	}
 
 }
