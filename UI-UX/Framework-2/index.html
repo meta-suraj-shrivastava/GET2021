@@ -1,802 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Dashboard</title>
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./assets/css/icons.css" rel="stylesheet">
-    <link href="./assets/css/style.css" rel="stylesheet">
 </head>
 
-<body class="fixed-left">
-    <!-- Loader -->
-    <div id="preloader">
-        <div id="status">
-            <div class="spinner"></div>
-        </div>
-    </div><!-- Begin page -->
-    <div id="wrapper">
-        <!-- ========== Left Sidebar Start ========== -->
-        <div class="left side-menu"><button type="button"
-                class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect"><i
-                    class="ion-close"></i></button><!-- LOGO -->
-            <div class="topbar-left">
-                <div class="text-center"><a href="index.html" class="logo"><i class="mdi mdi-assistant"></i> Annex</a>
-                    <!-- <a href="index.html" class="logo"><img src="assets/images/logo.png" height="24" alt="logo"></a> -->
+<body>
+    <div class="d-flex">
+        <div class="flex-column sidebar d-flex d-none d-lg-flex d-sm-none">
+            <div class="d-flex sidebar-header justify-content-center align-items-center p-5">
+                <div class="sidebar-title">
+                    ANNEX
                 </div>
             </div>
-            <div class="sidebar-inner slimscrollleft">
-                <div id="sidebar-menu">
-                    <ul>
-                        <li class="menu-title">Main</li>
-                        <li><a href="index.html" class="waves-effect"><i class="mdi mdi-airplay"></i> <span>Dashboard
-                                    <span class="badge badge-pill badge-primary float-right">7</span></span></a></li>
-                        <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i
-                                    class="mdi mdi-layers"></i> <span>Advanced UI </span><span class="float-right"><i
-                                        class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Highlight</a></li>
-                                <li><a href="#">Rating</a></li>
-                                <li><a href="#">Alertify</a></li>
-                                <li><a href="#">Range Slider</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" class="waves-effect"><i class="mdi mdi-calendar-clock"></i><span>
-                                    Calendar</span></a></li>
-                        <li class="menu-title">Components</li>
-                        <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i
-                                    class="mdi mdi-bullseye"></i> <span>UI Elements </span><span class="float-right"><i
-                                        class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Buttons</a></li>
-                                <li><a href="#">Cards</a></li>
-                                <li><a href="#">Tabs &amp; Accordions</a></li>
-                                <li><a href="#">Modals</a></li>
-                                <li><a href="#">Images</a></li>
-                                <li><a href="#">Alerts</a></li>
-                                <li><a href="#">Progress Bars</a></li>
-                                <li><a href="#">Dropdowns</a></li>
-                                <li><a href="#">Lightbox</a></li>
-                                <li><a href="#">Navs</a></li>
-                                <li><a href="#">Pagination</a></li>
-                                <li><a href="#">Popover & Tooltips</a></li>
-                                <li><a href="#">Badge</a></li>
-                                <li><a href="#">Carousel</a></li>
-                                <li><a href="#">Video</a></li>
-                                <li><a href="#">Typography</a></li>
-                                <li><a href="#">Sweet-Alert</a></li>
-                                <li><a href="#">Grid</a></li>
-                            </ul>
-                        </li>
-                        <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i
-                                    class="mdi mdi-clipboard-outline"></i><span> Forms </span><span
-                                    class="badge badge-pill badge-info float-right">8</span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Form Elements</a></li>
-                                <li><a href="#">Form Validation</a></li>
-                                <li><a href="#">Form Advanced</a></li>
-                                <li><a href="#">Form Editors</a></li>
-                                <li><a href="#">Form File Upload</a></li>
-                                <li><a href="#">Form Mask</a></li>
-                                <li><a href="#">Summernote</a></li>
-                                <li><a href="#">Form Xeditable</a></li>
-                            </ul>
-                        </li>
-                        <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i
-                                    class="mdi mdi-gauge"></i><span> Charts </span><span class="float-right"><i
-                                        class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Morris Chart</a></li>
-                                <li><a href="#">Chartist Chart</a></li>
-                                <li><a href="#">Chartjs Chart</a></li>
-                                <li><a href="#">Flot Chart</a></li>
-                                <li><a href="#">C3 Chart</a></li>
-                                <li><a href="#">Jquery Knob Chart</a></li>
-                            </ul>
-                        </li>
-                        <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i
-                                    class="mdi mdi-cards-outline"></i> <span>Icons </span><span class="float-right"><i
-                                        class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Material Design</a></li>
-                                <li><a href="#">Ion Icons</a></li>
-                                <li><a href="#">Font Awesome</a></li>
-                                <li><a href="#">Themify Icons</a></li>
-                                <li><a href="#">Dripicons</a></li>
-                                <li><a href="#">Typicons Icons</a></li>
-                            </ul>
-                        </li>
-                        <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i
-                                    class="mdi mdi-table"></i><span> Tables </span><span class="float-right"><i
-                                        class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Basic Tables</a></li>
-                                <li><a href="#">Data Table</a></li>
-                                <li><a href="#">Responsive Table</a></li>
-                                <li><a href="#">Editable Table</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-title">Extra</li>
-                        <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i
-                                    class="mdi mdi-map-marker-multiple"></i><span> Maps </span><span
-                                    class="badge badge-pill badge-danger float-right">2</span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Google Map</a></li>
-                                <li><a href="#">Vector Map</a></li>
-                            </ul>
-                        </li>
-                        <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i
-                                    class="mdi mdi-google-pages"></i><span> Pages </span><span class="float-right"><i
-                                        class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Login</a></li>
-                                <li><a href="#">Register</a></li>
-                                <li><a href="#">Recover Password</a></li>
-                                <li><a href="#">Lock Screen</a></li>
-                                <li><a href="#">Blank Page</a></li>
-                                <li><a href="#">Error 404</a></li>
-                                <li><a href="#">Error 500</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+            <div class="d-flex side-menu flex-column " id="side-bar-content">
+                <p class="side-menu-start px-3 pb-1">Main</p>
+                <div class="menu-item px-3 pb-3 menu-item-selected">
+                    <i class="dashboard-icon">
+                    </i><span>Dashboard</span>
+                    <span class="badge rounded-pill bg-primary float-end">7</span>
                 </div>
-                <div class="clearfix"></div>
-            </div><!-- end sidebarinner -->
-        </div><!-- Left Sidebar End -->
-        <!-- Start right Content here -->
-        <div class="content-page">
-            <!-- Start content -->
-            <div class="content">
-                <!-- Top Bar Start -->
-                <div class="topbar">
-                    <nav class="navbar-custom">
-                        <ul class="list-inline float-right mb-0">
-                            <!-- language-->
-                            <li class="list-inline-item dropdown notification-list hide-phone"><a
-                                    class="nav-link dropdown-toggle arrow-none waves-effect text-white"
-                                    data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-                                    aria-expanded="false">English<img height="16px" class="ml-2"
-                                        src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHBhdGggZD0ibTQ5NS40ODQgOTAuODM5aC0yMzEuMjI2bC0yNTUuMjU4IDE3Ni42NjF2MTQ2LjgzM2g0ODYuNDg0bDE2LjUxNi05LjY4OHYtMzAuNjczbC0xMC43NS0xMC4yMjJ2LTI5bDEwLjc1LTcuOTY3di00Ny4xODlsLTkuNjY3LTkuMjYxdi0yOS42NjdsOS42NjctOC4yNjJ2LTQ3LjE4OGwtOS42NjctOC41NDl2LTI2bDkuNjY3LTEyLjYzOXYtMzAuNjczYzAtOS4xMjItNy4zOTUtMTYuNTE2LTE2LjUxNi0xNi41MTZ6IiBmaWxsPSIjZTU2NDZlIi8+PHBhdGggZD0ibTI1Ni4zMzMgMTM4LjAyOGgyNTUuNjY3djQ3LjE4OWgtMjU1LjY2N3oiIGZpbGw9IiNmMmYyZjYiLz48cGF0aCBkPSJtMjU2IDIzMi40MDUgOC4yNTggNDcuMTg5aDI0Ny43NDJ2LTQ3LjE4OXoiIGZpbGw9IiNmMmYyZjYiLz48cGF0aCBkPSJtMTYuNTE2IDM1NS4wOTd2LTg0LjA5N2wtMTYuNTE2IDguNTk0djQ3LjE4OWw3IDUuOTY3djMxbC03IDEwLjIyMnYzMC42NzNjMCA5LjEyMiA3LjM5NSAxNi41MTYgMTYuNTE2IDE2LjUxNmg0NzguOTY4YzkuMTIxIDAgMTYuNTE2LTcuMzk1IDE2LjUxNi0xNi41MTZoLTQ0NS45MzVjLTI3LjM2NSAwLTQ5LjU0OS0yMi4xODMtNDkuNTQ5LTQ5LjU0OHoiIGZpbGw9IiNkYjQ2NTUiLz48cGF0aCBkPSJtMjY0LjI1OCA5MC44MzloLTI0Ny43NDJsLTEwLjUxNiAxNi41MTYgMTAuNTE2IDE3Mi4yMzloMjQ3Ljc0MnoiIGZpbGw9IiM1MDU1YTAiLz48cGF0aCBkPSJtMTYuNTE2IDkwLjgzOWMtOS4xMjEgMC0xNi41MTYgNy4zOTQtMTYuNTE2IDE2LjUxNnYxNzIuMjM5aDE2LjUxNnoiIGZpbGw9IiMzZjNmOGYiLz48cGF0aCBkPSJtMzMuMTEzIDEyNy42NTdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NSA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMzMuMTEzIDE5My43MjJjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NSA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMzMuMTEzIDI1OS43ODZjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NSA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMzMuMTEzIDE2MC42OWMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNTgtLjAwMSA0LjU2LTMuNjk1IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0zMy4xMTMgMjI2Ljc1NGMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk1IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0yMzEuMzA2IDEyNy42NTdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMjMxLjMwNiAxOTMuNzIyYy00LjU2NSAwLTguMjk4LTMuNjk4LTguMjk4LTguMjU4czMuNjUzLTguMjU4IDguMjE4LTguMjU4aC4wODFjNC41NjUgMCA4LjI1OCAzLjY5OCA4LjI1OCA4LjI1OHMtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTIzMS4zMDYgMjU5Ljc4NmMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2ZmZiIvPjxnIGZpbGw9IiNmMmYyZjYiPjxwYXRoIGQ9Im0yMzEuMzA2IDE2MC42OWMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIvPjxwYXRoIGQ9Im0yMzEuMzA2IDIyNi43NTRjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiLz48cGF0aCBkPSJtODIuNjYxIDEyNy42NTdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiLz48cGF0aCBkPSJtODIuNjYxIDE5My43MjJjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiLz48cGF0aCBkPSJtODIuNjYxIDI1OS43ODZjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiLz48L2c+PHBhdGggZD0ibTgyLjY2MSAxNjAuNjljLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4LS4wMDEgNC41Ni0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtODIuNjYxIDIyNi43NTRjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtNTcuODg3IDE0NC4xNzNjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4LS4wMDEgNC41NjEtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTU3Ljg4NyAyMTAuMjM4Yy00LjU2NSAwLTguMjk4LTMuNjk4LTguMjk4LTguMjU4czMuNjUzLTguMjU4IDguMjE4LTguMjU4aC4wODFjNC41NjUgMCA4LjI1OCAzLjY5OCA4LjI1OCA4LjI1OHMtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTU3Ljg4NyAxNzcuMjA2Yy00LjU2NSAwLTguMjk4LTMuNjk4LTguMjk4LTguMjU4czMuNjUzLTguMjU4IDguMjE4LTguMjU4aC4wODFjNC41NjUgMCA4LjI1OCAzLjY5OCA4LjI1OCA4LjI1OHMtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZjJmMmY2Ii8+PHBhdGggZD0ibTU3Ljg4NyAyNDMuMjdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmMmYyZjYiLz48cGF0aCBkPSJtMTMyLjIxIDEyNy42NTdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NSA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTMyLjIxIDE5My43MjJjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NSA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTMyLjIxIDI1OS43ODZjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NSA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTMyLjIxIDE2MC42OWMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNTgtLjAwMSA0LjU2LTMuNjk1IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0xMzIuMjEgMjI2Ljc1NGMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk1IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0xMDcuNDM1IDE0NC4xNzNjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4IDAgNC41NjEtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZjJmMmY2Ii8+PHBhdGggZD0ibTEwNy40MzUgMjEwLjIzOGMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0xMDcuNDM1IDE3Ny4yMDZjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTA3LjQzNSAyNDMuMjdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTgxLjY3NyAxMjcuNjU3Yy00LjU2NSAwLTguMjk4LTMuNjk4LTguMjk4LTguMjU4czMuNjUzLTguMjU4IDguMjE4LTguMjU4aC4wODFjNC41NjUgMCA4LjI1OCAzLjY5OCA4LjI1OCA4LjI1OHMtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZjJmMmY2Ii8+PHBhdGggZD0ibTE4MS42NzcgMTkzLjcyMmMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0xODEuNjc3IDI1OS43ODZjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmMmYyZjYiLz48cGF0aCBkPSJtMTgxLjY3NyAxNjAuNjljLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4LS4wMDEgNC41Ni0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTgxLjY3NyAyMjYuNzU0Yy00LjU2NSAwLTguMjk4LTMuNjk4LTguMjk4LTguMjU4czMuNjUzLTguMjU4IDguMjE4LTguMjU4aC4wODFjNC41NjUgMCA4LjI1OCAzLjY5OCA4LjI1OCA4LjI1OHMtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTE1Ni45MDMgMTQ0LjE3M2MtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNTgtLjAwMSA0LjU2MS0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTU2LjkwMyAyMTAuMjM4Yy00LjU2NSAwLTguMjk4LTMuNjk4LTguMjk4LTguMjU4czMuNjUzLTguMjU4IDguMjE4LTguMjU4aC4wODFjNC41NjUgMCA4LjI1OCAzLjY5OCA4LjI1OCA4LjI1OHMtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTE1Ni45MDMgMTc3LjIwNmMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0xNTYuOTAzIDI0My4yN2MtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0yMDYuNTMyIDE0NC4xNzNjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4LS4wMDEgNC41NjEtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZjJmMmY2Ii8+PHBhdGggZD0ibTIwNi41MzIgMjEwLjIzOGMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0yMDYuNTMyIDE3Ny4yMDZjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMjA2LjUzMiAyNDMuMjdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMyAzNjAuMzMzIDE3LjI2IDEzLjYzOWg0OTEuNzR2LTQ3LjE4OWgtNDk1LjQ4NHoiIGZpbGw9IiNmMmYyZjYiLz48cGF0aCBkPSJtMCAzMjYuNzgzdjQ3LjE4OWgyMC4yNmMtMi40MDEtNS44Mi0zLjc0My0xMi4xODktMy43NDMtMTguODc2di0yOC4zMTRoLTE2LjUxN3oiIGZpbGw9IiNlMWUxZTYiLz48L2c+PC9zdmc+" /></a>
-                                    <!-- <div class="dropdown-menu dropdown-menu-right language-switch"><a class="dropdown-item"
-                                        href="#"><img src="assets/images/flags/italy_flag.jpg" alt=""
-                                            height="16"><span>Italian </span></a><a class="dropdown-item" href="#"><img
-                                            src="assets/images/flags/french_flag.jpg" alt="" height="16"><span>French
-                                        </span></a><a class="dropdown-item" href="#"><img
-                                            src="assets/images/flags/spain_flag.jpg" alt="" height="16"><span>Spanish
-                                        </span></a><a class="dropdown-item" href="#"><img
-                                            src="assets/images/flags/russia_flag.jpg" alt=""
-                                            height="16"><span>Russian</span></a></div> -->
-                            </li>
-                            <li class="list-inline-item dropdown notification-list"><a
-                                    class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown"
-                                    href="#" role="button" aria-haspopup="false" aria-expanded="false"><i
-                                        class="ti-email noti-icon"></i> <span
-                                        class="badge badge-danger noti-icon-badge">5</span></a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
-                                    <!-- item-->
-                                    <div class="dropdown-item noti-title">
-                                        <h5><span class="badge badge-danger float-right">745</span>Messages</h5>
-                                    </div><!-- item--> <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PGc+PGc+PHBhdGggZD0ibTI1Ni4wMjUgNDgzLjMzNCAxMDEuNDI5LTI1LjYxNGM1Ny44OTUtNDguMDc0IDk0Ljc3MS0xMjAuNTg2IDk0Ljc3MS0yMDEuNzE5IDAtMTI1LjE0NC04Ny43MTEtMjI5LjgwMS0yMDUuMDEyLTI1NS44NTItMTM3LjMxNiA0LjYzMS0yNDcuMjEzIDExNy40MDctMjQ3LjIxMyAyNTUuODUxIDAgNzEuMTEyIDI5IDEzNS40NDYgNzUuODEyIDE4MS44MzZ6IiBmaWxsPSIjY2JlMmZmIi8+PC9nPjxnPjxwYXRoIGQ9Im00NDYuOTE0IDI1NmMwIDgzLjkxNS00MC4zODEgMTU4LjM5MS0xMDIuNzY1IDIwNS4wNzlsOTIuMDMxLTIzLjI0MWM0Ni44MTUtNDYuMzkgNzUuODItMTEwLjcyNCA3NS44Mi0xODEuODM4IDAtMTQxLjM4NS0xMTQuNjE1LTI1Ni0yNTYtMjU2LTExLjAyNCAwLTIxLjg4Ni42OTgtMzIuNTQzIDIuMDUgMTI2LjAxOSAxNS45ODggMjIzLjQ1NyAxMjMuNTkgMjIzLjQ1NyAyNTMuOTV6IiBmaWxsPSIjYmVkOGZiIi8+PC9nPjxnPjxnPjxnPjxwYXRoIGQ9Im0zMTkuNjIxIDk2Ljk1MmMwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTgxLjU4MmMtMzAuMDkxIDAtNTQuNDg1IDI0LjM5NC01NC40ODUgNTQuNDg1djYwLjQ5M2gxOTIuMjA5di01OS42MzVjMC0xMy4wNzUtMTAuNTk5LTIzLjY3NC0yMy42NzQtMjMuNjc0aC0uNzk4Yy00LjQxNiAwLTcuOTk2LTMuNTc5LTcuOTk2LTcuOTk1eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zMjguNDE1IDEwNC45NDdoLS43OThjLTQuNDE2IDAtNy45OTYtMy41OC03Ljk5Ni03Ljk5NiAwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTguOTQ1djExNC45NzhoNjUuMDg2di01OS42MzVjLjAwMS0xMy4wNzMtMTAuNTk5LTIzLjY3My0yMy42NzMtMjMuNjczeiIgZmlsbD0iIzJiNGQ2NiIvPjxwYXRoIGQ9Im00MjUuMDQ1IDM3Mi4zNTVjLTYuMjU5LTYuMTgyLTE0LjAwMS0xMC45NjMtMjIuNzktMTMuNzQ1bC02OS44OTEtMjIuMTI4LTc2LjM0OC0yLjY4My03Ni4zOCAyLjY4My02OS44OTEgMjIuMTI4Yy0yMy42NDQgNy40ODYtMzkuNzEzIDI5LjQyOC0zOS43MTMgNTQuMjI5djE5LjA5NGM0NC43ODkgNDcuMzI4IDEwNy40NTEgNzcuNTY4IDE3Ny4xODMgNzkuOTIgNzguMTI4LTE3LjM1MyAxNDMuMTI5LTY5LjU3NiAxNzcuODMtMTM5LjQ5OHoiIGZpbGw9IiM0YTgwYWEiLz48cGF0aCBkPSJtNDQxLjk2OCA0MzEuOTMydi0xOS4wOTRjMC0xNy41MzYtOC4wNC0zMy42MzUtMjEuMTA1LTQ0LjIxMy0zNy4xMTEgNzUuNjI2LTExMC40MjIgMTMwLjI2OC0xOTcuMzQ2IDE0MS4zMTcgMTAuNDkyIDEuMzI5IDIxLjE3OCAyLjAzOCAzMi4wMjYgMi4wNTcgMTAuNDIzLS4wMTYgMjAuNzA4LS42MiAzMC44MjQtMS43ODIgNjEuMDMxLTcuMjEyIDExNS40ODUtMzUuODk0IDE1NS42MDEtNzguMjg1eiIgZmlsbD0iIzQwNzA5MyIvPjxwYXRoIGQ9Im0yNjEuNzk2IDUwOC4xNjhjMTUuNDg5LTMwLjc1MSA1NS44MjItMTE4LjA2NyA0NC4zMjEtMTcyLjYwOWwtNTAuMTAxLTE5LjQ5OS01MC4xNDggMTkuNWMtMTEuODU2IDU2LjIyNSAzMS4zNyAxNDcuMjc3IDQ1LjY4MSAxNzUuMjkgMy40NDItLjgyNiA2Ljg1OS0xLjcyMSAxMC4yNDctMi42ODJ6IiBmaWxsPSIjZTRmNmZmIi8+PHBhdGggZD0ibTI4OC4xOTcgNDgzLjc4OS0yMC4zMTQtNzkuOTE3aC0yMy43NjdsLTIwLjI2NCA3OS42OTkgMjUuMDU4IDI3Ljg5N2M2LjM2MS0xLjQ1NyAxMi42MzQtMy4xNDYgMTguODEtNS4wNTd6IiBmaWxsPSIjZTI4MDg2Ii8+PHBhdGggZD0ibTI0OS4zMDIgNTExLjkwNWMyLjA3NS4wNTQgNC4xNTQuMDkxIDYuMjQxLjA5NSAyLjQxNS0uMDA0IDQuODIyLS4wNDYgNy4yMjItLjExM2wxMi45MDctMTQuMjU5Yy0xMC4xNTkgMy41NjQtMjAuNjEgNi41MDYtMzEuMzA5IDguNzc5eiIgZmlsbD0iI2RkNjM2ZSIvPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxwYXRoIGQ9Im0yOTguNzc0IDMyOC4xODN2LTQ1LjA2NmgtODUuNTh2NDUuMDY2YzAgMjMuNjMyIDQyLjc5IDQ5LjQ0NiA0Mi43OSA0OS40NDZzNDIuNzktMjUuODE0IDQyLjc5LTQ5LjQ0NnoiIGZpbGw9IiNmZmRkY2UiLz48L2c+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PHBhdGggZD0ibTM1Mi4wODkgMTgwLjMxOGgtMTYuMzU5Yy05LjA5OCAwLTE2LjQ3My03LjM3NS0xNi40NzMtMTYuNDczdi05LjAxNWMwLTExLjg1MS0xMS41OTUtMjAuMjMtMjIuODQ3LTE2LjUxMS0yNi4yNDMgOC42NzQtNTQuNTc5IDguNjc2LTgwLjgyMy4wMDZsLS4wMzEtLjAxYy0xMS4yNTItMy43MTctMjIuODQ1IDQuNjYyLTIyLjg0NSAxNi41MTJ2OS4wMTljMCA5LjA5OC03LjM3NSAxNi40NzMtMTYuNDczIDE2LjQ3M2gtMTYuMzU4djI2LjkzOGMwIDYuODgzIDUuNTggMTIuNDY0IDEyLjQ2NCAxMi40NjQgMi4xNzIgMCAzLjkzOSAxLjcwMSA0LjA3NiAzLjg2OSAyLjYyOCA0MS42NjggMzcuMjM1IDc0LjY1NCA3OS41NjUgNzQuNjU0IDQyLjMzIDAgNzYuOTM3LTMyLjk4NiA3OS41NjUtNzQuNjU0LjEzNy0yLjE2NyAxLjkwNC0zLjg2OSA0LjA3Ni0zLjg2OSA2Ljg4MyAwIDEyLjQ2NC01LjU4IDEyLjQ2NC0xMi40NjR2LTI2LjkzOXoiIGZpbGw9IiNmZmRkY2UiLz48cGF0aCBkPSJtMzM1LjczIDE4MC4zMThjLTkuMDk4IDAtMTYuNDczLTcuMzc1LTE2LjQ3My0xNi40NzN2LTkuMDE1YzAtMTEuODUxLTExLjU5NS0yMC4yMy0yMi44NDctMTYuNTExLTMuMTA4IDEuMDI3LTYuMjQ3IDEuOTIzLTkuNDA3IDIuNzA3djg4Ljk3MmMtLjQzOCAyOC45NDgtMTYuMyA1NC4xNDItMzkuNzI1IDY3Ljc1OCAyLjg2MS4zMTEgNS43NjMuNDg2IDguNzA2LjQ4NiA0Mi4zMyAwIDc2LjkzNy0zMi45ODYgNzkuNTY1LTc0LjY1NC4xMzctMi4xNjcgMS45MDQtMy44NjkgNC4wNzYtMy44NjkgNi44ODMgMCAxMi40NjQtNS41OCAxMi40NjQtMTIuNDY0di0yNi45MzhoLTE2LjM1OXoiIGZpbGw9IiNmZmNiYmUiLz48L2c+PGcgZmlsbD0iI2Y0ZmJmZiI+PHBhdGggZD0ibTIxMy4xOTQgMzE2LjA2LTMzLjU1OCAyNy4yNjcgMzUuMTkyIDQzLjUxM2M0LjI4MSA0LjE2OCAxMS4wMTkgNC40MjQgMTUuNjA1LjU5NGwyNi40NjUtMjIuMTA3eiIvPjxwYXRoIGQ9Im0yOTguNzkgMzE2LjA2LTQxLjg5MiA0OS4yNjcgMjQuODc0IDIxLjI2OGM0LjU1NyAzLjg5NiAxMS4zMjcgMy43IDE1LjY1MS0uNDUzbDM0Ljk0LTQyLjgxNXoiLz48L2c+PC9nPjxwYXRoIGQ9Im0yMTMuMTk0IDMxNi4wNi00OS4yNTYgMjQuMTk5Yy0zLjc1IDEuODQyLTUuMjU2IDYuNDA0LTMuMzQxIDEwLjExN2w5LjY1IDE4LjcxYzIuNTAxIDQuODQ4IDEuNTc4IDEwLjc1Ni0yLjI4MiAxNC42MS0xLjk4NyAxLjk4My00LjEzOSA0LjEzMS02LjAwNCA1Ljk5My0zLjMzOCAzLjMzMi00LjUzNyA4LjI1NS0zLjA2NyAxMi43MzcgMTEuNjUxIDM1LjUxNyA2Ny43MjUgODkuODI4IDg4Ljk0NiAxMDkuNDc4IDEuNDI3LjAzOCAyLjg1Ny4wNjQgNC4yOS4wOC0xNS4zODktMjkuOTMzLTY5LjkyMi0xNDMuNjU1LTM4LjkzNi0xOTUuOTI0eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zNDQuMDE5IDM4My42OTVjLTMuODYxLTMuODU0LTQuNzgzLTkuNzYyLTIuMjgyLTE0LjYxbDkuNjUtMTguNzFjMS45MTUtMy43MTMuNDA5LTguMjc1LTMuMzQxLTEwLjExN2wtNDkuMjU2LTI0LjE5OGMzMC45NzggNTIuMjU1LTIzLjUxNyAxNjUuOTI5LTM4LjkyMyAxOTUuOSAxLjQ0OC0uMDI1IDIuODkzLS4wNjEgNC4zMzUtLjEwOSAyMS4yNjUtMTkuNjk1IDc3LjI0OC03My45NCA4OC44ODgtMTA5LjQyNCAxLjQ3LTQuNDgyLjI3MS05LjQwNS0zLjA2Ny0xMi43MzctMS44NjUtMS44NjMtNC4wMTctNC4wMTItNi4wMDQtNS45OTV6IiBmaWxsPSIjMzY1ZTdkIi8+PHBhdGggZD0ibTI1Ni44OTggMzY1LjMyNy0yNi4wNiAyMS43NjQgMTMuMjc4IDE2Ljc4MWgyMy43NjdsMTMuMjc5LTE3Ljc3MXoiIGZpbGw9IiNkZDYzNmUiLz48L2c+PC9nPjwvZz48L2c+PC9zdmc+" />
-                                        </div>
-                                        <p class="notify-details"><b>Charles M. Jones</b><small class="text-muted">Dummy
-                                                text of the printing and typesetting industry.</small></p>
-                                    </a><!-- item--> <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PGc+PGc+PHBhdGggZD0ibTI1Ni4wMjUgNDgzLjMzNCAxMDEuNDI5LTI1LjYxNGM1Ny44OTUtNDguMDc0IDk0Ljc3MS0xMjAuNTg2IDk0Ljc3MS0yMDEuNzE5IDAtMTI1LjE0NC04Ny43MTEtMjI5LjgwMS0yMDUuMDEyLTI1NS44NTItMTM3LjMxNiA0LjYzMS0yNDcuMjEzIDExNy40MDctMjQ3LjIxMyAyNTUuODUxIDAgNzEuMTEyIDI5IDEzNS40NDYgNzUuODEyIDE4MS44MzZ6IiBmaWxsPSIjY2JlMmZmIi8+PC9nPjxnPjxwYXRoIGQ9Im00NDYuOTE0IDI1NmMwIDgzLjkxNS00MC4zODEgMTU4LjM5MS0xMDIuNzY1IDIwNS4wNzlsOTIuMDMxLTIzLjI0MWM0Ni44MTUtNDYuMzkgNzUuODItMTEwLjcyNCA3NS44Mi0xODEuODM4IDAtMTQxLjM4NS0xMTQuNjE1LTI1Ni0yNTYtMjU2LTExLjAyNCAwLTIxLjg4Ni42OTgtMzIuNTQzIDIuMDUgMTI2LjAxOSAxNS45ODggMjIzLjQ1NyAxMjMuNTkgMjIzLjQ1NyAyNTMuOTV6IiBmaWxsPSIjYmVkOGZiIi8+PC9nPjxnPjxnPjxnPjxwYXRoIGQ9Im0zMTkuNjIxIDk2Ljk1MmMwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTgxLjU4MmMtMzAuMDkxIDAtNTQuNDg1IDI0LjM5NC01NC40ODUgNTQuNDg1djYwLjQ5M2gxOTIuMjA5di01OS42MzVjMC0xMy4wNzUtMTAuNTk5LTIzLjY3NC0yMy42NzQtMjMuNjc0aC0uNzk4Yy00LjQxNiAwLTcuOTk2LTMuNTc5LTcuOTk2LTcuOTk1eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zMjguNDE1IDEwNC45NDdoLS43OThjLTQuNDE2IDAtNy45OTYtMy41OC03Ljk5Ni03Ljk5NiAwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTguOTQ1djExNC45NzhoNjUuMDg2di01OS42MzVjLjAwMS0xMy4wNzMtMTAuNTk5LTIzLjY3My0yMy42NzMtMjMuNjczeiIgZmlsbD0iIzJiNGQ2NiIvPjxwYXRoIGQ9Im00MjUuMDQ1IDM3Mi4zNTVjLTYuMjU5LTYuMTgyLTE0LjAwMS0xMC45NjMtMjIuNzktMTMuNzQ1bC02OS44OTEtMjIuMTI4LTc2LjM0OC0yLjY4My03Ni4zOCAyLjY4My02OS44OTEgMjIuMTI4Yy0yMy42NDQgNy40ODYtMzkuNzEzIDI5LjQyOC0zOS43MTMgNTQuMjI5djE5LjA5NGM0NC43ODkgNDcuMzI4IDEwNy40NTEgNzcuNTY4IDE3Ny4xODMgNzkuOTIgNzguMTI4LTE3LjM1MyAxNDMuMTI5LTY5LjU3NiAxNzcuODMtMTM5LjQ5OHoiIGZpbGw9IiM0YTgwYWEiLz48cGF0aCBkPSJtNDQxLjk2OCA0MzEuOTMydi0xOS4wOTRjMC0xNy41MzYtOC4wNC0zMy42MzUtMjEuMTA1LTQ0LjIxMy0zNy4xMTEgNzUuNjI2LTExMC40MjIgMTMwLjI2OC0xOTcuMzQ2IDE0MS4zMTcgMTAuNDkyIDEuMzI5IDIxLjE3OCAyLjAzOCAzMi4wMjYgMi4wNTcgMTAuNDIzLS4wMTYgMjAuNzA4LS42MiAzMC44MjQtMS43ODIgNjEuMDMxLTcuMjEyIDExNS40ODUtMzUuODk0IDE1NS42MDEtNzguMjg1eiIgZmlsbD0iIzQwNzA5MyIvPjxwYXRoIGQ9Im0yNjEuNzk2IDUwOC4xNjhjMTUuNDg5LTMwLjc1MSA1NS44MjItMTE4LjA2NyA0NC4zMjEtMTcyLjYwOWwtNTAuMTAxLTE5LjQ5OS01MC4xNDggMTkuNWMtMTEuODU2IDU2LjIyNSAzMS4zNyAxNDcuMjc3IDQ1LjY4MSAxNzUuMjkgMy40NDItLjgyNiA2Ljg1OS0xLjcyMSAxMC4yNDctMi42ODJ6IiBmaWxsPSIjZTRmNmZmIi8+PHBhdGggZD0ibTI4OC4xOTcgNDgzLjc4OS0yMC4zMTQtNzkuOTE3aC0yMy43NjdsLTIwLjI2NCA3OS42OTkgMjUuMDU4IDI3Ljg5N2M2LjM2MS0xLjQ1NyAxMi42MzQtMy4xNDYgMTguODEtNS4wNTd6IiBmaWxsPSIjZTI4MDg2Ii8+PHBhdGggZD0ibTI0OS4zMDIgNTExLjkwNWMyLjA3NS4wNTQgNC4xNTQuMDkxIDYuMjQxLjA5NSAyLjQxNS0uMDA0IDQuODIyLS4wNDYgNy4yMjItLjExM2wxMi45MDctMTQuMjU5Yy0xMC4xNTkgMy41NjQtMjAuNjEgNi41MDYtMzEuMzA5IDguNzc5eiIgZmlsbD0iI2RkNjM2ZSIvPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxwYXRoIGQ9Im0yOTguNzc0IDMyOC4xODN2LTQ1LjA2NmgtODUuNTh2NDUuMDY2YzAgMjMuNjMyIDQyLjc5IDQ5LjQ0NiA0Mi43OSA0OS40NDZzNDIuNzktMjUuODE0IDQyLjc5LTQ5LjQ0NnoiIGZpbGw9IiNmZmRkY2UiLz48L2c+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PHBhdGggZD0ibTM1Mi4wODkgMTgwLjMxOGgtMTYuMzU5Yy05LjA5OCAwLTE2LjQ3My03LjM3NS0xNi40NzMtMTYuNDczdi05LjAxNWMwLTExLjg1MS0xMS41OTUtMjAuMjMtMjIuODQ3LTE2LjUxMS0yNi4yNDMgOC42NzQtNTQuNTc5IDguNjc2LTgwLjgyMy4wMDZsLS4wMzEtLjAxYy0xMS4yNTItMy43MTctMjIuODQ1IDQuNjYyLTIyLjg0NSAxNi41MTJ2OS4wMTljMCA5LjA5OC03LjM3NSAxNi40NzMtMTYuNDczIDE2LjQ3M2gtMTYuMzU4djI2LjkzOGMwIDYuODgzIDUuNTggMTIuNDY0IDEyLjQ2NCAxMi40NjQgMi4xNzIgMCAzLjkzOSAxLjcwMSA0LjA3NiAzLjg2OSAyLjYyOCA0MS42NjggMzcuMjM1IDc0LjY1NCA3OS41NjUgNzQuNjU0IDQyLjMzIDAgNzYuOTM3LTMyLjk4NiA3OS41NjUtNzQuNjU0LjEzNy0yLjE2NyAxLjkwNC0zLjg2OSA0LjA3Ni0zLjg2OSA2Ljg4MyAwIDEyLjQ2NC01LjU4IDEyLjQ2NC0xMi40NjR2LTI2LjkzOXoiIGZpbGw9IiNmZmRkY2UiLz48cGF0aCBkPSJtMzM1LjczIDE4MC4zMThjLTkuMDk4IDAtMTYuNDczLTcuMzc1LTE2LjQ3My0xNi40NzN2LTkuMDE1YzAtMTEuODUxLTExLjU5NS0yMC4yMy0yMi44NDctMTYuNTExLTMuMTA4IDEuMDI3LTYuMjQ3IDEuOTIzLTkuNDA3IDIuNzA3djg4Ljk3MmMtLjQzOCAyOC45NDgtMTYuMyA1NC4xNDItMzkuNzI1IDY3Ljc1OCAyLjg2MS4zMTEgNS43NjMuNDg2IDguNzA2LjQ4NiA0Mi4zMyAwIDc2LjkzNy0zMi45ODYgNzkuNTY1LTc0LjY1NC4xMzctMi4xNjcgMS45MDQtMy44NjkgNC4wNzYtMy44NjkgNi44ODMgMCAxMi40NjQtNS41OCAxMi40NjQtMTIuNDY0di0yNi45MzhoLTE2LjM1OXoiIGZpbGw9IiNmZmNiYmUiLz48L2c+PGcgZmlsbD0iI2Y0ZmJmZiI+PHBhdGggZD0ibTIxMy4xOTQgMzE2LjA2LTMzLjU1OCAyNy4yNjcgMzUuMTkyIDQzLjUxM2M0LjI4MSA0LjE2OCAxMS4wMTkgNC40MjQgMTUuNjA1LjU5NGwyNi40NjUtMjIuMTA3eiIvPjxwYXRoIGQ9Im0yOTguNzkgMzE2LjA2LTQxLjg5MiA0OS4yNjcgMjQuODc0IDIxLjI2OGM0LjU1NyAzLjg5NiAxMS4zMjcgMy43IDE1LjY1MS0uNDUzbDM0Ljk0LTQyLjgxNXoiLz48L2c+PC9nPjxwYXRoIGQ9Im0yMTMuMTk0IDMxNi4wNi00OS4yNTYgMjQuMTk5Yy0zLjc1IDEuODQyLTUuMjU2IDYuNDA0LTMuMzQxIDEwLjExN2w5LjY1IDE4LjcxYzIuNTAxIDQuODQ4IDEuNTc4IDEwLjc1Ni0yLjI4MiAxNC42MS0xLjk4NyAxLjk4My00LjEzOSA0LjEzMS02LjAwNCA1Ljk5My0zLjMzOCAzLjMzMi00LjUzNyA4LjI1NS0zLjA2NyAxMi43MzcgMTEuNjUxIDM1LjUxNyA2Ny43MjUgODkuODI4IDg4Ljk0NiAxMDkuNDc4IDEuNDI3LjAzOCAyLjg1Ny4wNjQgNC4yOS4wOC0xNS4zODktMjkuOTMzLTY5LjkyMi0xNDMuNjU1LTM4LjkzNi0xOTUuOTI0eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zNDQuMDE5IDM4My42OTVjLTMuODYxLTMuODU0LTQuNzgzLTkuNzYyLTIuMjgyLTE0LjYxbDkuNjUtMTguNzFjMS45MTUtMy43MTMuNDA5LTguMjc1LTMuMzQxLTEwLjExN2wtNDkuMjU2LTI0LjE5OGMzMC45NzggNTIuMjU1LTIzLjUxNyAxNjUuOTI5LTM4LjkyMyAxOTUuOSAxLjQ0OC0uMDI1IDIuODkzLS4wNjEgNC4zMzUtLjEwOSAyMS4yNjUtMTkuNjk1IDc3LjI0OC03My45NCA4OC44ODgtMTA5LjQyNCAxLjQ3LTQuNDgyLjI3MS05LjQwNS0zLjA2Ny0xMi43MzctMS44NjUtMS44NjMtNC4wMTctNC4wMTItNi4wMDQtNS45OTV6IiBmaWxsPSIjMzY1ZTdkIi8+PHBhdGggZD0ibTI1Ni44OTggMzY1LjMyNy0yNi4wNiAyMS43NjQgMTMuMjc4IDE2Ljc4MWgyMy43NjdsMTMuMjc5LTE3Ljc3MXoiIGZpbGw9IiNkZDYzNmUiLz48L2c+PC9nPjwvZz48L2c+PC9zdmc+" />
-                                        </div>
-                                        <p class="notify-details"><b>Thomas J. Mimms</b><small class="text-muted">You
-                                                have 87 unread messages</small></p>
-                                    </a><!-- item--> <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PGc+PGc+PHBhdGggZD0ibTI1Ni4wMjUgNDgzLjMzNCAxMDEuNDI5LTI1LjYxNGM1Ny44OTUtNDguMDc0IDk0Ljc3MS0xMjAuNTg2IDk0Ljc3MS0yMDEuNzE5IDAtMTI1LjE0NC04Ny43MTEtMjI5LjgwMS0yMDUuMDEyLTI1NS44NTItMTM3LjMxNiA0LjYzMS0yNDcuMjEzIDExNy40MDctMjQ3LjIxMyAyNTUuODUxIDAgNzEuMTEyIDI5IDEzNS40NDYgNzUuODEyIDE4MS44MzZ6IiBmaWxsPSIjY2JlMmZmIi8+PC9nPjxnPjxwYXRoIGQ9Im00NDYuOTE0IDI1NmMwIDgzLjkxNS00MC4zODEgMTU4LjM5MS0xMDIuNzY1IDIwNS4wNzlsOTIuMDMxLTIzLjI0MWM0Ni44MTUtNDYuMzkgNzUuODItMTEwLjcyNCA3NS44Mi0xODEuODM4IDAtMTQxLjM4NS0xMTQuNjE1LTI1Ni0yNTYtMjU2LTExLjAyNCAwLTIxLjg4Ni42OTgtMzIuNTQzIDIuMDUgMTI2LjAxOSAxNS45ODggMjIzLjQ1NyAxMjMuNTkgMjIzLjQ1NyAyNTMuOTV6IiBmaWxsPSIjYmVkOGZiIi8+PC9nPjxnPjxnPjxnPjxwYXRoIGQ9Im0zMTkuNjIxIDk2Ljk1MmMwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTgxLjU4MmMtMzAuMDkxIDAtNTQuNDg1IDI0LjM5NC01NC40ODUgNTQuNDg1djYwLjQ5M2gxOTIuMjA5di01OS42MzVjMC0xMy4wNzUtMTAuNTk5LTIzLjY3NC0yMy42NzQtMjMuNjc0aC0uNzk4Yy00LjQxNiAwLTcuOTk2LTMuNTc5LTcuOTk2LTcuOTk1eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zMjguNDE1IDEwNC45NDdoLS43OThjLTQuNDE2IDAtNy45OTYtMy41OC03Ljk5Ni03Ljk5NiAwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTguOTQ1djExNC45NzhoNjUuMDg2di01OS42MzVjLjAwMS0xMy4wNzMtMTAuNTk5LTIzLjY3My0yMy42NzMtMjMuNjczeiIgZmlsbD0iIzJiNGQ2NiIvPjxwYXRoIGQ9Im00MjUuMDQ1IDM3Mi4zNTVjLTYuMjU5LTYuMTgyLTE0LjAwMS0xMC45NjMtMjIuNzktMTMuNzQ1bC02OS44OTEtMjIuMTI4LTc2LjM0OC0yLjY4My03Ni4zOCAyLjY4My02OS44OTEgMjIuMTI4Yy0yMy42NDQgNy40ODYtMzkuNzEzIDI5LjQyOC0zOS43MTMgNTQuMjI5djE5LjA5NGM0NC43ODkgNDcuMzI4IDEwNy40NTEgNzcuNTY4IDE3Ny4xODMgNzkuOTIgNzguMTI4LTE3LjM1MyAxNDMuMTI5LTY5LjU3NiAxNzcuODMtMTM5LjQ5OHoiIGZpbGw9IiM0YTgwYWEiLz48cGF0aCBkPSJtNDQxLjk2OCA0MzEuOTMydi0xOS4wOTRjMC0xNy41MzYtOC4wNC0zMy42MzUtMjEuMTA1LTQ0LjIxMy0zNy4xMTEgNzUuNjI2LTExMC40MjIgMTMwLjI2OC0xOTcuMzQ2IDE0MS4zMTcgMTAuNDkyIDEuMzI5IDIxLjE3OCAyLjAzOCAzMi4wMjYgMi4wNTcgMTAuNDIzLS4wMTYgMjAuNzA4LS42MiAzMC44MjQtMS43ODIgNjEuMDMxLTcuMjEyIDExNS40ODUtMzUuODk0IDE1NS42MDEtNzguMjg1eiIgZmlsbD0iIzQwNzA5MyIvPjxwYXRoIGQ9Im0yNjEuNzk2IDUwOC4xNjhjMTUuNDg5LTMwLjc1MSA1NS44MjItMTE4LjA2NyA0NC4zMjEtMTcyLjYwOWwtNTAuMTAxLTE5LjQ5OS01MC4xNDggMTkuNWMtMTEuODU2IDU2LjIyNSAzMS4zNyAxNDcuMjc3IDQ1LjY4MSAxNzUuMjkgMy40NDItLjgyNiA2Ljg1OS0xLjcyMSAxMC4yNDctMi42ODJ6IiBmaWxsPSIjZTRmNmZmIi8+PHBhdGggZD0ibTI4OC4xOTcgNDgzLjc4OS0yMC4zMTQtNzkuOTE3aC0yMy43NjdsLTIwLjI2NCA3OS42OTkgMjUuMDU4IDI3Ljg5N2M2LjM2MS0xLjQ1NyAxMi42MzQtMy4xNDYgMTguODEtNS4wNTd6IiBmaWxsPSIjZTI4MDg2Ii8+PHBhdGggZD0ibTI0OS4zMDIgNTExLjkwNWMyLjA3NS4wNTQgNC4xNTQuMDkxIDYuMjQxLjA5NSAyLjQxNS0uMDA0IDQuODIyLS4wNDYgNy4yMjItLjExM2wxMi45MDctMTQuMjU5Yy0xMC4xNTkgMy41NjQtMjAuNjEgNi41MDYtMzEuMzA5IDguNzc5eiIgZmlsbD0iI2RkNjM2ZSIvPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxwYXRoIGQ9Im0yOTguNzc0IDMyOC4xODN2LTQ1LjA2NmgtODUuNTh2NDUuMDY2YzAgMjMuNjMyIDQyLjc5IDQ5LjQ0NiA0Mi43OSA0OS40NDZzNDIuNzktMjUuODE0IDQyLjc5LTQ5LjQ0NnoiIGZpbGw9IiNmZmRkY2UiLz48L2c+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PHBhdGggZD0ibTM1Mi4wODkgMTgwLjMxOGgtMTYuMzU5Yy05LjA5OCAwLTE2LjQ3My03LjM3NS0xNi40NzMtMTYuNDczdi05LjAxNWMwLTExLjg1MS0xMS41OTUtMjAuMjMtMjIuODQ3LTE2LjUxMS0yNi4yNDMgOC42NzQtNTQuNTc5IDguNjc2LTgwLjgyMy4wMDZsLS4wMzEtLjAxYy0xMS4yNTItMy43MTctMjIuODQ1IDQuNjYyLTIyLjg0NSAxNi41MTJ2OS4wMTljMCA5LjA5OC03LjM3NSAxNi40NzMtMTYuNDczIDE2LjQ3M2gtMTYuMzU4djI2LjkzOGMwIDYuODgzIDUuNTggMTIuNDY0IDEyLjQ2NCAxMi40NjQgMi4xNzIgMCAzLjkzOSAxLjcwMSA0LjA3NiAzLjg2OSAyLjYyOCA0MS42NjggMzcuMjM1IDc0LjY1NCA3OS41NjUgNzQuNjU0IDQyLjMzIDAgNzYuOTM3LTMyLjk4NiA3OS41NjUtNzQuNjU0LjEzNy0yLjE2NyAxLjkwNC0zLjg2OSA0LjA3Ni0zLjg2OSA2Ljg4MyAwIDEyLjQ2NC01LjU4IDEyLjQ2NC0xMi40NjR2LTI2LjkzOXoiIGZpbGw9IiNmZmRkY2UiLz48cGF0aCBkPSJtMzM1LjczIDE4MC4zMThjLTkuMDk4IDAtMTYuNDczLTcuMzc1LTE2LjQ3My0xNi40NzN2LTkuMDE1YzAtMTEuODUxLTExLjU5NS0yMC4yMy0yMi44NDctMTYuNTExLTMuMTA4IDEuMDI3LTYuMjQ3IDEuOTIzLTkuNDA3IDIuNzA3djg4Ljk3MmMtLjQzOCAyOC45NDgtMTYuMyA1NC4xNDItMzkuNzI1IDY3Ljc1OCAyLjg2MS4zMTEgNS43NjMuNDg2IDguNzA2LjQ4NiA0Mi4zMyAwIDc2LjkzNy0zMi45ODYgNzkuNTY1LTc0LjY1NC4xMzctMi4xNjcgMS45MDQtMy44NjkgNC4wNzYtMy44NjkgNi44ODMgMCAxMi40NjQtNS41OCAxMi40NjQtMTIuNDY0di0yNi45MzhoLTE2LjM1OXoiIGZpbGw9IiNmZmNiYmUiLz48L2c+PGcgZmlsbD0iI2Y0ZmJmZiI+PHBhdGggZD0ibTIxMy4xOTQgMzE2LjA2LTMzLjU1OCAyNy4yNjcgMzUuMTkyIDQzLjUxM2M0LjI4MSA0LjE2OCAxMS4wMTkgNC40MjQgMTUuNjA1LjU5NGwyNi40NjUtMjIuMTA3eiIvPjxwYXRoIGQ9Im0yOTguNzkgMzE2LjA2LTQxLjg5MiA0OS4yNjcgMjQuODc0IDIxLjI2OGM0LjU1NyAzLjg5NiAxMS4zMjcgMy43IDE1LjY1MS0uNDUzbDM0Ljk0LTQyLjgxNXoiLz48L2c+PC9nPjxwYXRoIGQ9Im0yMTMuMTk0IDMxNi4wNi00OS4yNTYgMjQuMTk5Yy0zLjc1IDEuODQyLTUuMjU2IDYuNDA0LTMuMzQxIDEwLjExN2w5LjY1IDE4LjcxYzIuNTAxIDQuODQ4IDEuNTc4IDEwLjc1Ni0yLjI4MiAxNC42MS0xLjk4NyAxLjk4My00LjEzOSA0LjEzMS02LjAwNCA1Ljk5My0zLjMzOCAzLjMzMi00LjUzNyA4LjI1NS0zLjA2NyAxMi43MzcgMTEuNjUxIDM1LjUxNyA2Ny43MjUgODkuODI4IDg4Ljk0NiAxMDkuNDc4IDEuNDI3LjAzOCAyLjg1Ny4wNjQgNC4yOS4wOC0xNS4zODktMjkuOTMzLTY5LjkyMi0xNDMuNjU1LTM4LjkzNi0xOTUuOTI0eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zNDQuMDE5IDM4My42OTVjLTMuODYxLTMuODU0LTQuNzgzLTkuNzYyLTIuMjgyLTE0LjYxbDkuNjUtMTguNzFjMS45MTUtMy43MTMuNDA5LTguMjc1LTMuMzQxLTEwLjExN2wtNDkuMjU2LTI0LjE5OGMzMC45NzggNTIuMjU1LTIzLjUxNyAxNjUuOTI5LTM4LjkyMyAxOTUuOSAxLjQ0OC0uMDI1IDIuODkzLS4wNjEgNC4zMzUtLjEwOSAyMS4yNjUtMTkuNjk1IDc3LjI0OC03My45NCA4OC44ODgtMTA5LjQyNCAxLjQ3LTQuNDgyLjI3MS05LjQwNS0zLjA2Ny0xMi43MzctMS44NjUtMS44NjMtNC4wMTctNC4wMTItNi4wMDQtNS45OTV6IiBmaWxsPSIjMzY1ZTdkIi8+PHBhdGggZD0ibTI1Ni44OTggMzY1LjMyNy0yNi4wNiAyMS43NjQgMTMuMjc4IDE2Ljc4MWgyMy43NjdsMTMuMjc5LTE3Ljc3MXoiIGZpbGw9IiNkZDYzNmUiLz48L2c+PC9nPjwvZz48L2c+PC9zdmc+" />
-                                        </div>
-                                        <p class="notify-details"><b>Luis M. Konrad</b><small class="text-muted">It is a
-                                                long established fact that a reader will</small></p>
-                                    </a><!-- All--> <a href="javascript:void(0);" class="dropdown-item notify-item">View
-                                        All</a>
-                                </div>
-                            </li>
-                            <li class="list-inline-item dropdown notification-list"><a
-                                    class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown"
-                                    href="#" role="button" aria-haspopup="false" aria-expanded="false"><i
-                                        class="ti-bell noti-icon"></i> <span
-                                        class="badge badge-success noti-icon-badge">23</span></a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
-                                    <!-- item-->
-                                    <div class="dropdown-item noti-title">
-                                        <h5><span class="badge badge-danger float-right">87</span>Notification</h5>
-                                    </div><!-- item--> <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
-                                        <p class="notify-details"><b>Your order is placed</b><small
-                                                class="text-muted">Dummy text of the printing and typesetting
-                                                industry.</small></p>
-                                    </a><!-- item--> <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-success"><i class="mdi mdi-message"></i></div>
-                                        <p class="notify-details"><b>New Message received</b><small
-                                                class="text-muted">You have 87 unread messages</small></p>
-                                    </a><!-- item--> <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-warning"><i class="mdi mdi-martini"></i></div>
-                                        <p class="notify-details"><b>Your item is shipped</b><small
-                                                class="text-muted">It is a long established fact that a reader
-                                                will</small></p>
-                                    </a><!-- All--> <a href="javascript:void(0);" class="dropdown-item notify-item">View
-                                        All</a>
-                                </div>
-                            </li>
-                            <li class="list-inline-item dropdown notification-list"><a
-                                    class="nav-link dropdown-toggle arrow-none waves-effect nav-user"
-                                    data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-                                    aria-expanded="false"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PGc+PGc+PHBhdGggZD0ibTI1Ni4wMjUgNDgzLjMzNCAxMDEuNDI5LTI1LjYxNGM1Ny44OTUtNDguMDc0IDk0Ljc3MS0xMjAuNTg2IDk0Ljc3MS0yMDEuNzE5IDAtMTI1LjE0NC04Ny43MTEtMjI5LjgwMS0yMDUuMDEyLTI1NS44NTItMTM3LjMxNiA0LjYzMS0yNDcuMjEzIDExNy40MDctMjQ3LjIxMyAyNTUuODUxIDAgNzEuMTEyIDI5IDEzNS40NDYgNzUuODEyIDE4MS44MzZ6IiBmaWxsPSIjY2JlMmZmIi8+PC9nPjxnPjxwYXRoIGQ9Im00NDYuOTE0IDI1NmMwIDgzLjkxNS00MC4zODEgMTU4LjM5MS0xMDIuNzY1IDIwNS4wNzlsOTIuMDMxLTIzLjI0MWM0Ni44MTUtNDYuMzkgNzUuODItMTEwLjcyNCA3NS44Mi0xODEuODM4IDAtMTQxLjM4NS0xMTQuNjE1LTI1Ni0yNTYtMjU2LTExLjAyNCAwLTIxLjg4Ni42OTgtMzIuNTQzIDIuMDUgMTI2LjAxOSAxNS45ODggMjIzLjQ1NyAxMjMuNTkgMjIzLjQ1NyAyNTMuOTV6IiBmaWxsPSIjYmVkOGZiIi8+PC9nPjxnPjxnPjxnPjxwYXRoIGQ9Im0zMTkuNjIxIDk2Ljk1MmMwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTgxLjU4MmMtMzAuMDkxIDAtNTQuNDg1IDI0LjM5NC01NC40ODUgNTQuNDg1djYwLjQ5M2gxOTIuMjA5di01OS42MzVjMC0xMy4wNzUtMTAuNTk5LTIzLjY3NC0yMy42NzQtMjMuNjc0aC0uNzk4Yy00LjQxNiAwLTcuOTk2LTMuNTc5LTcuOTk2LTcuOTk1eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zMjguNDE1IDEwNC45NDdoLS43OThjLTQuNDE2IDAtNy45OTYtMy41OC03Ljk5Ni03Ljk5NiAwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTguOTQ1djExNC45NzhoNjUuMDg2di01OS42MzVjLjAwMS0xMy4wNzMtMTAuNTk5LTIzLjY3My0yMy42NzMtMjMuNjczeiIgZmlsbD0iIzJiNGQ2NiIvPjxwYXRoIGQ9Im00MjUuMDQ1IDM3Mi4zNTVjLTYuMjU5LTYuMTgyLTE0LjAwMS0xMC45NjMtMjIuNzktMTMuNzQ1bC02OS44OTEtMjIuMTI4LTc2LjM0OC0yLjY4My03Ni4zOCAyLjY4My02OS44OTEgMjIuMTI4Yy0yMy42NDQgNy40ODYtMzkuNzEzIDI5LjQyOC0zOS43MTMgNTQuMjI5djE5LjA5NGM0NC43ODkgNDcuMzI4IDEwNy40NTEgNzcuNTY4IDE3Ny4xODMgNzkuOTIgNzguMTI4LTE3LjM1MyAxNDMuMTI5LTY5LjU3NiAxNzcuODMtMTM5LjQ5OHoiIGZpbGw9IiM0YTgwYWEiLz48cGF0aCBkPSJtNDQxLjk2OCA0MzEuOTMydi0xOS4wOTRjMC0xNy41MzYtOC4wNC0zMy42MzUtMjEuMTA1LTQ0LjIxMy0zNy4xMTEgNzUuNjI2LTExMC40MjIgMTMwLjI2OC0xOTcuMzQ2IDE0MS4zMTcgMTAuNDkyIDEuMzI5IDIxLjE3OCAyLjAzOCAzMi4wMjYgMi4wNTcgMTAuNDIzLS4wMTYgMjAuNzA4LS42MiAzMC44MjQtMS43ODIgNjEuMDMxLTcuMjEyIDExNS40ODUtMzUuODk0IDE1NS42MDEtNzguMjg1eiIgZmlsbD0iIzQwNzA5MyIvPjxwYXRoIGQ9Im0yNjEuNzk2IDUwOC4xNjhjMTUuNDg5LTMwLjc1MSA1NS44MjItMTE4LjA2NyA0NC4zMjEtMTcyLjYwOWwtNTAuMTAxLTE5LjQ5OS01MC4xNDggMTkuNWMtMTEuODU2IDU2LjIyNSAzMS4zNyAxNDcuMjc3IDQ1LjY4MSAxNzUuMjkgMy40NDItLjgyNiA2Ljg1OS0xLjcyMSAxMC4yNDctMi42ODJ6IiBmaWxsPSIjZTRmNmZmIi8+PHBhdGggZD0ibTI4OC4xOTcgNDgzLjc4OS0yMC4zMTQtNzkuOTE3aC0yMy43NjdsLTIwLjI2NCA3OS42OTkgMjUuMDU4IDI3Ljg5N2M2LjM2MS0xLjQ1NyAxMi42MzQtMy4xNDYgMTguODEtNS4wNTd6IiBmaWxsPSIjZTI4MDg2Ii8+PHBhdGggZD0ibTI0OS4zMDIgNTExLjkwNWMyLjA3NS4wNTQgNC4xNTQuMDkxIDYuMjQxLjA5NSAyLjQxNS0uMDA0IDQuODIyLS4wNDYgNy4yMjItLjExM2wxMi45MDctMTQuMjU5Yy0xMC4xNTkgMy41NjQtMjAuNjEgNi41MDYtMzEuMzA5IDguNzc5eiIgZmlsbD0iI2RkNjM2ZSIvPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxwYXRoIGQ9Im0yOTguNzc0IDMyOC4xODN2LTQ1LjA2NmgtODUuNTh2NDUuMDY2YzAgMjMuNjMyIDQyLjc5IDQ5LjQ0NiA0Mi43OSA0OS40NDZzNDIuNzktMjUuODE0IDQyLjc5LTQ5LjQ0NnoiIGZpbGw9IiNmZmRkY2UiLz48L2c+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PHBhdGggZD0ibTM1Mi4wODkgMTgwLjMxOGgtMTYuMzU5Yy05LjA5OCAwLTE2LjQ3My03LjM3NS0xNi40NzMtMTYuNDczdi05LjAxNWMwLTExLjg1MS0xMS41OTUtMjAuMjMtMjIuODQ3LTE2LjUxMS0yNi4yNDMgOC42NzQtNTQuNTc5IDguNjc2LTgwLjgyMy4wMDZsLS4wMzEtLjAxYy0xMS4yNTItMy43MTctMjIuODQ1IDQuNjYyLTIyLjg0NSAxNi41MTJ2OS4wMTljMCA5LjA5OC03LjM3NSAxNi40NzMtMTYuNDczIDE2LjQ3M2gtMTYuMzU4djI2LjkzOGMwIDYuODgzIDUuNTggMTIuNDY0IDEyLjQ2NCAxMi40NjQgMi4xNzIgMCAzLjkzOSAxLjcwMSA0LjA3NiAzLjg2OSAyLjYyOCA0MS42NjggMzcuMjM1IDc0LjY1NCA3OS41NjUgNzQuNjU0IDQyLjMzIDAgNzYuOTM3LTMyLjk4NiA3OS41NjUtNzQuNjU0LjEzNy0yLjE2NyAxLjkwNC0zLjg2OSA0LjA3Ni0zLjg2OSA2Ljg4MyAwIDEyLjQ2NC01LjU4IDEyLjQ2NC0xMi40NjR2LTI2LjkzOXoiIGZpbGw9IiNmZmRkY2UiLz48cGF0aCBkPSJtMzM1LjczIDE4MC4zMThjLTkuMDk4IDAtMTYuNDczLTcuMzc1LTE2LjQ3My0xNi40NzN2LTkuMDE1YzAtMTEuODUxLTExLjU5NS0yMC4yMy0yMi44NDctMTYuNTExLTMuMTA4IDEuMDI3LTYuMjQ3IDEuOTIzLTkuNDA3IDIuNzA3djg4Ljk3MmMtLjQzOCAyOC45NDgtMTYuMyA1NC4xNDItMzkuNzI1IDY3Ljc1OCAyLjg2MS4zMTEgNS43NjMuNDg2IDguNzA2LjQ4NiA0Mi4zMyAwIDc2LjkzNy0zMi45ODYgNzkuNTY1LTc0LjY1NC4xMzctMi4xNjcgMS45MDQtMy44NjkgNC4wNzYtMy44NjkgNi44ODMgMCAxMi40NjQtNS41OCAxMi40NjQtMTIuNDY0di0yNi45MzhoLTE2LjM1OXoiIGZpbGw9IiNmZmNiYmUiLz48L2c+PGcgZmlsbD0iI2Y0ZmJmZiI+PHBhdGggZD0ibTIxMy4xOTQgMzE2LjA2LTMzLjU1OCAyNy4yNjcgMzUuMTkyIDQzLjUxM2M0LjI4MSA0LjE2OCAxMS4wMTkgNC40MjQgMTUuNjA1LjU5NGwyNi40NjUtMjIuMTA3eiIvPjxwYXRoIGQ9Im0yOTguNzkgMzE2LjA2LTQxLjg5MiA0OS4yNjcgMjQuODc0IDIxLjI2OGM0LjU1NyAzLjg5NiAxMS4zMjcgMy43IDE1LjY1MS0uNDUzbDM0Ljk0LTQyLjgxNXoiLz48L2c+PC9nPjxwYXRoIGQ9Im0yMTMuMTk0IDMxNi4wNi00OS4yNTYgMjQuMTk5Yy0zLjc1IDEuODQyLTUuMjU2IDYuNDA0LTMuMzQxIDEwLjExN2w5LjY1IDE4LjcxYzIuNTAxIDQuODQ4IDEuNTc4IDEwLjc1Ni0yLjI4MiAxNC42MS0xLjk4NyAxLjk4My00LjEzOSA0LjEzMS02LjAwNCA1Ljk5My0zLjMzOCAzLjMzMi00LjUzNyA4LjI1NS0zLjA2NyAxMi43MzcgMTEuNjUxIDM1LjUxNyA2Ny43MjUgODkuODI4IDg4Ljk0NiAxMDkuNDc4IDEuNDI3LjAzOCAyLjg1Ny4wNjQgNC4yOS4wOC0xNS4zODktMjkuOTMzLTY5LjkyMi0xNDMuNjU1LTM4LjkzNi0xOTUuOTI0eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zNDQuMDE5IDM4My42OTVjLTMuODYxLTMuODU0LTQuNzgzLTkuNzYyLTIuMjgyLTE0LjYxbDkuNjUtMTguNzFjMS45MTUtMy43MTMuNDA5LTguMjc1LTMuMzQxLTEwLjExN2wtNDkuMjU2LTI0LjE5OGMzMC45NzggNTIuMjU1LTIzLjUxNyAxNjUuOTI5LTM4LjkyMyAxOTUuOSAxLjQ0OC0uMDI1IDIuODkzLS4wNjEgNC4zMzUtLjEwOSAyMS4yNjUtMTkuNjk1IDc3LjI0OC03My45NCA4OC44ODgtMTA5LjQyNCAxLjQ3LTQuNDgyLjI3MS05LjQwNS0zLjA2Ny0xMi43MzctMS44NjUtMS44NjMtNC4wMTctNC4wMTItNi4wMDQtNS45OTV6IiBmaWxsPSIjMzY1ZTdkIi8+PHBhdGggZD0ibTI1Ni44OTggMzY1LjMyNy0yNi4wNiAyMS43NjQgMTMuMjc4IDE2Ljc4MWgyMy43NjdsMTMuMjc5LTE3Ljc3MXoiIGZpbGw9IiNkZDYzNmUiLz48L2c+PC9nPjwvZz48L2c+PC9zdmc+" />
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-                                    <!-- item-->
-                                    <div class="dropdown-item noti-title">
-                                        <h5>Welcome</h5>
-                                    </div><a class="dropdown-item" href="#"><i
-                                            class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a> <a
-                                        class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5 text-muted"></i>
-                                        My Wallet</a> <a class="dropdown-item" href="#"><span
-                                            class="badge badge-success float-right">5</span><i
-                                            class="mdi mdi-settings m-r-5 text-muted"></i> Settings</a> <a
-                                        class="dropdown-item" href="#"><i
-                                            class="mdi mdi-lock-open-outline m-r-5 text-muted"></i> Lock screen</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i
-                                            class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="list-inline menu-left mb-0">
-                            <li class="float-left"><button
-                                    class="button-menu-mobile open-left waves-light waves-effect"><i
-                                        class="mdi mdi-menu"></i></button></li>
-                            <li class="hide-phone app-search">
-                                <form role="search" class=""><input type="text" placeholder="Search..."
-                                        class="form-control"> <a href=""><i class="fa fa-search"></i></a></form>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </nav>
-                </div><!-- Top Bar End -->
-                <div class="page-content-wrapper">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="page-title-box">
-                                    <div class="btn-group float-right">
-                                        <ol class="breadcrumb hide-phone p-0 m-0">
-                                            <li class="breadcrumb-item"><a href="#">Annex</a></li>
-                                            <li class="breadcrumb-item active">Dashboard</li>
-                                        </ol>
-                                    </div>
-                                    <h4 class="page-title">Dashboard</h4>
-                                </div>
-                            </div>
-                        </div><!-- end page title end breadcrumb -->
-                        <div class="row">
-                            <!-- Column -->
-                            <div class="col-md-6 col-lg-6 col-xl-3">
-                                <div class="card m-b-30">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-row">
-                                            <div class="col-3 align-self-center">
-                                                <div class="round"><i class="mdi mdi-webcam"></i></div>
-                                            </div>
-                                            <div class="col-6 align-self-center text-center">
-                                                <div class="m-l-10">
-                                                    <h5 class="mt-0 round-inner">$18090</h5>
-                                                    <p class="mb-0 text-muted">Visits Today</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-3 align-self-end align-self-center">
-                                                <h6 class="m-0 float-right text-center text-danger"><i
-                                                        class="mdi mdi-arrow-down"></i> <span>5.26%</span></h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- Column -->
-                            <!-- Column -->
-                            <div class="col-md-6 col-lg-6 col-xl-3">
-                                <div class="card m-b-30">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-row">
-                                            <div class="col-3 align-self-center">
-                                                <div class="round"><i class="mdi mdi-account-multiple-plus"></i></div>
-                                            </div>
-                                            <div class="col-6 text-center align-self-center">
-                                                <div class="m-l-10">
-                                                    <h5 class="mt-0 round-inner">562</h5>
-                                                    <p class="mb-0 text-muted">New Users</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-3 align-self-end align-self-center">
-                                                <h6 class="m-0 float-right text-center text-success"><i
-                                                        class="mdi mdi-arrow-up"></i> <span>8.68%</span></h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- Column -->
-                            <!-- Column -->
-                            <div class="col-md-6 col-lg-6 col-xl-3">
-                                <div class="card m-b-30">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-row">
-                                            <div class="col-3 align-self-center">
-                                                <div class="round"><i class="mdi mdi-basket"></i></div>
-                                            </div>
-                                            <div class="col-6 align-self-center text-center">
-                                                <div class="m-l-10">
-                                                    <h5 class="mt-0 round-inner">7514</h5>
-                                                    <p class="mb-0 text-muted">New Orders</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-3 align-self-end align-self-center">
-                                                <h6 class="m-0 float-right text-center text-danger"><i
-                                                        class="mdi mdi-arrow-down"></i> <span>2.35%</span></h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- Column -->
-                            <!-- Column -->
-                            <div class="col-md-6 col-lg-6 col-xl-3">
-                                <div class="card m-b-30">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-row">
-                                            <div class="col-3 align-self-center">
-                                                <div class="round"><i class="mdi mdi-rocket"></i></div>
-                                            </div>
-                                            <div class="col-6 align-self-center text-center">
-                                                <div class="m-l-10">
-                                                    <h5 class="mt-0 round-inner">$32874</h5>
-                                                    <p class="mb-0 text-muted">Total Sales</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-3 align-self-end align-self-center">
-                                                <h6 class="m-0 float-right text-center text-success"><i
-                                                        class="mdi mdi-arrow-up"></i> <span>2.35%</span></h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- Column -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-advanced-ui">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#advanced-ui-subOptions" aria-expanded="false"
+                            aria-controls="advanced-ui-subOptions">
+                            Advanced UI
+                        </button>
+                    </h2>
+                    <div id="advanced-ui-subOptions" class="accordion-collapse collapse"
+                        aria-labelledby="flush-advanced-ui" data-bs-parent="#side-bar-content">
+                        <div class="accordion-body">
+                            <button class="sub-options d-block py-2">Highlight</button>
+                            <button class="sub-options d-block py-2">Rating</button>
+                            <button class="sub-options d-block py-2">Alertify</button>
+                            <button class="sub-options d-block py-2">Range Slider</button>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12 col-lg-12 col-xl-8">
-                                <div class="card m-b-30">
-                                    <div class="card-body">
-                                        <h5 class="header-title pb-3 mt-0">Overview</h5>
-                                        <div id="multi-line-chart" style="height:400px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-12 col-xl-4">
-                                <div class="card m-b-30">
-                                    <div class="card-body"><a href="" class="btn btn-primary btn-sm float-right">More
-                                            Info</a>
-                                        <h5 class="header-title mt-0 pb-3">Revenue By Country</h5>
-                                        <ul class="list-unstyled list-inline text-center">
-                                            <li class="list-inline-item">
-                                                <p><i class="mdi mdi-checkbox-blank-circle text-primary mr-2"></i>Canada
-                                                </p>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <p><i class="mdi mdi-checkbox-blank-circle text-info mr-2"></i>USA</p>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <p><i
-                                                        class="mdi mdi-checkbox-blank-circle text-greylight mr-2"></i>London
-                                                </p>
-                                            </li>
-                                        </ul>
-                                        <div id="morris-donut-chart" style="height:345px;"></div>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="menu-item px-3 py-3">
+                    <i class="dashboard-icon">
+                    </i><span>Calendar</span>
+                </div>
+                <p class="side-menu-start px-3 pb-1">Components</p>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-ui-elements">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#ui-elements-options" aria-expanded="false"
+                            aria-controls="ui-elements-options">
+                            UI Elements
+                        </button>
+                    </h2>
+                    <div id="ui-elements-options" class="accordion-collapse collapse"
+                        aria-labelledby="flush-ui-elements" data-bs-parent="#side-bar-content">
+                        <div class="accordion-body">
+                            <button class="sub-options d-block py-2">Buttons</button>
+                            <button class="sub-options d-block py-2">Tabs & Accordians</button>
+                            <button class="sub-options d-block py-2">Modals</button>
+                            <button class="sub-options d-block py-2">Images</button>
+                            <button class="sub-options d-block py-2">Alerts</button>
+                            <button class="sub-options d-block py-2">Progress bars</button>
+                            <button class="sub-options d-block py-2">Dropdowns</button>
+                            <button class="sub-options d-block py-2">Lightbox</button>
+                            <button class="sub-options d-block py-2">Navs</button>
+                            <button class="sub-options d-block py-2">Pagination</button>
+                            <button class="sub-options d-block py-2">Popover & Tooltips</button>
+                            <button class="sub-options d-block py-2">Badge</button>
+                            <button class="sub-options d-block py-2">Carousel</button>
+                            <button class="sub-options d-block py-2">Video</button>
+                            <button class="sub-options d-block py-2">Typograpgy</button>
+                            <button class="sub-options d-block py-2">Sweet-Alert</button>
+                            <button class="sub-options d-block py-2">Grid</button>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12 col-lg-6 col-xl-4">
-                                <div class="card bg-info m-b-30">
-                                    <div class="card-body">
-                                        <div id="verticalCarousel" class="carousel slide vertical" data-ride="carousel">
-                                            <!-- Carousel items -->
-                                            <div class="carousel-inner">
-                                                <div class="carousel-item active">
-                                                    <div class="row d-flex justify-content-center text-center">
-                                                        <div class="col-sm-12 carousel-icon"><i
-                                                                class="fa fa-twitter text-white pt-3"></i></div>
-                                                        <div class="col-6 text-white">
-                                                            <h2>54k</h2>
-                                                            <p class="">Followers</p>
-                                                        </div>
-                                                        <div class="col-6 text-white">
-                                                            <h2>44k</h2>
-                                                            <p class="">Tweets</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <div class="row d-flex justify-content-center">
-                                                        <div class="col-sm-12 carousel-icon text-center"><i
-                                                                class="fa fa-twitter text-white pt-3"></i></div>
-                                                        <div class="col-sm-10 mx-auto text-white text-center">
-                                                            <p>Lorem Ipsum is simply dummy text of the <span
-                                                                    class="warning">#TWITTER</span> and typesetting
-                                                                industry. A description list is perfect for defining
-                                                                terms.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card bg-primary">
-                                    <div class="card-body">
-                                        <div id="verticalCarousel2" class="carousel slide" data-ride="carousel">
-                                            <!-- Carousel items -->
-                                            <div class="carousel-inner">
-                                                <div class="carousel-item active">
-                                                    <div class="row d-flex justify-content-center">
-                                                        <div class="col-lg-12 carousel-icon text-center"><i
-                                                                class="fa fa-facebook text-white pt-3"></i></div>
-                                                        <div class="col-sm-10 mx-auto text-white text-center">
-                                                            <p>Lorem Ipsum is simply dummy text of the <mark>FACEBOOK
-                                                                </mark>and typesetting industry.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <div
-                                                        class="row d-flex justify-content-center text-white text-center">
-                                                        <div class="col-sm-12 carousel-icon"><i
-                                                                class="fa fa-facebook text-white pt-3"></i></div>
-                                                        <div class="col-6">
-                                                            <h2>54k</h2>
-                                                            <p class="">Followers</p>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <h2>44k</h2>
-                                                            <p class="">Posts</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-6 col-xl-4">
-                                <div class="card bg-white m-b-30">
-                                    <div class="card-body new-user">
-                                        <div class="row text-center">
-                                            <div class="col-6">
-                                                <h5><i class="mdi mdi-database mr-2 text-primary font-20"></i> 5 TB</h5>
-                                                <h6 class="text-lightdark">Bandwidth usage</h6><span
-                                                    class="text-muted"><small>June 2018</small></span>
-                                            </div>
-                                            <div class="col-6">
-                                                <h5><i class="mdi mdi-download mr-2 text-success font-20"></i>5412</h5>
-                                                <h6 class="text-lightdark">Download count</h6><span
-                                                    class="text-muted"><small>June 2018</small></span>
-                                            </div>
-                                        </div>
-                                        <div id="morris-area-chart" style="height: 310px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-12 col-xl-4">
-                                <div class="card bg-white m-b-30"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PGc+PGc+PHBhdGggZD0ibTI1Ni4wMjUgNDgzLjMzNCAxMDEuNDI5LTI1LjYxNGM1Ny44OTUtNDguMDc0IDk0Ljc3MS0xMjAuNTg2IDk0Ljc3MS0yMDEuNzE5IDAtMTI1LjE0NC04Ny43MTEtMjI5LjgwMS0yMDUuMDEyLTI1NS44NTItMTM3LjMxNiA0LjYzMS0yNDcuMjEzIDExNy40MDctMjQ3LjIxMyAyNTUuODUxIDAgNzEuMTEyIDI5IDEzNS40NDYgNzUuODEyIDE4MS44MzZ6IiBmaWxsPSIjY2JlMmZmIi8+PC9nPjxnPjxwYXRoIGQ9Im00NDYuOTE0IDI1NmMwIDgzLjkxNS00MC4zODEgMTU4LjM5MS0xMDIuNzY1IDIwNS4wNzlsOTIuMDMxLTIzLjI0MWM0Ni44MTUtNDYuMzkgNzUuODItMTEwLjcyNCA3NS44Mi0xODEuODM4IDAtMTQxLjM4NS0xMTQuNjE1LTI1Ni0yNTYtMjU2LTExLjAyNCAwLTIxLjg4Ni42OTgtMzIuNTQzIDIuMDUgMTI2LjAxOSAxNS45ODggMjIzLjQ1NyAxMjMuNTkgMjIzLjQ1NyAyNTMuOTV6IiBmaWxsPSIjYmVkOGZiIi8+PC9nPjxnPjxnPjxnPjxwYXRoIGQ9Im0zMTkuNjIxIDk2Ljk1MmMwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTgxLjU4MmMtMzAuMDkxIDAtNTQuNDg1IDI0LjM5NC01NC40ODUgNTQuNDg1djYwLjQ5M2gxOTIuMjA5di01OS42MzVjMC0xMy4wNzUtMTAuNTk5LTIzLjY3NC0yMy42NzQtMjMuNjc0aC0uNzk4Yy00LjQxNiAwLTcuOTk2LTMuNTc5LTcuOTk2LTcuOTk1eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zMjguNDE1IDEwNC45NDdoLS43OThjLTQuNDE2IDAtNy45OTYtMy41OC03Ljk5Ni03Ljk5NiAwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTguOTQ1djExNC45NzhoNjUuMDg2di01OS42MzVjLjAwMS0xMy4wNzMtMTAuNTk5LTIzLjY3My0yMy42NzMtMjMuNjczeiIgZmlsbD0iIzJiNGQ2NiIvPjxwYXRoIGQ9Im00MjUuMDQ1IDM3Mi4zNTVjLTYuMjU5LTYuMTgyLTE0LjAwMS0xMC45NjMtMjIuNzktMTMuNzQ1bC02OS44OTEtMjIuMTI4LTc2LjM0OC0yLjY4My03Ni4zOCAyLjY4My02OS44OTEgMjIuMTI4Yy0yMy42NDQgNy40ODYtMzkuNzEzIDI5LjQyOC0zOS43MTMgNTQuMjI5djE5LjA5NGM0NC43ODkgNDcuMzI4IDEwNy40NTEgNzcuNTY4IDE3Ny4xODMgNzkuOTIgNzguMTI4LTE3LjM1MyAxNDMuMTI5LTY5LjU3NiAxNzcuODMtMTM5LjQ5OHoiIGZpbGw9IiM0YTgwYWEiLz48cGF0aCBkPSJtNDQxLjk2OCA0MzEuOTMydi0xOS4wOTRjMC0xNy41MzYtOC4wNC0zMy42MzUtMjEuMTA1LTQ0LjIxMy0zNy4xMTEgNzUuNjI2LTExMC40MjIgMTMwLjI2OC0xOTcuMzQ2IDE0MS4zMTcgMTAuNDkyIDEuMzI5IDIxLjE3OCAyLjAzOCAzMi4wMjYgMi4wNTcgMTAuNDIzLS4wMTYgMjAuNzA4LS42MiAzMC44MjQtMS43ODIgNjEuMDMxLTcuMjEyIDExNS40ODUtMzUuODk0IDE1NS42MDEtNzguMjg1eiIgZmlsbD0iIzQwNzA5MyIvPjxwYXRoIGQ9Im0yNjEuNzk2IDUwOC4xNjhjMTUuNDg5LTMwLjc1MSA1NS44MjItMTE4LjA2NyA0NC4zMjEtMTcyLjYwOWwtNTAuMTAxLTE5LjQ5OS01MC4xNDggMTkuNWMtMTEuODU2IDU2LjIyNSAzMS4zNyAxNDcuMjc3IDQ1LjY4MSAxNzUuMjkgMy40NDItLjgyNiA2Ljg1OS0xLjcyMSAxMC4yNDctMi42ODJ6IiBmaWxsPSIjZTRmNmZmIi8+PHBhdGggZD0ibTI4OC4xOTcgNDgzLjc4OS0yMC4zMTQtNzkuOTE3aC0yMy43NjdsLTIwLjI2NCA3OS42OTkgMjUuMDU4IDI3Ljg5N2M2LjM2MS0xLjQ1NyAxMi42MzQtMy4xNDYgMTguODEtNS4wNTd6IiBmaWxsPSIjZTI4MDg2Ii8+PHBhdGggZD0ibTI0OS4zMDIgNTExLjkwNWMyLjA3NS4wNTQgNC4xNTQuMDkxIDYuMjQxLjA5NSAyLjQxNS0uMDA0IDQuODIyLS4wNDYgNy4yMjItLjExM2wxMi45MDctMTQuMjU5Yy0xMC4xNTkgMy41NjQtMjAuNjEgNi41MDYtMzEuMzA5IDguNzc5eiIgZmlsbD0iI2RkNjM2ZSIvPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxwYXRoIGQ9Im0yOTguNzc0IDMyOC4xODN2LTQ1LjA2NmgtODUuNTh2NDUuMDY2YzAgMjMuNjMyIDQyLjc5IDQ5LjQ0NiA0Mi43OSA0OS40NDZzNDIuNzktMjUuODE0IDQyLjc5LTQ5LjQ0NnoiIGZpbGw9IiNmZmRkY2UiLz48L2c+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PHBhdGggZD0ibTM1Mi4wODkgMTgwLjMxOGgtMTYuMzU5Yy05LjA5OCAwLTE2LjQ3My03LjM3NS0xNi40NzMtMTYuNDczdi05LjAxNWMwLTExLjg1MS0xMS41OTUtMjAuMjMtMjIuODQ3LTE2LjUxMS0yNi4yNDMgOC42NzQtNTQuNTc5IDguNjc2LTgwLjgyMy4wMDZsLS4wMzEtLjAxYy0xMS4yNTItMy43MTctMjIuODQ1IDQuNjYyLTIyLjg0NSAxNi41MTJ2OS4wMTljMCA5LjA5OC03LjM3NSAxNi40NzMtMTYuNDczIDE2LjQ3M2gtMTYuMzU4djI2LjkzOGMwIDYuODgzIDUuNTggMTIuNDY0IDEyLjQ2NCAxMi40NjQgMi4xNzIgMCAzLjkzOSAxLjcwMSA0LjA3NiAzLjg2OSAyLjYyOCA0MS42NjggMzcuMjM1IDc0LjY1NCA3OS41NjUgNzQuNjU0IDQyLjMzIDAgNzYuOTM3LTMyLjk4NiA3OS41NjUtNzQuNjU0LjEzNy0yLjE2NyAxLjkwNC0zLjg2OSA0LjA3Ni0zLjg2OSA2Ljg4MyAwIDEyLjQ2NC01LjU4IDEyLjQ2NC0xMi40NjR2LTI2LjkzOXoiIGZpbGw9IiNmZmRkY2UiLz48cGF0aCBkPSJtMzM1LjczIDE4MC4zMThjLTkuMDk4IDAtMTYuNDczLTcuMzc1LTE2LjQ3My0xNi40NzN2LTkuMDE1YzAtMTEuODUxLTExLjU5NS0yMC4yMy0yMi44NDctMTYuNTExLTMuMTA4IDEuMDI3LTYuMjQ3IDEuOTIzLTkuNDA3IDIuNzA3djg4Ljk3MmMtLjQzOCAyOC45NDgtMTYuMyA1NC4xNDItMzkuNzI1IDY3Ljc1OCAyLjg2MS4zMTEgNS43NjMuNDg2IDguNzA2LjQ4NiA0Mi4zMyAwIDc2LjkzNy0zMi45ODYgNzkuNTY1LTc0LjY1NC4xMzctMi4xNjcgMS45MDQtMy44NjkgNC4wNzYtMy44NjkgNi44ODMgMCAxMi40NjQtNS41OCAxMi40NjQtMTIuNDY0di0yNi45MzhoLTE2LjM1OXoiIGZpbGw9IiNmZmNiYmUiLz48L2c+PGcgZmlsbD0iI2Y0ZmJmZiI+PHBhdGggZD0ibTIxMy4xOTQgMzE2LjA2LTMzLjU1OCAyNy4yNjcgMzUuMTkyIDQzLjUxM2M0LjI4MSA0LjE2OCAxMS4wMTkgNC40MjQgMTUuNjA1LjU5NGwyNi40NjUtMjIuMTA3eiIvPjxwYXRoIGQ9Im0yOTguNzkgMzE2LjA2LTQxLjg5MiA0OS4yNjcgMjQuODc0IDIxLjI2OGM0LjU1NyAzLjg5NiAxMS4zMjcgMy43IDE1LjY1MS0uNDUzbDM0Ljk0LTQyLjgxNXoiLz48L2c+PC9nPjxwYXRoIGQ9Im0yMTMuMTk0IDMxNi4wNi00OS4yNTYgMjQuMTk5Yy0zLjc1IDEuODQyLTUuMjU2IDYuNDA0LTMuMzQxIDEwLjExN2w5LjY1IDE4LjcxYzIuNTAxIDQuODQ4IDEuNTc4IDEwLjc1Ni0yLjI4MiAxNC42MS0xLjk4NyAxLjk4My00LjEzOSA0LjEzMS02LjAwNCA1Ljk5My0zLjMzOCAzLjMzMi00LjUzNyA4LjI1NS0zLjA2NyAxMi43MzcgMTEuNjUxIDM1LjUxNyA2Ny43MjUgODkuODI4IDg4Ljk0NiAxMDkuNDc4IDEuNDI3LjAzOCAyLjg1Ny4wNjQgNC4yOS4wOC0xNS4zODktMjkuOTMzLTY5LjkyMi0xNDMuNjU1LTM4LjkzNi0xOTUuOTI0eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zNDQuMDE5IDM4My42OTVjLTMuODYxLTMuODU0LTQuNzgzLTkuNzYyLTIuMjgyLTE0LjYxbDkuNjUtMTguNzFjMS45MTUtMy43MTMuNDA5LTguMjc1LTMuMzQxLTEwLjExN2wtNDkuMjU2LTI0LjE5OGMzMC45NzggNTIuMjU1LTIzLjUxNyAxNjUuOTI5LTM4LjkyMyAxOTUuOSAxLjQ0OC0uMDI1IDIuODkzLS4wNjEgNC4zMzUtLjEwOSAyMS4yNjUtMTkuNjk1IDc3LjI0OC03My45NCA4OC44ODgtMTA5LjQyNCAxLjQ3LTQuNDgyLjI3MS05LjQwNS0zLjA2Ny0xMi43MzctMS44NjUtMS44NjMtNC4wMTctNC4wMTItNi4wMDQtNS45OTV6IiBmaWxsPSIjMzY1ZTdkIi8+PHBhdGggZD0ibTI1Ni44OTggMzY1LjMyNy0yNi4wNiAyMS43NjQgMTMuMjc4IDE2Ljc4MWgyMy43NjdsMTMuMjc5LTE3Ljc3MXoiIGZpbGw9IiNkZDYzNmUiLz48L2c+PC9nPjwvZz48L2c+PC9zdmc+" />
-                                    <div class="card-body bg-primary">
-                                        <div class="row">
-                                            <div class="col-6 align-self-center">
-                                                <div class="row">
-                                                    <div class="col-lg-6 col-sm-6 text-center"><canvas
-                                                            id="partly-cloudy-day" width="70" height="70"></canvas>
-                                                        <h6 class="text-white">SUNDAY <span>25<sup>th</sup></span></h6>
-                                                    </div>
-                                                    <div class="col-lg-6 col-sm-6 text-center align-self-center">
-                                                        <h5 class="mt-0 text-white"><b>32°</b></h5>
-                                                        <p class="text-white font-12">Partly cloudy</p>
-                                                        <p class="text-white font-12">15km/h - 37%</p>
-                                                    </div>
-                                                </div><!-- End row -->
-                                            </div>
-                                            <div class="col-6 align-self-center">
-                                                <div class="row">
-                                                    <div class="col-6 text-center">
-                                                        <h6 class="text-white mt-0 font-14">MON</h6><canvas id="rain"
-                                                            width="28" height="35"></canvas>
-                                                        <h6 class="text-white font-14">38°<i class="wi-degrees"></i>
-                                                        </h6>
-                                                    </div>
-                                                    <div class="col-6 text-center">
-                                                        <h6 class="text-white mt-0 font-14">TUE</h6><canvas id="wind"
-                                                            width="35" height="35"></canvas>
-                                                        <h6 class="text-white font-14">32°<i class="wi-degrees"></i>
-                                                        </h6>
-                                                    </div>
-                                                </div><!-- end row -->
-                                            </div>
-                                        </div><!-- end row -->
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="menu-item px-3 py-3">
+                    <i class="dashboard-icon">
+                    </i><span>Forms</span>
+                    <span class="badge rounded-pill bg-primary float-end">8</span>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-charts">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#chart-options" aria-expanded="false" aria-controls="chart-options">
+                            Charts
+                        </button>
+                    </h2>
+                    <div id="chart-options" class="accordion-collapse collapse" aria-labelledby="flush-charts"
+                        data-bs-parent="#side-bar-content">
+                        <div class="accordion-body">
+                            <button class="sub-options d-block py-2">Morris Chart</button>
+                            <button class="sub-options d-block py-2">Chartist Chart</button>
+                            <button class="sub-options d-block py-2">Chartjs Chart</button>
+                            <button class="sub-options d-block py-2">Flot Chart</button>
+                            <button class="sub-options d-block py-2">C3 Chart</button>
+                            <button class="sub-options d-block py-2">Jquery Knob Chart</button>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12 col-lg-12 col-xl-8 align-self-center">
-                                <div class="card bg-white m-b-30">
-                                    <div class="card-body new-user">
-                                        <h5 class="header-title mb-4 mt-0">Members Profiles</h5>
-                                        <div class="table-responsive">
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="border-top-0" style="width:60px;">Member</th>
-                                                        <th class="border-top-0">Name</th>
-                                                        <th class="border-top-0">Country</th>
-                                                        <th class="border-top-0">Earnings</th>
-                                                        <th class="border-top-0">Sales</th>
-                                                        <th class="border-top-0">Reviews</th>
-                                                        <th class="border-top-0">Progress</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><img width="40" src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PGc+PGc+PHBhdGggZD0ibTI1Ni4wMjUgNDgzLjMzNCAxMDEuNDI5LTI1LjYxNGM1Ny44OTUtNDguMDc0IDk0Ljc3MS0xMjAuNTg2IDk0Ljc3MS0yMDEuNzE5IDAtMTI1LjE0NC04Ny43MTEtMjI5LjgwMS0yMDUuMDEyLTI1NS44NTItMTM3LjMxNiA0LjYzMS0yNDcuMjEzIDExNy40MDctMjQ3LjIxMyAyNTUuODUxIDAgNzEuMTEyIDI5IDEzNS40NDYgNzUuODEyIDE4MS44MzZ6IiBmaWxsPSIjY2JlMmZmIi8+PC9nPjxnPjxwYXRoIGQ9Im00NDYuOTE0IDI1NmMwIDgzLjkxNS00MC4zODEgMTU4LjM5MS0xMDIuNzY1IDIwNS4wNzlsOTIuMDMxLTIzLjI0MWM0Ni44MTUtNDYuMzkgNzUuODItMTEwLjcyNCA3NS44Mi0xODEuODM4IDAtMTQxLjM4NS0xMTQuNjE1LTI1Ni0yNTYtMjU2LTExLjAyNCAwLTIxLjg4Ni42OTgtMzIuNTQzIDIuMDUgMTI2LjAxOSAxNS45ODggMjIzLjQ1NyAxMjMuNTkgMjIzLjQ1NyAyNTMuOTV6IiBmaWxsPSIjYmVkOGZiIi8+PC9nPjxnPjxnPjxnPjxwYXRoIGQ9Im0zMTkuNjIxIDk2Ljk1MmMwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTgxLjU4MmMtMzAuMDkxIDAtNTQuNDg1IDI0LjM5NC01NC40ODUgNTQuNDg1djYwLjQ5M2gxOTIuMjA5di01OS42MzVjMC0xMy4wNzUtMTAuNTk5LTIzLjY3NC0yMy42NzQtMjMuNjc0aC0uNzk4Yy00LjQxNiAwLTcuOTk2LTMuNTc5LTcuOTk2LTcuOTk1eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zMjguNDE1IDEwNC45NDdoLS43OThjLTQuNDE2IDAtNy45OTYtMy41OC03Ljk5Ni03Ljk5NiAwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTguOTQ1djExNC45NzhoNjUuMDg2di01OS42MzVjLjAwMS0xMy4wNzMtMTAuNTk5LTIzLjY3My0yMy42NzMtMjMuNjczeiIgZmlsbD0iIzJiNGQ2NiIvPjxwYXRoIGQ9Im00MjUuMDQ1IDM3Mi4zNTVjLTYuMjU5LTYuMTgyLTE0LjAwMS0xMC45NjMtMjIuNzktMTMuNzQ1bC02OS44OTEtMjIuMTI4LTc2LjM0OC0yLjY4My03Ni4zOCAyLjY4My02OS44OTEgMjIuMTI4Yy0yMy42NDQgNy40ODYtMzkuNzEzIDI5LjQyOC0zOS43MTMgNTQuMjI5djE5LjA5NGM0NC43ODkgNDcuMzI4IDEwNy40NTEgNzcuNTY4IDE3Ny4xODMgNzkuOTIgNzguMTI4LTE3LjM1MyAxNDMuMTI5LTY5LjU3NiAxNzcuODMtMTM5LjQ5OHoiIGZpbGw9IiM0YTgwYWEiLz48cGF0aCBkPSJtNDQxLjk2OCA0MzEuOTMydi0xOS4wOTRjMC0xNy41MzYtOC4wNC0zMy42MzUtMjEuMTA1LTQ0LjIxMy0zNy4xMTEgNzUuNjI2LTExMC40MjIgMTMwLjI2OC0xOTcuMzQ2IDE0MS4zMTcgMTAuNDkyIDEuMzI5IDIxLjE3OCAyLjAzOCAzMi4wMjYgMi4wNTcgMTAuNDIzLS4wMTYgMjAuNzA4LS42MiAzMC44MjQtMS43ODIgNjEuMDMxLTcuMjEyIDExNS40ODUtMzUuODk0IDE1NS42MDEtNzguMjg1eiIgZmlsbD0iIzQwNzA5MyIvPjxwYXRoIGQ9Im0yNjEuNzk2IDUwOC4xNjhjMTUuNDg5LTMwLjc1MSA1NS44MjItMTE4LjA2NyA0NC4zMjEtMTcyLjYwOWwtNTAuMTAxLTE5LjQ5OS01MC4xNDggMTkuNWMtMTEuODU2IDU2LjIyNSAzMS4zNyAxNDcuMjc3IDQ1LjY4MSAxNzUuMjkgMy40NDItLjgyNiA2Ljg1OS0xLjcyMSAxMC4yNDctMi42ODJ6IiBmaWxsPSIjZTRmNmZmIi8+PHBhdGggZD0ibTI4OC4xOTcgNDgzLjc4OS0yMC4zMTQtNzkuOTE3aC0yMy43NjdsLTIwLjI2NCA3OS42OTkgMjUuMDU4IDI3Ljg5N2M2LjM2MS0xLjQ1NyAxMi42MzQtMy4xNDYgMTguODEtNS4wNTd6IiBmaWxsPSIjZTI4MDg2Ii8+PHBhdGggZD0ibTI0OS4zMDIgNTExLjkwNWMyLjA3NS4wNTQgNC4xNTQuMDkxIDYuMjQxLjA5NSAyLjQxNS0uMDA0IDQuODIyLS4wNDYgNy4yMjItLjExM2wxMi45MDctMTQuMjU5Yy0xMC4xNTkgMy41NjQtMjAuNjEgNi41MDYtMzEuMzA5IDguNzc5eiIgZmlsbD0iI2RkNjM2ZSIvPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxwYXRoIGQ9Im0yOTguNzc0IDMyOC4xODN2LTQ1LjA2NmgtODUuNTh2NDUuMDY2YzAgMjMuNjMyIDQyLjc5IDQ5LjQ0NiA0Mi43OSA0OS40NDZzNDIuNzktMjUuODE0IDQyLjc5LTQ5LjQ0NnoiIGZpbGw9IiNmZmRkY2UiLz48L2c+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PHBhdGggZD0ibTM1Mi4wODkgMTgwLjMxOGgtMTYuMzU5Yy05LjA5OCAwLTE2LjQ3My03LjM3NS0xNi40NzMtMTYuNDczdi05LjAxNWMwLTExLjg1MS0xMS41OTUtMjAuMjMtMjIuODQ3LTE2LjUxMS0yNi4yNDMgOC42NzQtNTQuNTc5IDguNjc2LTgwLjgyMy4wMDZsLS4wMzEtLjAxYy0xMS4yNTItMy43MTctMjIuODQ1IDQuNjYyLTIyLjg0NSAxNi41MTJ2OS4wMTljMCA5LjA5OC03LjM3NSAxNi40NzMtMTYuNDczIDE2LjQ3M2gtMTYuMzU4djI2LjkzOGMwIDYuODgzIDUuNTggMTIuNDY0IDEyLjQ2NCAxMi40NjQgMi4xNzIgMCAzLjkzOSAxLjcwMSA0LjA3NiAzLjg2OSAyLjYyOCA0MS42NjggMzcuMjM1IDc0LjY1NCA3OS41NjUgNzQuNjU0IDQyLjMzIDAgNzYuOTM3LTMyLjk4NiA3OS41NjUtNzQuNjU0LjEzNy0yLjE2NyAxLjkwNC0zLjg2OSA0LjA3Ni0zLjg2OSA2Ljg4MyAwIDEyLjQ2NC01LjU4IDEyLjQ2NC0xMi40NjR2LTI2LjkzOXoiIGZpbGw9IiNmZmRkY2UiLz48cGF0aCBkPSJtMzM1LjczIDE4MC4zMThjLTkuMDk4IDAtMTYuNDczLTcuMzc1LTE2LjQ3My0xNi40NzN2LTkuMDE1YzAtMTEuODUxLTExLjU5NS0yMC4yMy0yMi44NDctMTYuNTExLTMuMTA4IDEuMDI3LTYuMjQ3IDEuOTIzLTkuNDA3IDIuNzA3djg4Ljk3MmMtLjQzOCAyOC45NDgtMTYuMyA1NC4xNDItMzkuNzI1IDY3Ljc1OCAyLjg2MS4zMTEgNS43NjMuNDg2IDguNzA2LjQ4NiA0Mi4zMyAwIDc2LjkzNy0zMi45ODYgNzkuNTY1LTc0LjY1NC4xMzctMi4xNjcgMS45MDQtMy44NjkgNC4wNzYtMy44NjkgNi44ODMgMCAxMi40NjQtNS41OCAxMi40NjQtMTIuNDY0di0yNi45MzhoLTE2LjM1OXoiIGZpbGw9IiNmZmNiYmUiLz48L2c+PGcgZmlsbD0iI2Y0ZmJmZiI+PHBhdGggZD0ibTIxMy4xOTQgMzE2LjA2LTMzLjU1OCAyNy4yNjcgMzUuMTkyIDQzLjUxM2M0LjI4MSA0LjE2OCAxMS4wMTkgNC40MjQgMTUuNjA1LjU5NGwyNi40NjUtMjIuMTA3eiIvPjxwYXRoIGQ9Im0yOTguNzkgMzE2LjA2LTQxLjg5MiA0OS4yNjcgMjQuODc0IDIxLjI2OGM0LjU1NyAzLjg5NiAxMS4zMjcgMy43IDE1LjY1MS0uNDUzbDM0Ljk0LTQyLjgxNXoiLz48L2c+PC9nPjxwYXRoIGQ9Im0yMTMuMTk0IDMxNi4wNi00OS4yNTYgMjQuMTk5Yy0zLjc1IDEuODQyLTUuMjU2IDYuNDA0LTMuMzQxIDEwLjExN2w5LjY1IDE4LjcxYzIuNTAxIDQuODQ4IDEuNTc4IDEwLjc1Ni0yLjI4MiAxNC42MS0xLjk4NyAxLjk4My00LjEzOSA0LjEzMS02LjAwNCA1Ljk5My0zLjMzOCAzLjMzMi00LjUzNyA4LjI1NS0zLjA2NyAxMi43MzcgMTEuNjUxIDM1LjUxNyA2Ny43MjUgODkuODI4IDg4Ljk0NiAxMDkuNDc4IDEuNDI3LjAzOCAyLjg1Ny4wNjQgNC4yOS4wOC0xNS4zODktMjkuOTMzLTY5LjkyMi0xNDMuNjU1LTM4LjkzNi0xOTUuOTI0eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zNDQuMDE5IDM4My42OTVjLTMuODYxLTMuODU0LTQuNzgzLTkuNzYyLTIuMjgyLTE0LjYxbDkuNjUtMTguNzFjMS45MTUtMy43MTMuNDA5LTguMjc1LTMuMzQxLTEwLjExN2wtNDkuMjU2LTI0LjE5OGMzMC45NzggNTIuMjU1LTIzLjUxNyAxNjUuOTI5LTM4LjkyMyAxOTUuOSAxLjQ0OC0uMDI1IDIuODkzLS4wNjEgNC4zMzUtLjEwOSAyMS4yNjUtMTkuNjk1IDc3LjI0OC03My45NCA4OC44ODgtMTA5LjQyNCAxLjQ3LTQuNDgyLjI3MS05LjQwNS0zLjA2Ny0xMi43MzctMS44NjUtMS44NjMtNC4wMTctNC4wMTItNi4wMDQtNS45OTV6IiBmaWxsPSIjMzY1ZTdkIi8+PHBhdGggZD0ibTI1Ni44OTggMzY1LjMyNy0yNi4wNiAyMS43NjQgMTMuMjc4IDE2Ljc4MWgyMy43NjdsMTMuMjc5LTE3Ljc3MXoiIGZpbGw9IiNkZDYzNmUiLz48L2c+PC9nPjwvZz48L2c+PC9zdmc+" />
-                                                        </td>
-                                                        <td><a href="javascript:void(0);">Ruby T. Curd</a></td>
-                                                        <td>
-                                                            <img style="width:30px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNNDczLjY1NSw4OC4yNzZIMzguMzQ1QzE3LjE2Nyw4OC4yNzYsMCwxMDUuNDQzLDAsMTI2LjYyMVYzODUuMzgNCgljMCwyMS4xNzcsMTcuMTY3LDM4LjM0NSwzOC4zNDUsMzguMzQ1aDQzNS4zMWMyMS4xNzcsMCwzOC4zNDUtMTcuMTY3LDM4LjM0NS0zOC4zNDVWMTI2LjYyMQ0KCUM1MTIsMTA1LjQ0Myw0OTQuODMzLDg4LjI3Niw0NzMuNjU1LDg4LjI3NnoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRjRCNTU7IiBkPSJNMi4xMDksMTE0LjA4SDUwOS44OWMtNS4xOTYtMTUuMDE3LTE5LjQ1Mi0yNS44MDQtMzYuMjM1LTI1LjgwNEgzOC4zNDUNCgkJQzIxLjU2MSw4OC4yNzYsNy4zMDYsOTkuMDYzLDIuMTA5LDExNC4wOHoiLz4NCgk8cmVjdCB5PSIxOTEuNDkiIHN0eWxlPSJmaWxsOiNGRjRCNTU7IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjI1LjgwMyIvPg0KCTxyZWN0IHk9IjEzOS44OCIgc3R5bGU9ImZpbGw6I0ZGNEI1NTsiIHdpZHRoPSI1MTIiIGhlaWdodD0iMjUuODAzIi8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGNEI1NTsiIGQ9Ik0wLDI2MC4wNzRjMCw0Ljg3NSwzLjk1Myw4LjgyOCw4LjgyOCw4LjgyOEg1MTJ2LTI1LjgwNEgwVjI2MC4wNzR6Ii8+DQoJPHJlY3QgeT0iMzQ2LjMyIiBzdHlsZT0iZmlsbDojRkY0QjU1OyIgd2lkdGg9IjUxMiIgaGVpZ2h0PSIyNS44MDQiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRkY0QjU1OyIgZD0iTTUwOS44OTEsMzk3LjkySDIuMTA5YzUuMTk3LDE1LjAxNywxOS40NTMsMjUuODA0LDM2LjIzNiwyNS44MDRoNDM1LjMxDQoJCUM0OTAuNDM5LDQyMy43MjQsNTA0LjY5NCw0MTIuOTM3LDUwOS44OTEsMzk3LjkyeiIvPg0KCTxyZWN0IHk9IjI5NC43MSIgc3R5bGU9ImZpbGw6I0ZGNEI1NTsiIHdpZHRoPSI1MTIiIGhlaWdodD0iMjUuODAzIi8+DQo8L2c+DQo8cGF0aCBzdHlsZT0iZmlsbDojNDE0NzlCOyIgZD0iTTguODI4LDI2OC45MDJoMjIwLjY5YzQuODc1LDAsOC44MjgtMy45NTMsOC44MjgtOC44MjhWOTcuMTAzYzAtNC44NzYtMy45NTMtOC44MjgtOC44MjgtOC44MjgNCglIMzguMzQ1QzE3LjE2Nyw4OC4yNzYsMCwxMDUuNDQzLDAsMTI2LjYyMXYxMzMuNDUzQzAsMjY0Ljk1LDMuOTUzLDI2OC45MDIsOC44MjgsMjY4LjkwMnoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMjQuNzg5LDEwOC41MzdsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjcsMC40ODgsMS41MDJsLTQuOTY5LDMuNjY5DQoJCWwxLjg2NCw1Ljg4OWMwLjI0MiwwLjc2Mi0wLjYyNywxLjM5NC0xLjI3OCwwLjkyOEwyNCwxMjIuODQxbC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjYtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODkNCgkJbC00Ljk2OS0zLjY2OWMtMC42NDMtMC40NzYtMC4zMTItMS40OTYsMC40ODgtMS41MDJsNi4xNzctMC4wNDdsMS45NTQtNS44NkMyMy40NjMsMTA3Ljc3OCwyNC41MzUsMTA3Ljc3OCwyNC43ODksMTA4LjUzN3oiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTI0Ljc4OSwxMzkuMTkxbDEuOTU0LDUuODZsNi4xNzcsMC4wNDdjMC44LDAuMDA3LDEuMTMxLDEuMDI2LDAuNDg4LDEuNTAybC00Ljk2OSwzLjY3bDEuODY0LDUuODg5DQoJCWMwLjI0MiwwLjc2Mi0wLjYyNywxLjM5NC0xLjI3OCwwLjkyOEwyNCwxNTMuNDk2bC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODlsLTQuOTY5LTMuNjcNCgkJYy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzIzLjQ2MywxMzguNDMzLDI0LjUzNSwxMzguNDMzLDI0Ljc4OSwxMzkuMTkxeiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMjQuNzg5LDE2OS44NDZsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjYsMC40ODgsMS41MDJsLTQuOTY5LDMuNjdsMS44NjQsNS44ODkNCgkJYzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4TDI0LDE4NC4xNTFsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2NS0xLjUxOC0wLjE2NS0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OWwtNC45NjktMy42Nw0KCQljLTAuNjQzLTAuNDc2LTAuMzEyLTEuNDk1LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDMjMuNDYzLDE2OS4wODcsMjQuNTM1LDE2OS4wODcsMjQuNzg5LDE2OS44NDZ6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik0yNC43ODksMjAwLjVsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjcsMC40ODgsMS41MDJsLTQuOTY5LDMuNjdsMS44NjQsNS44ODkNCgkJYzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4TDI0LDIxNC44MDVsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2NS0xLjUxOC0wLjE2Ni0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OWwtNC45NjktMy42Nw0KCQljLTAuNjQzLTAuNDc0LTAuMzEyLTEuNDk1LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDMjMuNDYzLDE5OS43NDEsMjQuNTM1LDE5OS43NDEsMjQuNzg5LDIwMC41eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMjQuNzg5LDIzMS4xNTRsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjYsMC40ODgsMS41MDJsLTQuOTY5LDMuNjdsMS44NjQsNS44ODkNCgkJYzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4TDI0LDI0NS40NTlsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2NS0xLjUxOC0wLjE2Ni0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OWwtNC45NjktMy42Nw0KCQljLTAuNjQzLTAuNDc2LTAuMzEyLTEuNDk1LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDMjMuNDYzLDIzMC4zOTYsMjQuNTM1LDIzMC4zOTYsMjQuNzg5LDIzMS4xNTR6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik00OC41ODIsMTIzLjU2NmwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNywwLjQ4OCwxLjUwMmwtNC45NjksMy42N2wxLjg2NCw1Ljg4OQ0KCQljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI1LTMuNTkybC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODlsLTQuOTY5LTMuNjcNCgkJYy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzQ3LjI1NiwxMjIuODA4LDQ4LjMyOSwxMjIuODA4LDQ4LjU4MiwxMjMuNTY2eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNNDguNTgyLDE1NC4yMjFsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjcsMC40ODgsMS41MDJsLTQuOTY5LDMuNjdsMS44NjQsNS44ODkNCgkJYzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNS0zLjU5MmwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY1LTEuNTE4LTAuMTY1LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5bC00Ljk2OS0zLjY3DQoJCWMtMC42NDMtMC40NzQtMC4zMTItMS40OTUsMC40ODgtMS41MDJsNi4xNzctMC4wNDdsMS45NTQtNS44NkM0Ny4yNTYsMTUzLjQ2Miw0OC4zMjksMTUzLjQ2Miw0OC41ODIsMTU0LjIyMXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTQ4LjU4MiwxODQuODc1bDEuOTU0LDUuODZsNi4xNzcsMC4wNDdjMC44LDAuMDA3LDEuMTMxLDEuMDI2LDAuNDg4LDEuNTAybC00Ljk2OSwzLjY3bDEuODY0LDUuODg5DQoJCWMwLjI0MiwwLjc2Mi0wLjYyNywxLjM5NC0xLjI3OCwwLjkyOGwtNS4wMjUtMy41OTJsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2NS0xLjUxOC0wLjE2Ni0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OWwtNC45NjktMy42Nw0KCQljLTAuNjQzLTAuNDc2LTAuMzEyLTEuNDk1LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDNDcuMjU2LDE4NC4xMTYsNDguMzI5LDE4NC4xMTYsNDguNTgyLDE4NC44NzV6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik00OC41ODIsMjE1LjUyOWwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNiwwLjQ4OCwxLjUwMmwtNC45NjksMy42N2wxLjg2NCw1Ljg4OQ0KCQljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI1LTMuNTkybC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjYtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODlsLTQuOTY5LTMuNjcNCgkJYy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzQ3LjI1NiwyMTQuNzcxLDQ4LjMyOSwyMTQuNzcxLDQ4LjU4MiwyMTUuNTI5eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNNzIuMzc1LDEwOC41MzdsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjcsMC40ODgsMS41MDJsLTQuOTY5LDMuNjY5DQoJCWwxLjg2NCw1Ljg4OWMwLjI0MiwwLjc2Mi0wLjYyNywxLjM5NC0xLjI3OCwwLjkyOGwtNS4wMjUtMy41OTJsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2Ni0xLjUxOC0wLjE2Ni0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OQ0KCQlsLTQuOTY5LTMuNjY5Yy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NiwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzcxLjA0OSwxMDcuNzc4LDcyLjEyMiwxMDcuNzc4LDcyLjM3NSwxMDguNTM3eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNNzIuMzc1LDEzOS4xOTFsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjYsMC40ODgsMS41MDJsLTQuOTY5LDMuNjdsMS44NjQsNS44ODkNCgkJYzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNS0zLjU5MmwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY1LTEuNTE4LTAuMTY2LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5bC00Ljk2OS0zLjY3DQoJCWMtMC42NDMtMC40NzYtMC4zMTItMS40OTUsMC40ODgtMS41MDJsNi4xNzctMC4wNDdsMS45NTQtNS44NkM3MS4wNDksMTM4LjQzMyw3Mi4xMjIsMTM4LjQzMyw3Mi4zNzUsMTM5LjE5MXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTcyLjM3NSwxNjkuODQ2bDEuOTU0LDUuODZsNi4xNzcsMC4wNDdjMC44LDAuMDA3LDEuMTMxLDEuMDI2LDAuNDg4LDEuNTAybC00Ljk2OSwzLjY3bDEuODY0LDUuODg5DQoJCWMwLjI0MiwwLjc2Mi0wLjYyNywxLjM5NC0xLjI3OCwwLjkyOGwtNS4wMjUtMy41OTJsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2NS0xLjUxOC0wLjE2NS0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OWwtNC45NjktMy42Nw0KCQljLTAuNjQzLTAuNDc2LTAuMzEyLTEuNDk1LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDNzEuMDQ5LDE2OS4wODcsNzIuMTIyLDE2OS4wODcsNzIuMzc1LDE2OS44NDZ6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik03Mi4zNzUsMjAwLjVsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjcsMC40ODgsMS41MDJsLTQuOTY5LDMuNjdsMS44NjQsNS44ODkNCgkJYzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNS0zLjU5MmwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY1LTEuNTE4LTAuMTY2LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5bC00Ljk2OS0zLjY3DQoJCWMtMC42NDMtMC40NzQtMC4zMTItMS40OTUsMC40ODgtMS41MDJsNi4xNzctMC4wNDdsMS45NTQtNS44NkM3MS4wNDksMTk5Ljc0MSw3Mi4xMjIsMTk5Ljc0MSw3Mi4zNzUsMjAwLjV6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik03Mi4zNzUsMjMxLjE1NGwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNiwwLjQ4OCwxLjUwMmwtNC45NjksMy42N2wxLjg2NCw1Ljg4OQ0KCQljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI1LTMuNTkybC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODlsLTQuOTY5LTMuNjcNCgkJYy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzcxLjA0OSwyMzAuMzk2LDcyLjEyMiwyMzAuMzk2LDcyLjM3NSwyMzEuMTU0eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNOTYuMTY5LDEyMy41NjZsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjcsMC40ODgsMS41MDJsLTQuOTY5LDMuNjdsMS44NjQsNS44ODkNCgkJYzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNS0zLjU5MmwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY1LTEuNTE4LTAuMTY2LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5bC00Ljk2OS0zLjY3DQoJCWMtMC42NDMtMC40NzYtMC4zMTItMS40OTUsMC40ODgtMS41MDJsNi4xNzctMC4wNDdsMS45NTQtNS44NkM5NC44NDIsMTIyLjgwOCw5NS45MTYsMTIyLjgwOCw5Ni4xNjksMTIzLjU2NnoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTk2LjE2OSwxNTQuMjIxbDEuOTU0LDUuODZsNi4xNzcsMC4wNDdjMC44LDAuMDA3LDEuMTMxLDEuMDI3LDAuNDg4LDEuNTAybC00Ljk2OSwzLjY3bDEuODY0LDUuODg5DQoJCWMwLjI0MiwwLjc2Mi0wLjYyNywxLjM5NC0xLjI3OCwwLjkyOGwtNS4wMjUtMy41OTJsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2NS0xLjUxOC0wLjE2NS0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OWwtNC45NjktMy42Nw0KCQljLTAuNjQzLTAuNDc0LTAuMzEyLTEuNDk1LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDOTQuODQyLDE1My40NjIsOTUuOTE2LDE1My40NjIsOTYuMTY5LDE1NC4yMjF6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik05Ni4xNjksMTg0Ljg3NWwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNiwwLjQ4OCwxLjUwMmwtNC45NjksMy42N2wxLjg2NCw1Ljg4OQ0KCQljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI1LTMuNTkybC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODlsLTQuOTY5LTMuNjcNCgkJYy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2Qzk0Ljg0MiwxODQuMTE2LDk1LjkxNiwxODQuMTE2LDk2LjE2OSwxODQuODc1eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNOTYuMTY5LDIxNS41MjlsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjYsMC40ODgsMS41MDJsLTQuOTY5LDMuNjdsMS44NjQsNS44ODkNCgkJYzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNS0zLjU5MmwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY2LTEuNTE4LTAuMTY2LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5bC00Ljk2OS0zLjY3DQoJCWMtMC42NDMtMC40NzYtMC4zMTItMS40OTUsMC40ODgtMS41MDJsNi4xNzctMC4wNDdsMS45NTQtNS44NkM5NC44NDIsMjE0Ljc3MSw5NS45MTYsMjE0Ljc3MSw5Ni4xNjksMjE1LjUyOXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTExOS45NjIsMTA4LjUzN2wxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNywwLjQ4OCwxLjUwMmwtNC45NjksMy42NjkNCgkJbDEuODY0LDUuODg5YzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNi0zLjU5MWwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY2LTEuNTE4LTAuMTY2LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5DQoJCWwtNC45NjktMy42NjljLTAuNjQzLTAuNDc2LTAuMzEyLTEuNDk2LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDMTE4LjYzNiwxMDcuNzc4LDExOS43MDksMTA3Ljc3OCwxMTkuOTYyLDEwOC41Mzd6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik0xMTkuOTYyLDEzOS4xOTFsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjYsMC40ODgsMS41MDJsLTQuOTY5LDMuNjcNCgkJbDEuODY0LDUuODg5YzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNi0zLjU5MmwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY1LTEuNTE4LTAuMTY2LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5DQoJCWwtNC45NjktMy42N2MtMC42NDMtMC40NzYtMC4zMTItMS40OTUsMC40ODgtMS41MDJsNi4xNzctMC4wNDdsMS45NTQtNS44NkMxMTguNjM2LDEzOC40MzMsMTE5LjcwOSwxMzguNDMzLDExOS45NjIsMTM5LjE5MXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTExOS45NjIsMTY5Ljg0NmwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNiwwLjQ4OCwxLjUwMmwtNC45NjksMy42Nw0KCQlsMS44NjQsNS44ODljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI2LTMuNTkzbC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODkNCgkJbC00Ljk2OS0zLjY3Yy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzExOC42MzYsMTY5LjA4NywxMTkuNzA5LDE2OS4wODcsMTE5Ljk2MiwxNjkuODQ2eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMTE5Ljk2MiwyMDAuNWwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNywwLjQ4OCwxLjUwMmwtNC45NjksMy42N2wxLjg2NCw1Ljg4OQ0KCQljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI2LTMuNTkybC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODlsLTQuOTY5LTMuNjcNCgkJYy0wLjY0My0wLjQ3NC0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzExOC42MzYsMTk5Ljc0MSwxMTkuNzA5LDE5OS43NDEsMTE5Ljk2MiwyMDAuNXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTExOS45NjIsMjMxLjE1NGwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNiwwLjQ4OCwxLjUwMmwtNC45NjksMy42Nw0KCQlsMS44NjQsNS44ODljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI2LTMuNTkybC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODkNCgkJbC00Ljk2OS0zLjY3Yy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzExOC42MzYsMjMwLjM5NiwxMTkuNzA5LDIzMC4zOTYsMTE5Ljk2MiwyMzEuMTU0eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMTQzLjc1NSwxMjMuNTY2bDEuOTU0LDUuODZsNi4xNzcsMC4wNDdjMC44LDAuMDA3LDEuMTMxLDEuMDI3LDAuNDg4LDEuNTAybC00Ljk2OSwzLjY3DQoJCWwxLjg2NCw1Ljg4OWMwLjI0MiwwLjc2Mi0wLjYyNywxLjM5NC0xLjI3OCwwLjkyOGwtNS4wMjUtMy41OTJsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2NS0xLjUxOC0wLjE2Ni0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OQ0KCQlsLTQuOTY5LTMuNjdjLTAuNjQzLTAuNDc2LTAuMzEyLTEuNDk1LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDMTQyLjQzLDEyMi44MDgsMTQzLjUwMiwxMjIuODA4LDE0My43NTUsMTIzLjU2NnoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTE0My43NTUsMTU0LjIyMWwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNywwLjQ4OCwxLjUwMmwtNC45NjksMy42Nw0KCQlsMS44NjQsNS44ODljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI1LTMuNTkybC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjUtMS4yNzgtMC45MjhsMS44NjQtNS44ODkNCgkJbC00Ljk2OS0zLjY3Yy0wLjY0My0wLjQ3NC0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzE0Mi40MywxNTMuNDYyLDE0My41MDIsMTUzLjQ2MiwxNDMuNzU1LDE1NC4yMjF6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik0xNDMuNzU1LDE4NC44NzVsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjYsMC40ODgsMS41MDJsLTQuOTY5LDMuNjcNCgkJbDEuODY0LDUuODg5YzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNS0zLjU5MmwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY1LTEuNTE4LTAuMTY2LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5DQoJCWwtNC45NjktMy42N2MtMC42NDMtMC40NzYtMC4zMTItMS40OTUsMC40ODgtMS41MDJsNi4xNzctMC4wNDdsMS45NTQtNS44NkMxNDIuNDMsMTg0LjExNiwxNDMuNTAyLDE4NC4xMTYsMTQzLjc1NSwxODQuODc1eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMTQzLjc1NSwyMTUuNTI5bDEuOTU0LDUuODZsNi4xNzcsMC4wNDdjMC44LDAuMDA3LDEuMTMxLDEuMDI2LDAuNDg4LDEuNTAybC00Ljk2OSwzLjY3DQoJCWwxLjg2NCw1Ljg4OWMwLjI0MiwwLjc2Mi0wLjYyNywxLjM5NC0xLjI3OCwwLjkyOGwtNS4wMjUtMy41OTJsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2Ni0xLjUxOC0wLjE2Ni0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OQ0KCQlsLTQuOTY5LTMuNjdjLTAuNjQzLTAuNDc2LTAuMzEyLTEuNDk1LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDMTQyLjQzLDIxNC43NzEsMTQzLjUwMiwyMTQuNzcxLDE0My43NTUsMjE1LjUyOXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTE2Ny41NDksMTA4LjUzN2wxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNywwLjQ4OCwxLjUwMmwtNC45NjksMy42NjkNCgkJbDEuODY0LDUuODg5YzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNS0zLjU5MmwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY2LTEuNTE4LTAuMTY2LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5DQoJCWwtNC45NjktMy42NjljLTAuNjQzLTAuNDc2LTAuMzEyLTEuNDk2LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDMTY2LjIyMiwxMDcuNzc4LDE2Ny4yOTYsMTA3Ljc3OCwxNjcuNTQ5LDEwOC41Mzd6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik0xNjcuNTQ5LDEzOS4xOTFsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjYsMC40ODgsMS41MDJsLTQuOTY5LDMuNjcNCgkJbDEuODY0LDUuODg5YzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNS0zLjU5MmwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY1LTEuNTE4LTAuMTY2LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5DQoJCWwtNC45NjktMy42N2MtMC42NDMtMC40NzYtMC4zMTItMS40OTUsMC40ODgtMS41MDJsNi4xNzctMC4wNDdsMS45NTQtNS44NkMxNjYuMjIyLDEzOC40MzMsMTY3LjI5NiwxMzguNDMzLDE2Ny41NDksMTM5LjE5MXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTE2Ny41NDksMTY5Ljg0NmwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNiwwLjQ4OCwxLjUwMmwtNC45NjksMy42Nw0KCQlsMS44NjQsNS44ODljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI1LTMuNTkybC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjUtMS4yNzgtMC45MjhsMS44NjQtNS44ODkNCgkJbC00Ljk2OS0zLjY3Yy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzE2Ni4yMjIsMTY5LjA4NywxNjcuMjk2LDE2OS4wODcsMTY3LjU0OSwxNjkuODQ2eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMTY3LjU0OSwyMDAuNWwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNywwLjQ4OCwxLjUwMmwtNC45NjksMy42N2wxLjg2NCw1Ljg4OQ0KCQljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI1LTMuNTkybC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODlsLTQuOTY5LTMuNjcNCgkJYy0wLjY0My0wLjQ3NC0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzE2Ni4yMjIsMTk5Ljc0MSwxNjcuMjk2LDE5OS43NDEsMTY3LjU0OSwyMDAuNXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTE2Ny41NDksMjMxLjE1NGwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNiwwLjQ4OCwxLjUwMmwtNC45NjksMy42Nw0KCQlsMS44NjQsNS44ODljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI1LTMuNTkybC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODkNCgkJbC00Ljk2OS0zLjY3Yy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzE2Ni4yMjIsMjMwLjM5NiwxNjcuMjk2LDIzMC4zOTYsMTY3LjU0OSwyMzEuMTU0eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMTkxLjM0MiwxMjMuNTY2bDEuOTU0LDUuODZsNi4xNzcsMC4wNDdjMC44LDAuMDA3LDEuMTMxLDEuMDI3LDAuNDg4LDEuNTAybC00Ljk2OSwzLjY3DQoJCWwxLjg2NCw1Ljg4OWMwLjI0MiwwLjc2Mi0wLjYyNywxLjM5NC0xLjI3OCwwLjkyOGwtNS4wMjUtMy41OTJsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2NS0xLjUxOC0wLjE2Ni0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OQ0KCQlsLTQuOTY5LTMuNjdjLTAuNjQzLTAuNDc2LTAuMzEyLTEuNDk1LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDMTkwLjAxNiwxMjIuODA4LDE5MS4wODksMTIyLjgwOCwxOTEuMzQyLDEyMy41NjZ6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik0xOTEuMzQyLDE1NC4yMjFsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjcsMC40ODgsMS41MDJsLTQuOTY5LDMuNjcNCgkJbDEuODY0LDUuODg5YzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNS0zLjU5MmwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY1LTEuNTE4LTAuMTY1LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5DQoJCWwtNC45NjktMy42N2MtMC42NDMtMC40NzQtMC4zMTItMS40OTUsMC40ODgtMS41MDJsNi4xNzctMC4wNDdsMS45NTQtNS44NkMxOTAuMDE2LDE1My40NjIsMTkxLjA4OSwxNTMuNDYyLDE5MS4zNDIsMTU0LjIyMXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTE5MS4zNDIsMTg0Ljg3NWwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNiwwLjQ4OCwxLjUwMmwtNC45NjksMy42Nw0KCQlsMS44NjQsNS44ODljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI1LTMuNTkybC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODkNCgkJbC00Ljk2OS0zLjY3Yy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzE5MC4wMTYsMTg0LjExNiwxOTEuMDg5LDE4NC4xMTYsMTkxLjM0MiwxODQuODc1eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMTkxLjM0MiwyMTUuNTI5bDEuOTU0LDUuODZsNi4xNzcsMC4wNDdjMC44LDAuMDA3LDEuMTMxLDEuMDI2LDAuNDg4LDEuNTAybC00Ljk2OSwzLjY3DQoJCWwxLjg2NCw1Ljg4OWMwLjI0MiwwLjc2Mi0wLjYyNywxLjM5NC0xLjI3OCwwLjkyOGwtNS4wMjUtMy41OTJsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2Ni0xLjUxOC0wLjE2Ni0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OQ0KCQlsLTQuOTY5LTMuNjdjLTAuNjQzLTAuNDc2LTAuMzEyLTEuNDk1LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDMTkwLjAxNiwyMTQuNzcxLDE5MS4wODksMjE0Ljc3MSwxOTEuMzQyLDIxNS41Mjl6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik0yMTUuMTM2LDEwOC41MzdsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjcsMC40ODgsMS41MDJsLTQuOTY5LDMuNjY5DQoJCWwxLjg2NCw1Ljg4OWMwLjI0MiwwLjc2Mi0wLjYyNywxLjM5NC0xLjI3OCwwLjkyOGwtNS4wMjUtMy41OTJsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2Ni0xLjUxOC0wLjE2Ni0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OQ0KCQlsLTQuOTY5LTMuNjY5Yy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NiwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzIxMy44MSwxMDcuNzc4LDIxNC44ODIsMTA3Ljc3OCwyMTUuMTM2LDEwOC41Mzd6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik0yMTUuMTM2LDEzOS4xOTFsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjYsMC40ODgsMS41MDJsLTQuOTY5LDMuNjcNCgkJbDEuODY0LDUuODg5YzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNS0zLjU5MmwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY1LTEuNTE4LTAuMTY2LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5DQoJCWwtNC45NjktMy42N2MtMC42NDMtMC40NzYtMC4zMTItMS40OTUsMC40ODgtMS41MDJsNi4xNzctMC4wNDdsMS45NTQtNS44NkMyMTMuODEsMTM4LjQzMywyMTQuODgyLDEzOC40MzMsMjE1LjEzNiwxMzkuMTkxeiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMjE1LjEzNiwxNjkuODQ2bDEuOTU0LDUuODZsNi4xNzcsMC4wNDdjMC44LDAuMDA3LDEuMTMxLDEuMDI2LDAuNDg4LDEuNTAybC00Ljk2OSwzLjY3DQoJCWwxLjg2NCw1Ljg4OWMwLjI0MiwwLjc2Mi0wLjYyNywxLjM5NC0xLjI3OCwwLjkyOGwtNS4wMjUtMy41OTJsLTUuMDI1LDMuNTkyYy0wLjY1MSwwLjQ2NS0xLjUxOC0wLjE2NS0xLjI3OC0wLjkyOGwxLjg2NC01Ljg4OQ0KCQlsLTQuOTY5LTMuNjdjLTAuNjQzLTAuNDc2LTAuMzEyLTEuNDk1LDAuNDg4LTEuNTAybDYuMTc3LTAuMDQ3bDEuOTU0LTUuODZDMjEzLjgxLDE2OS4wODcsMjE0Ljg4MiwxNjkuMDg3LDIxNS4xMzYsMTY5Ljg0NnoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTIxNS4xMzYsMjAwLjVsMS45NTQsNS44Nmw2LjE3NywwLjA0N2MwLjgsMC4wMDcsMS4xMzEsMS4wMjcsMC40ODgsMS41MDJsLTQuOTY5LDMuNjdsMS44NjQsNS44ODkNCgkJYzAuMjQyLDAuNzYyLTAuNjI3LDEuMzk0LTEuMjc4LDAuOTI4bC01LjAyNS0zLjU5MmwtNS4wMjUsMy41OTJjLTAuNjUxLDAuNDY1LTEuNTE4LTAuMTY2LTEuMjc4LTAuOTI4bDEuODY0LTUuODg5bC00Ljk2OS0zLjY3DQoJCWMtMC42NDMtMC40NzQtMC4zMTItMS40OTUsMC40ODgtMS41MDJsNi4xNzctMC4wNDdsMS45NTQtNS44NkMyMTMuODEsMTk5Ljc0MSwyMTQuODgyLDE5OS43NDEsMjE1LjEzNiwyMDAuNXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTIxNS4xMzYsMjMxLjE1NGwxLjk1NCw1Ljg2bDYuMTc3LDAuMDQ3YzAuOCwwLjAwNywxLjEzMSwxLjAyNiwwLjQ4OCwxLjUwMmwtNC45NjksMy42Nw0KCQlsMS44NjQsNS44ODljMC4yNDIsMC43NjItMC42MjcsMS4zOTQtMS4yNzgsMC45MjhsLTUuMDI1LTMuNTkybC01LjAyNSwzLjU5MmMtMC42NTEsMC40NjUtMS41MTgtMC4xNjYtMS4yNzgtMC45MjhsMS44NjQtNS44ODkNCgkJbC00Ljk2OS0zLjY3Yy0wLjY0My0wLjQ3Ni0wLjMxMi0xLjQ5NSwwLjQ4OC0xLjUwMmw2LjE3Ny0wLjA0N2wxLjk1NC01Ljg2QzIxMy44MSwyMzAuMzk2LDIxNC44ODIsMjMwLjM5NiwyMTUuMTM2LDIzMS4xNTR6Ii8+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" />
-                                                        </td>
-                                                        <td>$100</td>
-                                                        <td>10</td>
-                                                        <td><i class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star-half text-warning"></i> <i
-                                                                class="mdi mdi-star-outline text-warning"></i></td>
-                                                        <td>
-                                                            <div class="progress" style="height:8px;">
-                                                                <div class="progress-bar bg-primary" role="progressbar"
-                                                                    aria-valuenow="94" aria-valuemin="0"
-                                                                    aria-valuemax="100" style="width: 94%;"></div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <!-- <td><img class="rounded-circle"
-                                                                src="assets/images/users/avatar-3.jpg" alt="user"
-                                                                width="40"></td> -->
-                                                        <td><a href="javascript:void(0);">William A. Johnson</a></td>
-                                                        <!-- <td><img src="assets/images/flags/french_flag.jpg" alt=""
-                                                                style="width:30px"></td> -->
-                                                        <td>$490</td>
-                                                        <td>24</td>
-                                                        <td><i class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star-half text-warning"></i> <i
-                                                                class="mdi mdi-star-outline text-warning"></i></td>
-                                                        <td>
-                                                            <div class="progress" style="height:8px;">
-                                                                <div class="progress-bar bg-success" role="progressbar"
-                                                                    aria-valuenow="38" aria-valuemin="0"
-                                                                    aria-valuemax="100" style="width: 38%;"></div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <!-- <td><img class="rounded-circle"
-                                                                src="assets/images/users/avatar-4.jpg" alt="user"
-                                                                width="40"></td> -->
-                                                        <td><a href="javascript:void(0);">Bobby M. Gray</a></td>
-                                                        <!-- <td><img src="assets/images/flags/spain_flag.jpg" alt=""
-                                                                style="width:30px"></td> -->
-                                                        <td>$380</td>
-                                                        <td>19</td>
-                                                        <td><i class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star-half text-warning"></i> <i
-                                                                class="mdi mdi-star-outline text-warning"></i></td>
-                                                        <td>
-                                                            <div class="progress" style="height:8px;">
-                                                                <div class="progress-bar bg-dark" role="progressbar"
-                                                                    aria-valuenow="65" aria-valuemin="0"
-                                                                    aria-valuemax="100" style="width:65%;"></div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <!-- <td><img class="rounded-circle"
-                                                                src="assets/images/users/avatar-5.jpg" alt="user"
-                                                                width="40"></td> -->
-                                                        <td><a href="javascript:void(0);">Robert N. Carlile</a></td>
-                                                        <!-- <td><img src="assets/images/flags/russia_flag.jpg" alt=""
-                                                                style="width:30px"></td> -->
-                                                        <td>$450</td>
-                                                        <td>30</td>
-                                                        <td><i class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star-half text-warning"></i> <i
-                                                                class="mdi mdi-star-outline text-warning"></i></td>
-                                                        <td>
-                                                            <div class="progress" style="height:8px;">
-                                                                <div class="progress-bar bg-danger" role="progressbar"
-                                                                    aria-valuenow="88" aria-valuemin="0"
-                                                                    aria-valuemax="100" style="width: 88%;"></div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <!-- <td><img class="rounded-circle"
-                                                                src="assets/images/users/avatar-6.jpg" alt="user"
-                                                                width="40"></td> -->
-                                                        <td><a href="javascript:void(0);">Ruby T. Curd</a></td>
-                                                        <!-- <td><img src="assets/images/flags/italy_flag.jpg" alt=""
-                                                                style="width:30px"></td> -->
-                                                        <td>$500</td>
-                                                        <td>40</td>
-                                                        <td><i class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star text-warning"></i> <i
-                                                                class="mdi mdi-star-half text-warning"></i> <i
-                                                                class="mdi mdi-star-outline text-warning"></i></td>
-                                                        <td>
-                                                            <div class="progress" style="height:8px;">
-                                                                <div class="progress-bar l-blue" role="progressbar"
-                                                                    aria-valuenow="17" aria-valuemin="0"
-                                                                    aria-valuemax="100" style="width: 17%;"></div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-12 col-xl-4">
-                                <div class="card bg-white m-b-30">
-                                    <div class="card-body new-user">
-                                        <h5 class="header-title mt-0 mb-4">New Users</h5>
-                                        <ul class="list-unstyled mb-0 pr-3" id="boxscroll2" tabindex="1"
-                                            style="overflow: hidden; outline: none;">
-                                            <li class="p-3">
-                                                <div class="media">
-                                                    <!-- <div class="thumb float-left"><a href="#"><img
-                                                                class="rounded-circle"
-                                                                src="assets/images/users/avatar-5.jpg" alt=""></a></div> -->
-                                                    <div class="media-body">
-                                                        <p class="media-heading mb-0">Ruby T. Curd <i
-                                                                class="fa fa-circle text-success mr-1 pull-right"></i>
-                                                        </p><small class="pull-right text-muted">Now</small> <small
-                                                            class="text-muted">Newyork</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="p-3">
-                                                <div class="media">
-                                                    <!-- <div class="thumb float-left"><a href="#"><img
-                                                                class="rounded-circle"
-                                                                src="assets/images/users/avatar-4.jpg" alt=""></a></div> -->
-                                                    <div class="media-body">
-                                                        <p class="media-heading mb-0">William A. Johnson <i
-                                                                class="fa fa-circle text-success mr-1 pull-right"></i>
-                                                        </p><small class="pull-right text-muted">Now</small> <small
-                                                            class="text-muted">California</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="p-3">
-                                                <div class="media">
-                                                    <!-- <div class="thumb float-left"><a href="#"><img
-                                                                class="rounded-circle"
-                                                                src="assets/images/users/avatar-3.jpg" alt=""></a></div> -->
-                                                    <div class="media-body">
-                                                        <p class="media-heading mb-0">Robert N. Carlile<i
-                                                                class="fa fa-circle text-danger mr-1 pull-right"></i>
-                                                        </p><small class="pull-right text-muted">10 min ago</small>
-                                                        <small class="text-muted">India</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="p-3">
-                                                <div class="media">
-                                                    <!-- <div class="thumb float-left"><a href="#"><img
-                                                                class="rounded-circle"
-                                                                src="assets/images/users/avatar-2.jpg" alt=""></a></div> -->
-                                                    <div class="media-body">
-                                                        <p class="media-heading mb-0">Bobby M. Gray <i
-                                                                class="fa fa-circle text-success mr-1 pull-right"></i>
-                                                        </p><small class="pull-right text-muted">Now</small> <small
-                                                            class="text-muted">Australia</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="p-3">
-                                                <div class="media">
-                                                    <!-- <div class="thumb float-left"><a href="#"><img
-                                                                class="rounded-circle"
-                                                                src="assets/images/users/avatar-1.jpg" alt=""></a></div> -->
-                                                    <div class="media-body">
-                                                        <p class="media-heading mb-0">Ruby T. Curd <i
-                                                                class="fa fa-circle text-danger mr-1 pull-right"></i>
-                                                        </p><small class="pull-right text-muted">36 min ago</small>
-                                                        <small class="text-muted">New Zealand</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="p-3">
-                                                <div class="media">
-                                                        <!-- <div class="thumb float-left"><a href="#"><img
-                                                                    class="rounded-circle"
-                                                                    src="assets/images/users/avatar-6.jpg" alt=""></a></div> -->
-                                                    <div class="media-body">
-                                                        <p class="media-heading mb-0">Robert N. Carlile <i
-                                                                class="fa fa-circle text-success mr-1 pull-right"></i>
-                                                        </p><small class="pull-right text-muted">Now</small> <small
-                                                            class="text-muted">India</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="p-3">
-                                                <div class="media">
-                                                    <!-- <div class="thumb float-left"><a href="#"><img
-                                                                class="rounded-circle"
-                                                                src="assets/images/users/avatar-4.jpg" alt=""></a></div> -->
-                                                    <div class="media-body">
-                                                        <p class="media-heading mb-0">Bobby M. Gray<i
-                                                                class="fa fa-circle text-danger mr-1 pull-right"></i>
-                                                        </p><small class="pull-right text-muted">58 min ago</small>
-                                                        <small class="text-muted">Australia</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-icons">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#icon-options" aria-expanded="false" aria-controls="icon-options">
+                            Icons
+                        </button>
+                    </h2>
+                    <div id="icon-options" class="accordion-collapse collapse" aria-labelledby="flush-icons"
+                        data-bs-parent="#side-bar-content">
+                        <div class="accordion-body">
+                            <button class="sub-options d-block py-2">Material Design</button>
+                            <button class="sub-options d-block py-2">Ion Icons</button>
+                            <button class="sub-options d-block py-2">Font Awesome</button>
+                            <button class="sub-options d-block py-2">Themify Icons</button>
+                            <button class="sub-options d-block py-2">Dripicons</button>
+                            <button class="sub-options d-block py-2">Typicons Icons</button>
                         </div>
-                    </div><!-- container -->
-                </div><!-- Page content Wrapper -->
-            </div><!-- content -->
-            <footer class="footer">© 2019 Annex by Mannatthemes.</footer>
-        </div><!-- End Right content here -->
-    </div><!-- END wrapper -->
-    <!-- jQuery  -->
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-tables">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#table-options" aria-expanded="false" aria-controls="table-options">
+                            Tables
+                        </button>
+                    </h2>
+                    <div id="table-options" class="accordion-collapse collapse" aria-labelledby="flush-tables"
+                        data-bs-parent="#side-bar-content">
+                        <div class="accordion-body">
+                            <button class="sub-options d-block py-2">Basic Tables</button>
+                            <button class="sub-options d-block py-2">Data Table</button>
+                            <button class="sub-options d-block py-2">Responsive Table</button>
+                            <button class="sub-options d-block py-2">Editable Table</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="side-menu-start px-3 pb-1">Extra</p>
+                <div class="menu-item px-3 pb-3 menu-item-selected">
+                    <i class="dashboard-icon">
+                    </i><span>Maps</span>
+                    <span class="badge rounded-pill bg-danger float-end">2</span>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-pages">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pages-options" aria-expanded="false" aria-controls="pages-options">
+                            Pages
+                        </button>
+                    </h2>
+                    <div id="pages-options" class="accordion-collapse collapse" aria-labelledby="flush-pages"
+                        data-bs-parent="#side-bar-content">
+                        <div class="accordion-body">
+                            <button class="sub-options d-block py-2">Login</button>
+                            <button class="sub-options d-block py-2">Register</button>
+                            <button class="sub-options d-block py-2">Recover Password</button>
+                            <button class="sub-options d-block py-2">Lock Screen</button>
+                            <button class="sub-options d-block py-2">Blank Page</button>
+                            <button class="sub-options d-block py-2">Error 404</button>
+                            <button class="sub-options d-block py-2">Error 500</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-container flex-grow-1 ">
+            <div class="topbar d-flex px-2 py-1 justify-content-between align-items-center">
+                <div class="d-flex">
+                    <div class="sidebar-toggle d-block d-sm-block d-lg-none">
+                        <img height="17" src="assets/icons/menu-4-48.png" alt="" srcset="">
+                    </div>
+                    <form class="position-relative form-search d-none d-inline d-sm-none d-md-inline" role="search">
+                        <input type="text" class="search" placeholder="Search..." class="form-control">
+                        <a href="#">
+                            <img height="15px" class="search-icon" src="assets/icons/search-3-32.png" />
+                        </a>
+                        
+                    </form>
+                </div>
+                <div class="btn-group btn">
+                    <button type="button" class="btn text-white d-inline-block d-none d-sm-none d-md-inline-block btn-lang"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        English <span>
+                            <img height="25" width="30"
+                                src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHBhdGggZD0ibTQ5NS40ODQgOTAuODM5aC0yMzEuMjI2bC0yNTUuMjU4IDE3Ni42NjF2MTQ2LjgzM2g0ODYuNDg0bDE2LjUxNi05LjY4OHYtMzAuNjczbC0xMC43NS0xMC4yMjJ2LTI5bDEwLjc1LTcuOTY3di00Ny4xODlsLTkuNjY3LTkuMjYxdi0yOS42NjdsOS42NjctOC4yNjJ2LTQ3LjE4OGwtOS42NjctOC41NDl2LTI2bDkuNjY3LTEyLjYzOXYtMzAuNjczYzAtOS4xMjItNy4zOTUtMTYuNTE2LTE2LjUxNi0xNi41MTZ6IiBmaWxsPSIjZTU2NDZlIi8+PHBhdGggZD0ibTI1Ni4zMzMgMTM4LjAyOGgyNTUuNjY3djQ3LjE4OWgtMjU1LjY2N3oiIGZpbGw9IiNmMmYyZjYiLz48cGF0aCBkPSJtMjU2IDIzMi40MDUgOC4yNTggNDcuMTg5aDI0Ny43NDJ2LTQ3LjE4OXoiIGZpbGw9IiNmMmYyZjYiLz48cGF0aCBkPSJtMTYuNTE2IDM1NS4wOTd2LTg0LjA5N2wtMTYuNTE2IDguNTk0djQ3LjE4OWw3IDUuOTY3djMxbC03IDEwLjIyMnYzMC42NzNjMCA5LjEyMiA3LjM5NSAxNi41MTYgMTYuNTE2IDE2LjUxNmg0NzguOTY4YzkuMTIxIDAgMTYuNTE2LTcuMzk1IDE2LjUxNi0xNi41MTZoLTQ0NS45MzVjLTI3LjM2NSAwLTQ5LjU0OS0yMi4xODMtNDkuNTQ5LTQ5LjU0OHoiIGZpbGw9IiNkYjQ2NTUiLz48cGF0aCBkPSJtMjY0LjI1OCA5MC44MzloLTI0Ny43NDJsLTEwLjUxNiAxNi41MTYgMTAuNTE2IDE3Mi4yMzloMjQ3Ljc0MnoiIGZpbGw9IiM1MDU1YTAiLz48cGF0aCBkPSJtMTYuNTE2IDkwLjgzOWMtOS4xMjEgMC0xNi41MTYgNy4zOTQtMTYuNTE2IDE2LjUxNnYxNzIuMjM5aDE2LjUxNnoiIGZpbGw9IiMzZjNmOGYiLz48cGF0aCBkPSJtMzMuMTEzIDEyNy42NTdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NSA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMzMuMTEzIDE5My43MjJjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NSA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMzMuMTEzIDI1OS43ODZjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NSA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMzMuMTEzIDE2MC42OWMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNTgtLjAwMSA0LjU2LTMuNjk1IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0zMy4xMTMgMjI2Ljc1NGMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk1IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0yMzEuMzA2IDEyNy42NTdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMjMxLjMwNiAxOTMuNzIyYy00LjU2NSAwLTguMjk4LTMuNjk4LTguMjk4LTguMjU4czMuNjUzLTguMjU4IDguMjE4LTguMjU4aC4wODFjNC41NjUgMCA4LjI1OCAzLjY5OCA4LjI1OCA4LjI1OHMtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTIzMS4zMDYgMjU5Ljc4NmMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2ZmZiIvPjxnIGZpbGw9IiNmMmYyZjYiPjxwYXRoIGQ9Im0yMzEuMzA2IDE2MC42OWMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIvPjxwYXRoIGQ9Im0yMzEuMzA2IDIyNi43NTRjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiLz48cGF0aCBkPSJtODIuNjYxIDEyNy42NTdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiLz48cGF0aCBkPSJtODIuNjYxIDE5My43MjJjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiLz48cGF0aCBkPSJtODIuNjYxIDI1OS43ODZjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiLz48L2c+PHBhdGggZD0ibTgyLjY2MSAxNjAuNjljLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4LS4wMDEgNC41Ni0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtODIuNjYxIDIyNi43NTRjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtNTcuODg3IDE0NC4xNzNjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4LS4wMDEgNC41NjEtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTU3Ljg4NyAyMTAuMjM4Yy00LjU2NSAwLTguMjk4LTMuNjk4LTguMjk4LTguMjU4czMuNjUzLTguMjU4IDguMjE4LTguMjU4aC4wODFjNC41NjUgMCA4LjI1OCAzLjY5OCA4LjI1OCA4LjI1OHMtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTU3Ljg4NyAxNzcuMjA2Yy00LjU2NSAwLTguMjk4LTMuNjk4LTguMjk4LTguMjU4czMuNjUzLTguMjU4IDguMjE4LTguMjU4aC4wODFjNC41NjUgMCA4LjI1OCAzLjY5OCA4LjI1OCA4LjI1OHMtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZjJmMmY2Ii8+PHBhdGggZD0ibTU3Ljg4NyAyNDMuMjdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmMmYyZjYiLz48cGF0aCBkPSJtMTMyLjIxIDEyNy42NTdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NSA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTMyLjIxIDE5My43MjJjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NSA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTMyLjIxIDI1OS43ODZjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NSA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTMyLjIxIDE2MC42OWMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNTgtLjAwMSA0LjU2LTMuNjk1IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0xMzIuMjEgMjI2Ljc1NGMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk1IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0xMDcuNDM1IDE0NC4xNzNjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4IDAgNC41NjEtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZjJmMmY2Ii8+PHBhdGggZD0ibTEwNy40MzUgMjEwLjIzOGMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0xMDcuNDM1IDE3Ny4yMDZjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTA3LjQzNSAyNDMuMjdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTgxLjY3NyAxMjcuNjU3Yy00LjU2NSAwLTguMjk4LTMuNjk4LTguMjk4LTguMjU4czMuNjUzLTguMjU4IDguMjE4LTguMjU4aC4wODFjNC41NjUgMCA4LjI1OCAzLjY5OCA4LjI1OCA4LjI1OHMtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZjJmMmY2Ii8+PHBhdGggZD0ibTE4MS42NzcgMTkzLjcyMmMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0xODEuNjc3IDI1OS43ODZjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmMmYyZjYiLz48cGF0aCBkPSJtMTgxLjY3NyAxNjAuNjljLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4LS4wMDEgNC41Ni0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTgxLjY3NyAyMjYuNzU0Yy00LjU2NSAwLTguMjk4LTMuNjk4LTguMjk4LTguMjU4czMuNjUzLTguMjU4IDguMjE4LTguMjU4aC4wODFjNC41NjUgMCA4LjI1OCAzLjY5OCA4LjI1OCA4LjI1OHMtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTE1Ni45MDMgMTQ0LjE3M2MtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNTgtLjAwMSA0LjU2MS0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMTU2LjkwMyAyMTAuMjM4Yy00LjU2NSAwLTguMjk4LTMuNjk4LTguMjk4LTguMjU4czMuNjUzLTguMjU4IDguMjE4LTguMjU4aC4wODFjNC41NjUgMCA4LjI1OCAzLjY5OCA4LjI1OCA4LjI1OHMtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTE1Ni45MDMgMTc3LjIwNmMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0xNTYuOTAzIDI0My4yN2MtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0yMDYuNTMyIDE0NC4xNzNjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4LS4wMDEgNC41NjEtMy42OTQgOC4yNTgtOC4yNTkgOC4yNTh6IiBmaWxsPSIjZjJmMmY2Ii8+PHBhdGggZD0ibTIwNi41MzIgMjEwLjIzOGMtNC41NjUgMC04LjI5OC0zLjY5OC04LjI5OC04LjI1OHMzLjY1My04LjI1OCA4LjIxOC04LjI1OGguMDgxYzQuNTY1IDAgOC4yNTggMy42OTggOC4yNTggOC4yNThzLTMuNjk0IDguMjU4LTguMjU5IDguMjU4eiIgZmlsbD0iI2YyZjJmNiIvPjxwYXRoIGQ9Im0yMDYuNTMyIDE3Ny4yMDZjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMjA2LjUzMiAyNDMuMjdjLTQuNTY1IDAtOC4yOTgtMy42OTgtOC4yOTgtOC4yNThzMy42NTMtOC4yNTggOC4yMTgtOC4yNThoLjA4MWM0LjU2NSAwIDguMjU4IDMuNjk4IDguMjU4IDguMjU4cy0zLjY5NCA4LjI1OC04LjI1OSA4LjI1OHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJtMyAzNjAuMzMzIDE3LjI2IDEzLjYzOWg0OTEuNzR2LTQ3LjE4OWgtNDk1LjQ4NHoiIGZpbGw9IiNmMmYyZjYiLz48cGF0aCBkPSJtMCAzMjYuNzgzdjQ3LjE4OWgyMC4yNmMtMi40MDEtNS44Mi0zLjc0My0xMi4xODktMy43NDMtMTguODc2di0yOC4zMTRoLTE2LjUxN3oiIGZpbGw9IiNlMWUxZTYiLz48L2c+PC9zdmc+" />
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Italian</a></li>
+                        <li><a class="dropdown-item" href="#">French</a></li>
+                        <li><a class="dropdown-item" href="#">Spanish</a></li>
+                        <li><a class="dropdown-item" href="#">Russian</a></li>
+                    </ul>
+                    <div role="button" class="btn mx-1 align-self-center" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img height="22" src="assets/icons/mail-32.png" />
+                        <span class="badge bg-danger position-absolute">5</span>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Italian</a></li>
+                        <li><a class="dropdown-item" href="#">French</a></li>
+                        <li><a class="dropdown-item" href="#">Spanish</a></li>
+                        <li><a class="dropdown-item" href="#">Russian</a></li>
+                    </ul>
+                <div role="button" class="btn align-self-center  mx-1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img height="22" src="assets/icons/bell-2-32.png" />
+                    <span class="badge bg-success position-absolute">23</span>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Italian</a></li>
+                    <li><a class="dropdown-item" href="#">French</a></li>
+                    <li><a class="dropdown-item" href="#">Spanish</a></li>
+                    <li><a class="dropdown-item" href="#">Russian</a></li>
+                </ul>
+                <div role="button" class="btn align-self-center mx-1" data-bs-toggle="dropdown" aria-expanded="false">
+                 <img
+                 height="40"
+                 src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PGc+PGc+PHBhdGggZD0ibTI1Ni4wMjUgNDgzLjMzNCAxMDEuNDI5LTI1LjYxNGM1Ny44OTUtNDguMDc0IDk0Ljc3MS0xMjAuNTg2IDk0Ljc3MS0yMDEuNzE5IDAtMTI1LjE0NC04Ny43MTEtMjI5LjgwMS0yMDUuMDEyLTI1NS44NTItMTM3LjMxNiA0LjYzMS0yNDcuMjEzIDExNy40MDctMjQ3LjIxMyAyNTUuODUxIDAgNzEuMTEyIDI5IDEzNS40NDYgNzUuODEyIDE4MS44MzZ6IiBmaWxsPSIjY2JlMmZmIi8+PC9nPjxnPjxwYXRoIGQ9Im00NDYuOTE0IDI1NmMwIDgzLjkxNS00MC4zODEgMTU4LjM5MS0xMDIuNzY1IDIwNS4wNzlsOTIuMDMxLTIzLjI0MWM0Ni44MTUtNDYuMzkgNzUuODItMTEwLjcyNCA3NS44Mi0xODEuODM4IDAtMTQxLjM4NS0xMTQuNjE1LTI1Ni0yNTYtMjU2LTExLjAyNCAwLTIxLjg4Ni42OTgtMzIuNTQzIDIuMDUgMTI2LjAxOSAxNS45ODggMjIzLjQ1NyAxMjMuNTkgMjIzLjQ1NyAyNTMuOTV6IiBmaWxsPSIjYmVkOGZiIi8+PC9nPjxnPjxnPjxnPjxwYXRoIGQ9Im0zMTkuNjIxIDk2Ljk1MmMwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTgxLjU4MmMtMzAuMDkxIDAtNTQuNDg1IDI0LjM5NC01NC40ODUgNTQuNDg1djYwLjQ5M2gxOTIuMjA5di01OS42MzVjMC0xMy4wNzUtMTAuNTk5LTIzLjY3NC0yMy42NzQtMjMuNjc0aC0uNzk4Yy00LjQxNiAwLTcuOTk2LTMuNTc5LTcuOTk2LTcuOTk1eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zMjguNDE1IDEwNC45NDdoLS43OThjLTQuNDE2IDAtNy45OTYtMy41OC03Ljk5Ni03Ljk5NiAwLTEzLjA3NS0xMC41OTktMjMuNjc0LTIzLjY3NC0yMy42NzRoLTguOTQ1djExNC45NzhoNjUuMDg2di01OS42MzVjLjAwMS0xMy4wNzMtMTAuNTk5LTIzLjY3My0yMy42NzMtMjMuNjczeiIgZmlsbD0iIzJiNGQ2NiIvPjxwYXRoIGQ9Im00MjUuMDQ1IDM3Mi4zNTVjLTYuMjU5LTYuMTgyLTE0LjAwMS0xMC45NjMtMjIuNzktMTMuNzQ1bC02OS44OTEtMjIuMTI4LTc2LjM0OC0yLjY4My03Ni4zOCAyLjY4My02OS44OTEgMjIuMTI4Yy0yMy42NDQgNy40ODYtMzkuNzEzIDI5LjQyOC0zOS43MTMgNTQuMjI5djE5LjA5NGM0NC43ODkgNDcuMzI4IDEwNy40NTEgNzcuNTY4IDE3Ny4xODMgNzkuOTIgNzguMTI4LTE3LjM1MyAxNDMuMTI5LTY5LjU3NiAxNzcuODMtMTM5LjQ5OHoiIGZpbGw9IiM0YTgwYWEiLz48cGF0aCBkPSJtNDQxLjk2OCA0MzEuOTMydi0xOS4wOTRjMC0xNy41MzYtOC4wNC0zMy42MzUtMjEuMTA1LTQ0LjIxMy0zNy4xMTEgNzUuNjI2LTExMC40MjIgMTMwLjI2OC0xOTcuMzQ2IDE0MS4zMTcgMTAuNDkyIDEuMzI5IDIxLjE3OCAyLjAzOCAzMi4wMjYgMi4wNTcgMTAuNDIzLS4wMTYgMjAuNzA4LS42MiAzMC44MjQtMS43ODIgNjEuMDMxLTcuMjEyIDExNS40ODUtMzUuODk0IDE1NS42MDEtNzguMjg1eiIgZmlsbD0iIzQwNzA5MyIvPjxwYXRoIGQ9Im0yNjEuNzk2IDUwOC4xNjhjMTUuNDg5LTMwLjc1MSA1NS44MjItMTE4LjA2NyA0NC4zMjEtMTcyLjYwOWwtNTAuMTAxLTE5LjQ5OS01MC4xNDggMTkuNWMtMTEuODU2IDU2LjIyNSAzMS4zNyAxNDcuMjc3IDQ1LjY4MSAxNzUuMjkgMy40NDItLjgyNiA2Ljg1OS0xLjcyMSAxMC4yNDctMi42ODJ6IiBmaWxsPSIjZTRmNmZmIi8+PHBhdGggZD0ibTI4OC4xOTcgNDgzLjc4OS0yMC4zMTQtNzkuOTE3aC0yMy43NjdsLTIwLjI2NCA3OS42OTkgMjUuMDU4IDI3Ljg5N2M2LjM2MS0xLjQ1NyAxMi42MzQtMy4xNDYgMTguODEtNS4wNTd6IiBmaWxsPSIjZTI4MDg2Ii8+PHBhdGggZD0ibTI0OS4zMDIgNTExLjkwNWMyLjA3NS4wNTQgNC4xNTQuMDkxIDYuMjQxLjA5NSAyLjQxNS0uMDA0IDQuODIyLS4wNDYgNy4yMjItLjExM2wxMi45MDctMTQuMjU5Yy0xMC4xNTkgMy41NjQtMjAuNjEgNi41MDYtMzEuMzA5IDguNzc5eiIgZmlsbD0iI2RkNjM2ZSIvPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxnPjxwYXRoIGQ9Im0yOTguNzc0IDMyOC4xODN2LTQ1LjA2NmgtODUuNTh2NDUuMDY2YzAgMjMuNjMyIDQyLjc5IDQ5LjQ0NiA0Mi43OSA0OS40NDZzNDIuNzktMjUuODE0IDQyLjc5LTQ5LjQ0NnoiIGZpbGw9IiNmZmRkY2UiLz48L2c+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PHBhdGggZD0ibTM1Mi4wODkgMTgwLjMxOGgtMTYuMzU5Yy05LjA5OCAwLTE2LjQ3My03LjM3NS0xNi40NzMtMTYuNDczdi05LjAxNWMwLTExLjg1MS0xMS41OTUtMjAuMjMtMjIuODQ3LTE2LjUxMS0yNi4yNDMgOC42NzQtNTQuNTc5IDguNjc2LTgwLjgyMy4wMDZsLS4wMzEtLjAxYy0xMS4yNTItMy43MTctMjIuODQ1IDQuNjYyLTIyLjg0NSAxNi41MTJ2OS4wMTljMCA5LjA5OC03LjM3NSAxNi40NzMtMTYuNDczIDE2LjQ3M2gtMTYuMzU4djI2LjkzOGMwIDYuODgzIDUuNTggMTIuNDY0IDEyLjQ2NCAxMi40NjQgMi4xNzIgMCAzLjkzOSAxLjcwMSA0LjA3NiAzLjg2OSAyLjYyOCA0MS42NjggMzcuMjM1IDc0LjY1NCA3OS41NjUgNzQuNjU0IDQyLjMzIDAgNzYuOTM3LTMyLjk4NiA3OS41NjUtNzQuNjU0LjEzNy0yLjE2NyAxLjkwNC0zLjg2OSA0LjA3Ni0zLjg2OSA2Ljg4MyAwIDEyLjQ2NC01LjU4IDEyLjQ2NC0xMi40NjR2LTI2LjkzOXoiIGZpbGw9IiNmZmRkY2UiLz48cGF0aCBkPSJtMzM1LjczIDE4MC4zMThjLTkuMDk4IDAtMTYuNDczLTcuMzc1LTE2LjQ3My0xNi40NzN2LTkuMDE1YzAtMTEuODUxLTExLjU5NS0yMC4yMy0yMi44NDctMTYuNTExLTMuMTA4IDEuMDI3LTYuMjQ3IDEuOTIzLTkuNDA3IDIuNzA3djg4Ljk3MmMtLjQzOCAyOC45NDgtMTYuMyA1NC4xNDItMzkuNzI1IDY3Ljc1OCAyLjg2MS4zMTEgNS43NjMuNDg2IDguNzA2LjQ4NiA0Mi4zMyAwIDc2LjkzNy0zMi45ODYgNzkuNTY1LTc0LjY1NC4xMzctMi4xNjcgMS45MDQtMy44NjkgNC4wNzYtMy44NjkgNi44ODMgMCAxMi40NjQtNS41OCAxMi40NjQtMTIuNDY0di0yNi45MzhoLTE2LjM1OXoiIGZpbGw9IiNmZmNiYmUiLz48L2c+PGcgZmlsbD0iI2Y0ZmJmZiI+PHBhdGggZD0ibTIxMy4xOTQgMzE2LjA2LTMzLjU1OCAyNy4yNjcgMzUuMTkyIDQzLjUxM2M0LjI4MSA0LjE2OCAxMS4wMTkgNC40MjQgMTUuNjA1LjU5NGwyNi40NjUtMjIuMTA3eiIvPjxwYXRoIGQ9Im0yOTguNzkgMzE2LjA2LTQxLjg5MiA0OS4yNjcgMjQuODc0IDIxLjI2OGM0LjU1NyAzLjg5NiAxMS4zMjcgMy43IDE1LjY1MS0uNDUzbDM0Ljk0LTQyLjgxNXoiLz48L2c+PC9nPjxwYXRoIGQ9Im0yMTMuMTk0IDMxNi4wNi00OS4yNTYgMjQuMTk5Yy0zLjc1IDEuODQyLTUuMjU2IDYuNDA0LTMuMzQxIDEwLjExN2w5LjY1IDE4LjcxYzIuNTAxIDQuODQ4IDEuNTc4IDEwLjc1Ni0yLjI4MiAxNC42MS0xLjk4NyAxLjk4My00LjEzOSA0LjEzMS02LjAwNCA1Ljk5My0zLjMzOCAzLjMzMi00LjUzNyA4LjI1NS0zLjA2NyAxMi43MzcgMTEuNjUxIDM1LjUxNyA2Ny43MjUgODkuODI4IDg4Ljk0NiAxMDkuNDc4IDEuNDI3LjAzOCAyLjg1Ny4wNjQgNC4yOS4wOC0xNS4zODktMjkuOTMzLTY5LjkyMi0xNDMuNjU1LTM4LjkzNi0xOTUuOTI0eiIgZmlsbD0iIzM2NWU3ZCIvPjxwYXRoIGQ9Im0zNDQuMDE5IDM4My42OTVjLTMuODYxLTMuODU0LTQuNzgzLTkuNzYyLTIuMjgyLTE0LjYxbDkuNjUtMTguNzFjMS45MTUtMy43MTMuNDA5LTguMjc1LTMuMzQxLTEwLjExN2wtNDkuMjU2LTI0LjE5OGMzMC45NzggNTIuMjU1LTIzLjUxNyAxNjUuOTI5LTM4LjkyMyAxOTUuOSAxLjQ0OC0uMDI1IDIuODkzLS4wNjEgNC4zMzUtLjEwOSAyMS4yNjUtMTkuNjk1IDc3LjI0OC03My45NCA4OC44ODgtMTA5LjQyNCAxLjQ3LTQuNDgyLjI3MS05LjQwNS0zLjA2Ny0xMi43MzctMS44NjUtMS44NjMtNC4wMTctNC4wMTItNi4wMDQtNS45OTV6IiBmaWxsPSIjMzY1ZTdkIi8+PHBhdGggZD0ibTI1Ni44OTggMzY1LjMyNy0yNi4wNiAyMS43NjQgMTMuMjc4IDE2Ljc4MWgyMy43NjdsMTMuMjc5LTE3Ljc3MXoiIGZpbGw9IiNkZDYzNmUiLz48L2c+PC9nPjwvZz48L2c+PC9zdmc+" />
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Italian</a></li>
+                    <li><a class="dropdown-item" href="#">French</a></li>
+                    <li><a class="dropdown-item" href="#">Spanish</a></li>
+                    <li><a class="dropdown-item" href="#">Russian</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!-- <script>/* BEGIN SVG WEATHER ICON */
-        if (typeof Skycons !== 'undefined') {
-            var icons = new Skycons(
-                { "color": "#fff" },
-                { "resizeClear": true }
-            ),
-                list = [
-                    "clear-day", "clear-night", "partly-cloudy-day",
-                    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-                    "fog"
-                ],
-                i;
-
-            for (i = list.length; i--;)
-                icons.set(list[i], list[i]);
-            icons.play();
-        };
-
-        // scroll
-
-        $(document).ready(function () {
-
-            $("#boxscroll").niceScroll({ cursorborder: "", cursorcolor: "#cecece", boxzoom: true });
-            $("#boxscroll2").niceScroll({ cursorborder: "", cursorcolor: "#cecece", boxzoom: true });
-
-        });</script> -->
 </body>
 
 </html>
