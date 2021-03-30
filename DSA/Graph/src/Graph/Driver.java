@@ -12,7 +12,8 @@ public class Driver {
 			System.out.println("2.Is connected");
 			System.out.println("3.Is Reacable");
 			System.out.println("4.Get total Node");
-			System.out.println("5.Display Graph");
+			System.out.println("5.Shortest Path");
+			System.out.println("6.Display Graph");
 			int choice = sc.nextInt();
 			switch (choice) {
 			case 1:
@@ -28,6 +29,13 @@ public class Driver {
 				System.out.println("Total nodes "+graph.getTotalNode());
 				break;
 			case 5:
+				System.out.println("Enter start Node name");
+				char start = sc.next().charAt(0);
+				System.out.println("Enter end Node name");
+				char end = sc.next().charAt(0);
+				System.out.println(graph.shortestPath(start, end));
+				break;
+			case 6:
 				graph.displayGraph();
 				break;
 			default:

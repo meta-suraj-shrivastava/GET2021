@@ -71,18 +71,19 @@ public class Graph implements GraphInterface {
 
 	@Override
 	public Set<String> mst() {
-		HashMap<Character,Character> parents = new HashMap<>();
+		ArrayList<Character> sources = new ArrayList<>();
+		ArrayList<Character> destinations = new ArrayList<>();
 		HashMap<String,Integer> mst = new HashMap<>();
 		for(Node node:graph){
 			String path = node.nodeName + " to ";
 			Node tmpNode = node;
 			int min = Integer.MAX_VALUE;
 			while(tmpNode!=null){
-				if(!findCycle(parents,node.nodeName,tmpNode)){
-					if(tmpNode.weight<min){
-						
-					}
-				}
+//				if(!findCycle(node.nodeName,tmpNode.nodeName,sources,destinations)){
+//					if(tmpNode.weight<min){
+//						
+//					}
+//				}
 				tmpNode = tmpNode.next;
 			}
 		}
@@ -94,21 +95,46 @@ public class Graph implements GraphInterface {
 		
 		return mst.keySet();
 	}
-
-	private boolean findCycle(HashMap<Character,Character> parents,char nodeName, Node tmpNode) {
-		if((parents.containsKey(nodeName)
-				&& parents.get(nodeName)== tmpNode.nodeName) || nodeName == tmpNode.nodeName){
-			return true;
+	
+	private boolean isVisited(char[] visited,char node){
+		for(char visitedNode:visited){
+			if(visitedNode == node) return true;
 		}
-		
 		return false;
 	}
+
+//	private boolean findCycle(char source,char dest,ArrayList<Character> sources, ArrayList<Character>  destinations) {
+//		if(source == ){
+//			return true;
+//		}
+//		
+//		return false;
+//	}
+	public String shortestPath(char start, char end,int totalWight,char[] visited) {
+		if(start == end) return start+"-->"+end;
+		else{
+			String shortestPath = "";
+			for(Node node:graph){
+				Node tmpNode = node.next;
+				if(node.nodeName == start){
+					while(tmpNode!=null && !isVisited(visited,tmpNode.nodeName)){
+						shortestPath+=min(shortestPath(tmpNode.nodeName, end,totalWight+tmpNode.weight,visited),
+								
+								);
+						tmpNode = tmpNode.next;
+						}
+						
+					}
+				}
+			return shortestPath;
+			}
+
+		}
 	@Override
-	public ArrayList<Node> shortestPath(Node start, Node end) {
-		
-		return null;
+	public String shortestPath(char start,char end){
+		char[] visited = new char[this.nodeArray.size()];
+		return shortestPath(start, end, 0,visted);
 	}
-	
 	int getTotalNode(){
 		return this.nodeArray.size();
 	}

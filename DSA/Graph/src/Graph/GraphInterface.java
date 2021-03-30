@@ -9,6 +9,6 @@ public interface GraphInterface {
 	boolean isConnected();
 	ArrayList<Character> reachable(char a);
 	Set<String> mst();
-	ArrayList<Node> shortestPath(Node start,Node end);
+	String shortestPath(char start,char end);
 	
 }
