@@ -1,34 +1,33 @@
 class EmployeeDetails{
     constructor(){
-        var name,mail,password,gender;
+        let name,mail,password,gender;
     }
-    isValid(password){
-        var regex = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/;
+    isValidPass=(password)=>{
+        let regex = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/;
         return regex.test(password);
     }
-    isValidName(name){
-        console.log("Validating name");
-        var regex = /^[A-Za-z]{2,}$/
+    isValidName=(name)=>{
+        let regex = /^[A-Za-z]{2,}$/
         return regex.test(name);
     }
     
-    isConfirmPassValid(password){
+    isConfirmPassValid=(password)=>{
         return this.password == password;
     }
-    isValidContact(contact){
-        var regex = /^[\d]{8,10}$/
+    isValidContact=(contact)=>{
+        let regex = /^[\d]{8,10}$/
         return regex.test(contact);
     }
-    isValidEmail(email){
-        var regEx = /^[a-zA-Z0-9]+@[a-z]{4,}.[a-z]{2,}(.[a-z]{2,4})?$/;
+
+    isValidEmail=(email)=>{
+        let regEx = /^[a-zA-Z0-9]+@[a-z]{4,}.[a-z]{2,}(.[a-z]{2,4})?$/;
         return regEx.test(email);
     }
-    handlePress(event){
+    handlePress=(event)=>{
         if (!event) event = window.event;
-        var keyCode = event.code || event.key;
+        let keyCode = event.code || event.key;
         if (keyCode == 'Enter'){
-            var currentNode = event.target;
-            console.log(currentNode.id);
+            let currentNode = event.target;
             if(currentNode.id == 'fullName'){
                 if(!this.isValidName(currentNode.value)){
                     currentNode.classList.toggle('error');
@@ -50,7 +49,7 @@ class EmployeeDetails{
                 document.getElementById('mailError').style.display = "none";
             }
             if(currentNode.id == 'password'){
-                if(!this.isValid(currentNode.value)){
+                if(!this.isValidPass(currentNode.value)){
                     currentNode.classList.toggle('error');
                     document.getElementById('passError').style.display="block";
                     return;
@@ -78,14 +77,14 @@ class EmployeeDetails{
                 document.getElementById('contactError').style.display = "none";  
             }
             if(currentNode.name == 'gender') this.gender = currentNode.value;
-            var parent;
-            var sibling = getSiblig(currentNode);
+            let parent;
+            let sibling = getSiblig(currentNode);
             if(sibling == null){
                 parent =  getParent(currentNode);
                 parent.classList.toggle('hide');
                 sibling = getSiblig(parent);
             }
-            var label = document.getElementById('label-with-name');
+            let label = document.getElementById('label-with-name');
             if(currentNode.id == 'fullName'){
                 this.name = currentNode.value;
                 console.log();

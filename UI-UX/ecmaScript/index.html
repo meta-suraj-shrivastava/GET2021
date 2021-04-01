@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
     <title>Metacube Parking System</title>
 </head>
 
@@ -29,19 +29,32 @@
                 <span class="show"></span>
             </div>
             <div class="content">
-                <input placeholder="Full name" type="text" class="textInput" /><br /><br />
-                <div class="radioContainer">
+                <label id="label-with-name" class="salutation hide"></label>
+                <input placeholder="Full name" type="text" class="textInput" id="fullName"
+                    onkeypress="employee.handlePress(event)" />
+                <span style="font-size:10px;color: red;" class="errorText" id="nameError">Name should contain at least 2
+                    characters and numbers are not allowed.</span>
+                <div class="radioContainer hide" id="gender" onkeypress="employee.handlePress(event)">
                     Gender &ThickSpace;&ThickSpace;&ThickSpace;
                     <label>Male<input type="radio" name="gender" value="male" /><span class="checkmark"></span>
                     </label>
                     <label>Female<input type="radio" name="gender" value="female" /><span class="checkmark"></span>
                     </label>
-                </div><br />
-                <input type="email" name="email" placeholder="Email" class="textInput" /><br /><br />
-                <input type="password" name="password" placeholder="Password" class="textInput" /><br /><br />
-                <input type="password" name="confirm" placeholder="Re-enter password" class="textInput" /><br /><br />
-                <input type="number" name="contact" placeholder="Contact Number" class="textInput" /><br /><br />
-                <button type="submit">Add Employee</button>
+                </div>
+                <input type="email" id="email" placeholder="Email" class="textInput hide"
+                    onkeypress="employee.handlePress(event)" /> <span style="font-size:10px;color: red;" class="errorText" id="mailError">Please enter a valid mail.</span>
+                <input type="password" id="password" placeholder="Password" class="textInput  hide"
+                    onkeypress="employee.handlePress(event)" />
+                <span style="font-size:10px;color: red;" class="errorText" id="passError">Password should contain at
+                    least one uppercase , one lowercase ,one number and a symbol and at least 8 charaters.</span>
+                <input type="password" id="confirm password" placeholder="Re-enter password" class="textInput hide"
+                    onkeypress="employee.handlePress(event)" />
+                <span id="cnpError" style="font-size:10px;color: red;" class="errorText">Password doesn't match</span>
+                <input type="number" id="contact" placeholder="Contact Number" class="textInput hide"
+                    onkeypress="employee.handlePress(event)" />
+                <span id="contactError" style="font-size:10px;color: red;" class="errorText">Please enter valid conatct
+                    number</span>
+                <button type="submit" class="hide" onclick="handleSubmit(event)">Add Employee</button>
             </div>
         </center>
     </div>
@@ -54,76 +67,73 @@
                 <span class="show"></span>
             </div>
             <div class="content">
-                <input placeholder="company Name" type="text" class="textInput" /><br /><br />
-                <input placeholder="Model Name" type="text" class="textInput" /><br /><br />
-                <input placeholder="Vehicle Type" type="text" class="textInput" /><br /><br />
-                <input placeholder="Vehicle Number" type="text" class="textInput" /><br /><br />
-                <input placeholder="Employee Id" type="text" class="textInput" /><br /><br />
-                <textarea rows="5" placeholder="Identification"></textarea><br /><br />
-                <button type="submit">Add Vehicle</button>
+                <input placeholder="Model Name" type="text" class="textInput" onkeypress="vehicle.handlePress(event)"
+                    id="name" />
+                <div class="radioContainer hide" id="type" onkeypress="vehicle.handlePress(event)">
+                    <p>What is your vehicle Type?</p>
+                    <label>Cycle<input type="radio" name="type" value="cycle"
+                            onchange="vehicle.updatePriceSection(event)" /><span class="checkmark"></span>
+                    </label>
+                    <label>Motor Cycle<input type="radio" name="type" value="bike"
+                            onchange="vehicle.updatePriceSection(event)" /><span class="checkmark"></span>
+                    </label>
+                    <label>Four Wheeler<input type="radio" name="type" value="car"
+                            onchange="vehicle.updatePriceSection(event)" /><span class="checkmark"></span>
+                    </label>
+                </div>
+                <input placeholder="Vehicle Number" type="text" class="textInput hide"
+                    onkeypress="vehicle.handlePress(event)" id="vehNum" />
+                <input placeholder="Employee Id" type="text" class="textInput hide"
+                    onkeypress="vehicle.handlePress(event)" id="empId" />
+                <textarea rows="5" placeholder="Identification" class="hide" onkeypress="vehicle.handlePress(event)"
+                    id="ident"></textarea>
+                <button type="submit" class="hide" onclick="handleSubmit(event)">Add Vehicle</button>
             </div>
         </center>
     </div>
-    <!-- Here user can give the feedback to the parking system -->
-    <div id="giveFeedbackSection">
-        <center>
-            <div class="collapsible">
-                <h3 class="sectionHeading">Feedback</h3>
-                <span class="show"></span>
-            </div>
-            <div class="content">
-                <input placeholder="Full name" type="text" class="textInput" /><br /><br />
-                <input placeholder="Email Id" type="email" class="textInput" /><br /><br />
-                <input placeholder="Vehicle Type" type="text" class="textInput" /><br /><br />
-                <select name="rating">
-                    <option value="Rating">Rating</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select><br /><br />
-                <textarea rows="5" placeholder="Give your suggestion here..."></textarea><br /><br />
-                <button type="submit">Send</button>
-            </div>
-        </center>
     </div>
     <!-- Here employee can choose the package accor. to their convinience -->
-    <center>
-        <div class="collapsible">
-            <h3 class="sectionHeading">Pricing</h3>
-            <span class="show"></span>
-        </div>
-        <div class=" content">
-            <div id="pricingSection" class="pricingSection">
-                <div class="priceCard">
-                    <span class="vehicleType">Four Wheelers</span><br /><br />
-                    <div class="circle">
-                        <p style="font-size: 10px;"><span class="bestPrice">$100</span><br />/Month</p>
+    <div id="priceSection">
+        <center>
+            <div class="collapsible">
+                <h3 class="sectionHeading">Pricing</h3>
+                <span class="show"></span>
+            </div>
+            <div class=" content">
+                <div id="pricingSection" class="pricingSection">
+                    <div class="priceCard" id="cycle">
+                        <span class="vehicleType">Cycle</span><br /><br />
+                        <div class="circle">
+                            <p style="font-size: 10px;"><span class="bestPrice">$100</span><br />/Month</p>
+                        </div>
+                        <p class="allOffers">$5 daily<br />$100 Monthly<br />$500 yearly</p>
+                        <button type="submit">Purchase Now</button>
                     </div>
-                    <p class="allOffers">$5 daily<br />$100 Monthly<br />$500 yearly</p>
-                    <button type="submit">Purchase Now</button>
-                </div>
-                <div class="priceCard">
-                    <span class="vehicleType">Four Wheelers</span><br /><br />
-                    <div class="circle">
-                        <p style="font-size: 10px;"><span class="bestPrice">$200</span><br />/Month</p>
+                    <div class="priceCard" id="bike">
+                        <span class="vehicleType">Motor Cycle</span><br /><br />
+                        <div class="circle">
+                            <p style="font-size: 10px;"><span class="bestPrice">$200</span><br />/Month</p>
+                        </div>
+                        <p class="allOffers">$10 daily<br />$200 Monthly<br />$1000 yearly</p>
+                        <button type="submit">Purchase Now</button>
                     </div>
-                    <p class="allOffers">$10 daily<br />$200 Monthly<br />$1000 yearly</p>
-                    <button type="submit">Purchase Now</button>
-                </div>
-                <div class="priceCard">
-                    <span class="vehicleType">Four Wheelers</span><br /><br />
-                    <div class="circle">
-                        <p style="font-size: 10px;"><span class="bestPrice">$500</span><br />/Month</p>
+                    <div class="priceCard" id='car'>
+                        <span class="vehicleType">Four Wheelers</span><br /><br />
+                        <div class="circle">
+                            <p style="font-size: 10px;"><span class="bestPrice">$500</span><br />/Month</p>
+                        </div>
+                        <p class="allOffers">$20 daily<br />$500 Monthly<br />$3500 yearly</p>
+                        <button type="submit">Purchase Now</button>
                     </div>
-                    <p class="allOffers">$20 daily<br />$500 Monthly<br />$3500 yearly</p>
-                    <button type="submit">Purchase Now</button>
                 </div>
             </div>
-        </div>
-    </center>
+        </center>
+    </div>
 </body>
+<script src="assets/js/helper.js"></script>
+<script src="assets/js/Vehicle.js"></script>
+<script src="assets/js/Employee.js"></script>
+<script src="assets/js/app.js"></script>
 <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
