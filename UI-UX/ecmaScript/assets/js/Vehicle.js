@@ -1,12 +1,6 @@
 class Vehicle {
-  constructor() {
-    let name;
-    let type;
-    let vehicleNumber;
-    let employeeId;
-    let identification;
-  }
 
+  //*************setters***************
   setCompanyName=(name)=>{
     this.name = name;
   }
@@ -24,6 +18,8 @@ class Vehicle {
     this.identification = identi;
   }
 
+
+  //It will update the price section accorting to the vehicle type
   updatePriceSection=(event)=>{
     let children = document.getElementById("pricingSection").children;
     console.log("Updating");
@@ -35,6 +31,8 @@ class Vehicle {
       }
     }
   }
+
+  //It will handle the press events occuring while entering vehcile details
   handlePress=(event)=>{
     if (!event) event = window.event;
     let keyCode = event.code || event.key;

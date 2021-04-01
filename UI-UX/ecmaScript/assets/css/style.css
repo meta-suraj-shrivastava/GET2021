@@ -100,27 +100,34 @@ textarea{
 
 /* Style for pricing section */
 .pricingSection{
-display: flex;
-flex:1;
-justify-content: space-evenly;
-}
-
-.priceCard{
-    width: 18%;
-    margin-bottom: 20px;
-    padding: 20px;
-    border:1px solid teal;
-    border-radius: 10px;
-}
+    display: flex;
+    flex:1;
+    justify-content: space-evenly;
+    }
+    @media(max-width:992px){
+        .pricingSection{
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+    
+    .priceCard{
+        margin-bottom: 20px;
+        padding: 20px 25px;
+        border:1px solid teal;
+        border-radius: 10px;
+    }
 
 .circle{
     border:1px solid teal;
     display: inline-block;
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-radius: 80px;
+    border-radius: 90px;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
 }
 
 .allOffers{
@@ -137,7 +144,22 @@ justify-content: space-evenly;
     font-weight: bold;
     font-size: 20px;
 }
+.currencyConv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.switchCur{
+    border:1px solid aquamarine;
+    background-color: white;
+    color: black;
+    margin:10px 0px;
+
+}
+.selected{
+    background-color: aquamarine;
+}
 
 /* styles for collapsible bars */
 .collapsible{

@@ -43,6 +43,8 @@
                 </div>
                 <input type="email" id="email" placeholder="Email" class="textInput hide"
                     onkeypress="employee.handlePress(event)" />
+                <span style="font-size:10px;color: red;" class="errorText" id="mailError">Please enter valid
+                    email.</span>
                 <input type="password" id="password" placeholder="Password" class="textInput  hide"
                     onkeypress="employee.handlePress(event)" />
                 <span style="font-size:10px;color: red;" class="errorText" id="passError">Password should contain at
@@ -92,37 +94,49 @@
         </center>
     </div>
     </div>
-    <!-- Here employee can choose the package accor. to their convinience -->
+    <!-- Here employee can choose the package accor. to their vehicle -->
     <div id="priceSection">
         <center>
             <div class="collapsible">
                 <h3 class="sectionHeading">Pricing</h3>
                 <span class="show"></span>
             </div>
-            <div class=" content">
+            <div class="content">
+                <div class="currencyCov">
+                    <button class="switchCur selected" onclick="payment.convertPricesTo(event)">INR</button>
+                    <button class="switchCur" onclick="payment.convertPricesTo(event,'\u{00024}',73.29)">DOLLAR</button>
+                    <button class="switchCur" onclick="payment.convertPricesTo(event,'\u{000A5}',1.51)">YEN</button>
+                </div>
                 <div id="pricingSection" class="pricingSection">
                     <div class="priceCard" id="cycle">
                         <span class="vehicleType">Cycle</span><br /><br />
                         <div class="circle">
-                            <p style="font-size: 10px;"><span class="bestPrice">$100</span><br />/Month</p>
+                            <p style="font-size: 10px;"><span class="bestPrice" id="cycleBest">&#165;</span><br />/Month
+                            </p>
                         </div>
-                        <p class="allOffers">$5 daily<br />$100 Monthly<br />$500 yearly</p>
+                        <p class="allOffers" id="cycleDaily"></p>
+                        <p class="allOffers" id="cycleMonthly"></p>
+                        <p class="allOffers" id="cycleYearly"></p>
                         <button type="submit">Purchase Now</button>
                     </div>
                     <div class="priceCard" id="bike">
                         <span class="vehicleType">Motor Cycle</span><br /><br />
                         <div class="circle">
-                            <p style="font-size: 10px;"><span class="bestPrice">$200</span><br />/Month</p>
+                            <p style="font-size: 10px;"><span class="bestPrice" id="bikeBest"></span><br />/Month</p>
                         </div>
-                        <p class="allOffers">$10 daily<br />$200 Monthly<br />$1000 yearly</p>
+                        <p class="allOffers" id="bikeDaily"></p>
+                        <p class="allOffers" id="bikeMonthly"></p>
+                        <p class="allOffers" id="bikeYearly"></p>
                         <button type="submit">Purchase Now</button>
                     </div>
                     <div class="priceCard" id='car'>
                         <span class="vehicleType">Four Wheelers</span><br /><br />
                         <div class="circle">
-                            <p style="font-size: 10px;"><span class="bestPrice">$500</span><br />/Month</p>
+                            <p style="font-size: 10px;"><span class="bestPrice" id="carBest"></span><br />/Month</p>
                         </div>
-                        <p class="allOffers">$20 daily<br />$500 Monthly<br />$3500 yearly</p>
+                        <p class="allOffers" id="carDaily"></p>
+                        <p class="allOffers" id="carMonthly"></p>
+                        <p class="allOffers" id="carYearly"></p>
                         <button type="submit">Purchase Now</button>
                     </div>
                 </div>
@@ -133,6 +147,7 @@
 <script src="assets/js/helper.js"></script>
 <script src="assets/js/Vehicle.js"></script>
 <script src="assets/js/Employee.js"></script>
+<script src="assets/js/payment.js"></script>
 <script src="assets/js/app.js"></script>
 <script>
     var coll = document.getElementsByClassName("collapsible");

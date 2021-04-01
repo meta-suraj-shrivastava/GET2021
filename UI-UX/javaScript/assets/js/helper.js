@@ -1,3 +1,5 @@
+
+//return the parent of the current node
 function getParent(currentNode){
     var parent = currentNode;
     while(parent.nodeName != 'DIV'){
@@ -6,6 +8,8 @@ function getParent(currentNode){
     return parent;
 
 }
+
+//return the next sibling of the current node
 function getSiblig(currentNode){
     var sibling = currentNode.nextSibling;
     while(sibling.nodeName != 'DIV' && sibling.nodeName != 'INPUT' && sibling.nodeName != 'BUTTON' && sibling.nodeName != 'TEXTAREA'){
@@ -16,6 +20,7 @@ function getSiblig(currentNode){
 }
 
 
+//handle the submit task at the end of the form
 function handleSubmit(event){
     var parent = event.path[3];
     var center = parent.children[0];

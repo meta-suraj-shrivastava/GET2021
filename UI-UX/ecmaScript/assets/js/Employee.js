@@ -1,29 +1,43 @@
+
+//All the validation related to the Employee form can be done using this class object
 class EmployeeDetails{
-    constructor(){
-        let name,mail,password,gender;
-    }
+
+    //return true if password valiation  get success
+    //@param - password
     isValidPass=(password)=>{
         let regex = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/;
         return regex.test(password);
     }
+
+    //return true if name valiation  get success
+    //@param - name
     isValidName=(name)=>{
         let regex = /^[A-Za-z]{2,}$/
         return regex.test(name);
     }
     
+    //return true if conf password valiation  get success
+    //@param - password
     isConfirmPassValid=(password)=>{
         return this.password == password;
     }
+
+    //return true if contact valiation  get success
+    //@param - contact
     isValidContact=(contact)=>{
         let regex = /^[\d]{8,10}$/
         return regex.test(contact);
     }
 
+    //return true if emoal valiation  get success
+    //@param - email
     isValidEmail=(email)=>{
         let regEx = /^[a-zA-Z0-9]+@[a-z]{4,}.[a-z]{2,}(.[a-z]{2,4})?$/;
         console.log("Email val");
         return regEx.test(email);
     }
+
+    //It will handle the press events occuring while entering employee details
     handlePress=(event)=>{
         if (!event) event = window.event;
         let keyCode = event.code || event.key;
