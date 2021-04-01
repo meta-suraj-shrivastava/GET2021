@@ -13,6 +13,10 @@
 <body>
     <div class="d-flex">
         <div class="flex-column sidebar d-flex d-none d-lg-flex d-sm-none float-start" id="sidebar">
+            <div class="btn btn-lg btn-close bg-danger align-self-end position-absolute d-none" 
+            id="sidebar-close"
+            role="button"
+            ></div>
             <div class="d-flex sidebar-header justify-content-center align-items-center p-5">
                 <div class="sidebar-title">
                    <a href="#" class="nav-linnk text-decoration-none text-dark">ANNEX</a> 
@@ -170,7 +174,7 @@
         <div class="content-container d-flex flex-column">
             <div class="topbar d-flex px-2 py-1 justify-content-between align-items-center">
                 <div class="d-flex justify-content-center">
-                    <div class="sidebar-toggle d-block d-sm-block d-lg-none" role="button" id="menu-btn">
+                    <div class="sidebar-toggle d-block d-sm-block d-lg-none" role="button" id="menu-btn" data-bs-toggle="collapse">
                        <span style="color: white;font-size:20px;">&#9776;</span>
                     </div>
                     <form class="position-relative form-search d-none d-inline d-sm-none d-md-inline" role="search">
@@ -251,6 +255,22 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
+         $(document).ready(function () {
+             $('#sidebar-close').on('click',function(){
+            $('#sidebar').addClass('d-none');
+            $('#sidebar').addClass('d-sm-none');
+            $('#sidebar').removeClass('active-sidebar');
+            $('#sidebar').removeClass('position-absolute');
+            $('#sidebar-close').addClass('d-none');
+             });
+        $('#menu-btn').on('click', function () {
+            $('#sidebar').removeClass('d-none');
+            $('#sidebar').removeClass('d-sm-none');
+            $('#sidebar').addClass('active-sidebar');
+            $('#sidebar').addClass('position-absolute');
+            $('#sidebar-close').removeClass('d-none');
+        });
+    });
     </script>
 </body>
 

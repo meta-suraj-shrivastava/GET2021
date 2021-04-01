@@ -104,3 +104,7 @@ background-size: 16px;
 .main-content{
   flex:10;
 }
+
+.active-sidebar{
+  z-index: 100;
+}
