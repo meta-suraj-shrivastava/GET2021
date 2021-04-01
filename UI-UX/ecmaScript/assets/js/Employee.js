@@ -21,6 +21,7 @@ class EmployeeDetails{
 
     isValidEmail=(email)=>{
         let regEx = /^[a-zA-Z0-9]+@[a-z]{4,}.[a-z]{2,}(.[a-z]{2,4})?$/;
+        console.log("Email val");
         return regEx.test(email);
     }
     handlePress=(event)=>{
@@ -30,50 +31,52 @@ class EmployeeDetails{
             let currentNode = event.target;
             if(currentNode.id == 'fullName'){
                 if(!this.isValidName(currentNode.value)){
-                    currentNode.classList.toggle('error');
+                    console.log("Not valid name");
+                    currentNode.classList.add('error');
                     document.getElementById('nameError').style.display="block";
                     return;
                 }
                 this.name = currentNode.value;
-                currentNode.classList.toggle('error');
+                currentNode.classList.remove('error');
                 document.getElementById('nameError').style.display = "none";
             }
             if(currentNode.id == 'email'){
                 if(!this.isValidEmail(currentNode.value)){
-                    currentNode.classList.toggle('error');
+                    currentNode.classList.add('error');
+                    console.log( document.getElementById('mailError'));
                     document.getElementById('mailError').style.display="block";
                     return;
                 }
                 this.mail = currentNode.value;
-                currentNode.classList.toggle('error');
+                currentNode.classList.remove('error');
                 document.getElementById('mailError').style.display = "none";
             }
             if(currentNode.id == 'password'){
                 if(!this.isValidPass(currentNode.value)){
-                    currentNode.classList.toggle('error');
+                    currentNode.classList.add('error');
                     document.getElementById('passError').style.display="block";
                     return;
                 }
                 this.password = currentNode.value;
-                currentNode.classList.toggle('error');
+                currentNode.classList.remove('error');
                 document.getElementById('passError').style.display = "none";
             }
             if(currentNode.id == 'confirm password'){
                 if(!this.isConfirmPassValid(currentNode.value)){
-                    currentNode.classList.toggle('error');
+                    currentNode.classList.add('error');
                     document.getElementById('cnpError').style.display="block";
                     return;
                 }
-                currentNode.classList.toggle('error');
+                currentNode.classList.remove('error');
                 document.getElementById('cnpError').style.display = "none"; 
             }
             if(currentNode.id == 'contact'){
                 if(!this.isValidContact(currentNode.value)){
-                    currentNode.classList.toggle('error');
+                    currentNode.classList.add('error');
                     document.getElementById('contactError').style.display="block";
                     return;
                 }
-                currentNode.classList.toggle('error');
+                currentNode.classList.remove('error');
                 document.getElementById('contactError').style.display = "none";  
             }
             if(currentNode.name == 'gender') this.gender = currentNode.value;
