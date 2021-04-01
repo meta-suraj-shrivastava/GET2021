@@ -12,22 +12,22 @@
 
 <body>
     <div class="d-flex">
-        <div class="flex-column sidebar d-flex d-lg-flex d-sm-none float-start">
+        <div class="flex-column sidebar d-flex d-none d-lg-flex d-sm-none float-start" id="sidebar">
             <div class="d-flex sidebar-header justify-content-center align-items-center p-5">
                 <div class="sidebar-title">
-                    ANNEX
+                   <a href="#" class="nav-linnk text-decoration-none text-dark">ANNEX</a> 
                 </div>
             </div>
             <div class="d-flex side-menu flex-column overflow-auto" id="side-bar-content">
-                <p class="side-menu-start px-3 pb-1">Main</p>
-                <div class="menu-item px-3 pb-3 menu-item-selected">
+                <p class="side-menu-start px-3">Main</p>
+                <div class="menu-item px-3 py-3 menu-item-selected">
                     <i class="dashboard-icon">
                     </i><span>Dashboard</span>
                     <span class="badge rounded-pill bg-primary float-end">7</span>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-advanced-ui">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button collapsed menu-item" type="button" data-bs-toggle="collapse"
                             data-bs-target="#advanced-ui-subOptions" aria-expanded="false"
                             aria-controls="advanced-ui-subOptions">
                             Advanced UI
@@ -47,10 +47,10 @@
                     <i class="dashboard-icon">
                     </i><span>Calendar</span>
                 </div>
-                <p class="side-menu-start px-3 pb-1">Components</p>
+                <p class="side-menu-start px-3">Components</p>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-ui-elements">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button collapsed menu-item" type="button" data-bs-toggle="collapse"
                             data-bs-target="#ui-elements-options" aria-expanded="false"
                             aria-controls="ui-elements-options">
                             UI Elements
@@ -86,7 +86,7 @@
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-charts">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button collapsed menu-item" type="button" data-bs-toggle="collapse"
                             data-bs-target="#chart-options" aria-expanded="false" aria-controls="chart-options">
                             Charts
                         </button>
@@ -103,9 +103,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item menu-item">
                     <h2 class="accordion-header" id="flush-icons">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button collapsed menu-item" type="button" data-bs-toggle="collapse"
                             data-bs-target="#icon-options" aria-expanded="false" aria-controls="icon-options">
                             Icons
                         </button>
@@ -122,9 +122,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item menu-item">
                     <h2 class="accordion-header" id="flush-tables">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button collapsed menu-item" type="button" data-bs-toggle="collapse"
                             data-bs-target="#table-options" aria-expanded="false" aria-controls="table-options">
                             Tables
                         </button>
@@ -139,15 +139,15 @@
                         </div>
                     </div>
                 </div>
-                <p class="side-menu-start px-3 pb-1">Extra</p>
-                <div class="menu-item px-3 pb-3 menu-item-selected">
+                <p class="side-menu-start px-3 py-3">Extra</p>
+                <div class="menu-item px-3 pb-3">
                     <i class="dashboard-icon">
                     </i><span>Maps</span>
                     <span class="badge rounded-pill bg-danger float-end">2</span>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item menu-item">
                     <h2 class="accordion-header" id="flush-pages">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button collapsed menu-item" type="button" data-bs-toggle="collapse"
                             data-bs-target="#pages-options" aria-expanded="false" aria-controls="pages-options">
                             Pages
                         </button>
@@ -170,7 +170,7 @@
         <div class="content-container d-flex flex-column">
             <div class="topbar d-flex px-2 py-1 justify-content-between align-items-center">
                 <div class="d-flex justify-content-center">
-                    <div class="sidebar-toggle d-block d-sm-block d-lg-none" role="button">
+                    <div class="sidebar-toggle d-block d-sm-block d-lg-none" role="button" id="menu-btn">
                        <span style="color: white;font-size:20px;">&#9776;</span>
                     </div>
                     <form class="position-relative form-search d-none d-inline d-sm-none d-md-inline" role="search">
@@ -191,10 +191,20 @@
                         </span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Italian</a></li>
-                        <li><a class="dropdown-item" href="#">French</a></li>
-                        <li><a class="dropdown-item" href="#">Spanish</a></li>
-                        <li><a class="dropdown-item" href="#">Russian</a></li>
+                        <li><a class="dropdown-item py-2 d-flex justify-content-between" href="#">Italian
+                            <img height="25" width="30" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBvbHlnb24gc3R5bGU9ImZpbGw6I0YwRjBGMDsiIHBvaW50cz0iMzQxLjMzNCw4NS4zMyAxNzAuNjY2LDg1LjMzIDAsODUuMzMgMCw0MjYuNjYyIDE3MC42NjYsNDI2LjY2MiAzNDEuMzM0LDQyNi42NjIgDQoJNTEyLDQyNi42NjIgNTEyLDg1LjMzICIvPg0KPHJlY3QgeT0iODUuMzMzIiBzdHlsZT0iZmlsbDojNkRBNTQ0OyIgd2lkdGg9IjE3MC42NjMiIGhlaWdodD0iMzQxLjMzNyIvPg0KPHJlY3QgeD0iMzQxLjMzNyIgeT0iODUuMzMzIiBzdHlsZT0iZmlsbDojRDgwMDI3OyIgd2lkdGg9IjE3MC42NjMiIGhlaWdodD0iMzQxLjMzNyIvPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
+                        </a></li>
+                        <li><a class="dropdown-item py-2 d-flex justify-content-between" href="#">French
+                            <img height="25" width="30" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHJlY3QgeT0iODUuMzM3IiBzdHlsZT0iZmlsbDojRjBGMEYwOyIgd2lkdGg9IjUxMiIgaGVpZ2h0PSIzNDEuMzI2Ii8+DQo8Zz4NCgk8cmVjdCB5PSI4NS4zMzciIHN0eWxlPSJmaWxsOiNEODAwMjc7IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjExMy43NzUiLz4NCgk8cmVjdCB5PSIzMTIuODg4IiBzdHlsZT0iZmlsbDojRDgwMDI3OyIgd2lkdGg9IjUxMiIgaGVpZ2h0PSIxMTMuNzc1Ii8+DQo8L2c+DQo8cGF0aCBzdHlsZT0iZmlsbDojRkZEQTQ0OyIgZD0iTTI5My45OTEsMjU2YzAsMjAuOTgyLTE3LjAxLDMzLjI0My0zNy45OTIsMzMuMjQzUzIxOC4wMDgsMjc2Ljk4MiwyMTguMDA4LDI1Ng0KCXMxNy4wMS0zNy45OTIsMzcuOTkyLTM3Ljk5MlMyOTMuOTkxLDIzNS4wMTgsMjkzLjk5MSwyNTZ6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojMDA1MkI0OyIgZD0iTTI5My45OTEsMjU2YzAsMjAuOTgyLTE3LjAxLDM3Ljk5Mi0zNy45OTIsMzcuOTkycy0zNy45OTItMTcuMDEtMzcuOTkyLTM3Ljk5MiIvPg0KPGc+DQoJPHJlY3QgeD0iMjMyLjI1OSIgeT0iMjQ2LjUwNiIgc3R5bGU9ImZpbGw6I0Q4MDAyNzsiIHdpZHRoPSI5LjQ5OCIgaGVpZ2h0PSIxOSIvPg0KCTxyZWN0IHg9IjI3MC4yNDciIHk9IjI0Ni41MDYiIHN0eWxlPSJmaWxsOiNEODAwMjc7IiB3aWR0aD0iOS40OTgiIGhlaWdodD0iMTkiLz4NCgk8cmVjdCB4PSIyNTEuMjQ3IiB5PSIyMzIuMjU5IiBzdHlsZT0iZmlsbDojRDgwMDI3OyIgd2lkdGg9IjkuNDk4IiBoZWlnaHQ9IjMzLjI0MyIvPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
+                        </a></li>
+                        <li><a class="dropdown-item py-2 d-flex justify-content-between" href="#">Spanish
+
+                            <img height="25" width="30" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMi4wMDEgNTEyLjAwMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyLjAwMSA1MTIuMDAxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBzdHlsZT0iZmlsbDojQzg0MTRCOyIgZD0iTTguODI4LDQyMy43MjVoNDk0LjM0NWM0Ljg3NSwwLDguODI4LTMuOTUzLDguODI4LTguODI4Vjk3LjEwNGMwLTQuODc1LTMuOTUzLTguODI4LTguODI4LTguODI4DQoJSDguODI4QzMuOTUzLDg4LjI3NywwLDkyLjIyOSwwLDk3LjEwNHYzMTcuNzkzQzAsNDE5Ljc3MywzLjk1Myw0MjMuNzI1LDguODI4LDQyMy43MjV6Ii8+DQo8cmVjdCB5PSIxNTguOTAxIiBzdHlsZT0iZmlsbDojRkZEMjUwOyIgd2lkdGg9IjUxMiIgaGVpZ2h0PSIxOTQuMjEiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNDODQxNEI7IiBkPSJNMjE2LjI3NiwyNTYuMDAxbDcuNDg1LTMzLjY4MWMwLjY5LTMuMTAyLTEuNjcxLTYuMDQ0LTQuODQ5LTYuMDQ0aC01LjI3Mg0KCWMtMy4xNzcsMC01LjUzNywyLjk0Mi00Ljg0OSw2LjA0NEwyMTYuMjc2LDI1Ni4wMDF6Ii8+DQo8cmVjdCB4PSIyMDcuNDUiIHk9IjIzOC4zNDEiIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiB3aWR0aD0iMTcuNjU1IiBoZWlnaHQ9Ijc1LjAzIi8+DQo8cmVjdCB4PSIyMDMuMDMiIHk9IjIyOS41MjEiIHN0eWxlPSJmaWxsOiNGQUI0NDY7IiB3aWR0aD0iMjYuNDgzIiBoZWlnaHQ9IjguODI4Ii8+DQo8Zz4NCgk8cmVjdCB4PSIxODUuMzgiIHk9IjI1Ni4wMDEiIHN0eWxlPSJmaWxsOiNDODQxNEI7IiB3aWR0aD0iNDQuMTQiIGhlaWdodD0iOC44MjgiLz4NCgk8cG9seWdvbiBzdHlsZT0iZmlsbDojQzg0MTRCOyIgcG9pbnRzPSIyMjkuNTE3LDI5MS4zMTEgMjAzLjAzNCwyODIuNDg0IDIwMy4wMzQsMjczLjY1NiAyMjkuNTE3LDI4Mi40ODQgCSIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNDODQxNEI7IiBkPSJNODMuODYyLDI1Ni4wMDFsNy40ODUtMzMuNjgxYzAuNjktMy4xMDItMS42NzEtNi4wNDQtNC44NDktNi4wNDRoLTUuMjcyDQoJCWMtMy4xNzcsMC01LjUzNywyLjk0Mi00Ljg0OSw2LjA0NEw4My44NjIsMjU2LjAwMXoiLz4NCjwvZz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMTE0Ljc1OSwyMjkuNTE4Yy00Ljg3NSwwLTguODI4LDMuOTUzLTguODI4LDguODI4djU3LjM3OWMwLDEwLjcyNSwxMC4wMSwzMC44OTcsNDQuMTM4LDMwLjg5Nw0KCXM0NC4xMzgtMjAuMTcxLDQ0LjEzOC0zMC44OTd2LTU3LjM3OWMwLTQuODc1LTMuOTUzLTguODI4LTguODI4LTguODI4SDExNC43NTl6Ii8+DQo8Zz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojQzg0MTRCOyIgZD0iTTE1MC4wNjksMjczLjY1NmgtNDQuMTM4di0zNS4zMWMwLTQuODc1LDMuOTUzLTguODI4LDguODI4LTguODI4aDM1LjMxVjI3My42NTZ6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0M4NDE0QjsiIGQ9Ik0xNTAuMDY5LDI3My42NTZoNDQuMTM4djIyLjA2OWMwLDEyLjE4OS05Ljg4LDIyLjA2OS0yMi4wNjksMjIuMDY5bDAsMA0KCQljLTEyLjE4OSwwLTIyLjA2OS05Ljg4LTIyLjA2OS0yMi4wNjlWMjczLjY1NnoiLz4NCjwvZz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNGQUI0NDY7IiBkPSJNMTA1LjkzMSwyNzMuNjU2aDQ0LjEzOHYyMi4wNjljMCwxMi4xODktOS44OCwyMi4wNjktMjIuMDY5LDIyLjA2OWwwLDANCgljLTEyLjE4OSwwLTIyLjA2OS05Ljg4LTIyLjA2OS0yMi4wNjlWMjczLjY1NnoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNDODQxNEI7IiBkPSJNMTQxLjI0MSwzMTMuMjgxdi0zOS42MjVoLTguODI4djQzLjY5M0MxMzUuNjk3LDMxNi42ODMsMTM4LjY2NCwzMTUuMjI5LDE0MS4yNDEsMzEzLjI4MXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojQzg0MTRCOyIgZD0iTTEyMy41ODYsMzE3LjM0OXYtNDMuNjkzaC04LjgyOHYzOS42MjVDMTE3LjMzNiwzMTUuMjI5LDEyMC4zMDMsMzE2LjY4MywxMjMuNTg2LDMxNy4zNDl6Ii8+DQo8L2c+DQo8cmVjdCB4PSIxMTQuNzYiIHk9IjI1Ni4wMDEiIHN0eWxlPSJmaWxsOiNGRkI0NDE7IiB3aWR0aD0iMjYuNDgzIiBoZWlnaHQ9IjguODI4Ii8+DQo8Zz4NCgk8cmVjdCB4PSIxMTQuNzYiIHk9IjIzOC4zNDEiIHN0eWxlPSJmaWxsOiNGQUI0NDY7IiB3aWR0aD0iMjYuNDgzIiBoZWlnaHQ9IjguODI4Ii8+DQoJPHJlY3QgeD0iMTE5LjE3IiB5PSIyNDMuNTkxIiBzdHlsZT0iZmlsbDojRkFCNDQ2OyIgd2lkdGg9IjE3LjY1NSIgaGVpZ2h0PSIxNS45OTIiLz4NCjwvZz4NCjxyZWN0IHg9Ijc1LjAzIiB5PSIyMzguMzQxIiBzdHlsZT0iZmlsbDojRjVGNUY1OyIgd2lkdGg9IjE3LjY1NSIgaGVpZ2h0PSI3NS4wMyIvPg0KPGc+DQoJPHJlY3QgeD0iNzAuNjIiIHk9IjMwOC45NzEiIHN0eWxlPSJmaWxsOiNGQUI0NDY7IiB3aWR0aD0iMjYuNDgzIiBoZWlnaHQ9IjguODI4Ii8+DQoJPHJlY3QgeD0iNzAuNjIiIHk9IjIyOS41MjEiIHN0eWxlPSJmaWxsOiNGQUI0NDY7IiB3aWR0aD0iMjYuNDgzIiBoZWlnaHQ9IjguODI4Ii8+DQo8L2c+DQo8cmVjdCB4PSI2Ni4yMSIgeT0iMzE3Ljc5MSIgc3R5bGU9ImZpbGw6IzUwNjRBQTsiIHdpZHRoPSIzNS4zMSIgaGVpZ2h0PSI4LjgyOCIvPg0KPHJlY3QgeD0iMjA3LjQ1IiB5PSIzMDguOTcxIiBzdHlsZT0iZmlsbDojRkFCNDQ2OyIgd2lkdGg9IjI2LjQ4MyIgaGVpZ2h0PSI4LjgyOCIvPg0KPHJlY3QgeD0iMTk4LjYyIiB5PSIzMTcuNzkxIiBzdHlsZT0iZmlsbDojNTA2NEFBOyIgd2lkdGg9IjM1LjMxIiBoZWlnaHQ9IjguODI4Ii8+DQo8cmVjdCB4PSIxMjMuNTkiIHk9IjIyMC42OTEiIHN0eWxlPSJmaWxsOiNGQUI0NDY7IiB3aWR0aD0iNTIuOTY2IiBoZWlnaHQ9IjguODI4Ii8+DQo8cmVjdCB4PSIxNDUuNjYiIHk9IjE5NC4yMTEiIHN0eWxlPSJmaWxsOiNGRkI0NDE7IiB3aWR0aD0iOC44MjgiIGhlaWdodD0iMjYuNDgzIi8+DQo8Zz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTE0MS4yNDEsMjA3LjQ0OWMtNy4zMDIsMC0xMy4yNDEtNS45NC0xMy4yNDEtMTMuMjQxYzAtNy4zMDIsNS45NC0xMy4yNDEsMTMuMjQxLTEzLjI0MQ0KCQljNy4zMDIsMCwxMy4yNDEsNS45NCwxMy4yNDEsMTMuMjQxQzE1NC40ODMsMjAxLjUwOSwxNDguNTQzLDIwNy40NDksMTQxLjI0MSwyMDcuNDQ5eiBNMTQxLjI0MSwxODkuNzk0DQoJCWMtMi40MzUsMC00LjQxNCwxLjk3OC00LjQxNCw0LjQxNGMwLDIuNDM1LDEuOTc4LDQuNDE0LDQuNDE0LDQuNDE0czQuNDE0LTEuOTc4LDQuNDE0LTQuNDE0DQoJCUMxNDUuNjU1LDE5MS43NzMsMTQzLjY3NywxODkuNzk0LDE0MS4yNDEsMTg5Ljc5NHoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTE1OC44OTcsMjA3LjQ0OWMtNy4zMDIsMC0xMy4yNDEtNS45NC0xMy4yNDEtMTMuMjQxYzAtNy4zMDIsNS45NC0xMy4yNDEsMTMuMjQxLTEzLjI0MQ0KCQljNy4zMDIsMCwxMy4yNDEsNS45NCwxMy4yNDEsMTMuMjQxUzE2Ni4xOTgsMjA3LjQ0OSwxNTguODk3LDIwNy40NDl6IE0xNTguODk3LDE4OS43OTRjLTIuNDM1LDAtNC40MTQsMS45NzgtNC40MTQsNC40MTQNCgkJYzAsMi40MzUsMS45NzgsNC40MTQsNC40MTQsNC40MTRjMi40MzUsMCw0LjQxNC0xLjk3OCw0LjQxNC00LjQxNEMxNjMuMzEsMTkxLjc3MywxNjEuMzMyLDE4OS43OTQsMTU4Ljg5NywxODkuNzk0eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMTc2LjU1MiwyMTYuMjc3Yy03LjMwMiwwLTEzLjI0MS01Ljk0LTEzLjI0MS0xMy4yNDFjMC03LjMwMiw1Ljk0LTEzLjI0MSwxMy4yNDEtMTMuMjQxDQoJCWM3LjMwMiwwLDEzLjI0MSw1Ljk0LDEzLjI0MSwxMy4yNDFTMTgzLjg1MywyMTYuMjc3LDE3Ni41NTIsMjE2LjI3N3ogTTE3Ni41NTIsMTk4LjYyMmMtMi40MzUsMC00LjQxNCwxLjk3OC00LjQxNCw0LjQxNA0KCQljMCwyLjQzNSwxLjk3OCw0LjQxNCw0LjQxNCw0LjQxNGMyLjQzNSwwLDQuNDE0LTEuOTc4LDQuNDE0LTQuNDE0UzE3OC45ODcsMTk4LjYyMiwxNzYuNTUyLDE5OC42MjJ6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0Y1RjVGNTsiIGQ9Ik0xMjMuNTg2LDIxNi4yNzdjLTcuMzAyLDAtMTMuMjQxLTUuOTQtMTMuMjQxLTEzLjI0MWMwLTcuMzAyLDUuOTQtMTMuMjQxLDEzLjI0MS0xMy4yNDENCgkJYzcuMzAyLDAsMTMuMjQxLDUuOTQsMTMuMjQxLDEzLjI0MUMxMzYuODI4LDIxMC4zMzcsMTMwLjg4OCwyMTYuMjc3LDEyMy41ODYsMjE2LjI3N3ogTTEyMy41ODYsMTk4LjYyMg0KCQljLTIuNDM1LDAtNC40MTQsMS45NzgtNC40MTQsNC40MTRjMCwyLjQzNSwxLjk3OCw0LjQxNCw0LjQxNCw0LjQxNHM0LjQxNC0xLjk3OSw0LjQxNC00LjQxNQ0KCQlDMTI4LDIwMC42LDEyNi4wMjIsMTk4LjYyMiwxMjMuNTg2LDE5OC42MjJ6Ii8+DQo8L2c+DQo8cGF0aCBzdHlsZT0iZmlsbDojRkFCNDQ2OyIgZD0iTTE3Ni41NTIsMjkxLjMxMXY0LjQxNGMwLDIuNDM0LTEuOTgsNC40MTQtNC40MTQsNC40MTRzLTQuNDE0LTEuOTgtNC40MTQtNC40MTR2LTQuNDE0SDE3Ni41NTINCgkgTTE4NS4zNzksMjgyLjQ4NGgtMjYuNDgzdjEzLjI0MWMwLDcuMzAyLDUuOTQsMTMuMjQxLDEzLjI0MSwxMy4yNDFjNy4zMDIsMCwxMy4yNDEtNS45NCwxMy4yNDEtMTMuMjQxdi0xMy4yNDFIMTg1LjM3OXoiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNGRkEwRDI7IiBkPSJNMTcyLjEzOCwyNjQuODI5TDE3Mi4xMzgsMjY0LjgyOWMtNC44NzUsMC04LjgyOC0zLjk1My04LjgyOC04LjgyOHYtOC44MjgNCgljMC00Ljg3NSwzLjk1My04LjgyOCw4LjgyOC04LjgyOGwwLDBjNC44NzUsMCw4LjgyOCwzLjk1Myw4LjgyOCw4LjgyOHY4LjgyOEMxODAuOTY2LDI2MC44NzYsMTc3LjAxMywyNjQuODI5LDE3Mi4xMzgsMjY0LjgyOXoiLz4NCjxjaXJjbGUgc3R5bGU9ImZpbGw6IzUwNjRBQTsiIGN4PSIxNTAuMDciIGN5PSIyNzMuNjUxIiByPSIxMy4yNDEiLz4NCjxyZWN0IHg9IjE0NS42NiIgeT0iMTc2LjU1MSIgc3R5bGU9ImZpbGw6I0ZBQjQ0NjsiIHdpZHRoPSI4LjgyOCIgaGVpZ2h0PSIyNi40ODMiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNDODQxNEI7IiBkPSJNMTIzLjU4NiwyMjAuNjkxbC04LjgyOC04LjgyOGw1LjE3MS01LjE3MWM3Ljk5My03Ljk5MywxOC44MzUtMTIuNDg0LDMwLjE0LTEyLjQ4NGwwLDANCgljMTEuMzA1LDAsMjIuMTQ2LDQuNDkxLDMwLjE0LDEyLjQ4NGw1LjE3MSw1LjE3MWwtOC44MjgsOC44MjhIMTIzLjU4NnoiLz4NCjxnPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0ZGRDI1MDsiIGN4PSIxNTAuMDciIGN5PSIyMTEuODYxIiByPSI0LjQxNCIvPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0ZGRDI1MDsiIGN4PSIxMzIuNDEiIGN5PSIyMTEuODYxIiByPSI0LjQxNCIvPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0ZGRDI1MDsiIGN4PSIxNjcuNzIiIGN5PSIyMTEuODYxIiByPSI0LjQxNCIvPg0KPC9nPg0KPGc+DQoJPHJlY3QgeD0iNzAuNjIiIHk9IjI1Ni4wMDEiIHN0eWxlPSJmaWxsOiNDODQxNEI7IiB3aWR0aD0iNDQuMTQiIGhlaWdodD0iOC44MjgiLz4NCgk8cG9seWdvbiBzdHlsZT0iZmlsbDojQzg0MTRCOyIgcG9pbnRzPSI3MC42MjEsMjkxLjMxMSA5Ny4xMDMsMjgyLjQ4NCA5Ny4xMDMsMjczLjY1NiA3MC42MjEsMjgyLjQ4NCAJIi8+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" />
+                        </a></li>
+                        <li><a class="dropdown-item py-2 d-flex justify-content-between" href="#">Russian
+                            <img height="25" width="30" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMi4wMDEgNTEyLjAwMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyLjAwMSA1MTIuMDAxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTUxMiwyMDAuMDkzSDBWOTcuMTA0YzAtNC44NzUsMy45NTMtOC44MjgsOC44MjgtOC44MjhoNDk0LjM0NWM0Ljg3NSwwLDguODI4LDMuOTUzLDguODI4LDguODI4DQoJTDUxMiwyMDAuMDkzTDUxMiwyMDAuMDkzeiIvPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGNEI1NTsiIGQ9Ik01MDMuMTcyLDQyMy43MjVIOC44MjhjLTQuODc1LDAtOC44MjgtMy45NTMtOC44MjgtOC44MjhWMzExLjkwOWg1MTJ2MTAyLjk4OA0KCUM1MTIsNDE5Ljc3Myw1MDguMDQ3LDQyMy43MjUsNTAzLjE3Miw0MjMuNzI1eiIvPg0KPHJlY3QgeT0iMjAwLjA5MSIgc3R5bGU9ImZpbGw6IzQxNDc5QjsiIHdpZHRoPSI1MTIiIGhlaWdodD0iMTExLjgxIi8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" />
+
+                        </a></li>
                     </ul>
                     <div role="button" class="btn mx-1 align-self-center" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -231,10 +241,17 @@
                     </ul>
                 </div>
             </div>
-            <div class="main-content"></div>
+            <div class="main-content">
+                <div class="d-flex">
+                    
+                </div>
+            </div>
         </div>
     </div>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+    </script>
 </body>
 
 </html>

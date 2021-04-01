@@ -32,6 +32,9 @@ a:hover{
     color: yellow;
 }
 
+.hide{
+    display: none;
+}
 /* Style for cover image */
 .cover{
     height: 400px;
@@ -163,7 +166,6 @@ justify-content: space-evenly;
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    transition: max-height 1s ease-out;
   }
 
   .collapsible>span:after{
@@ -172,4 +174,19 @@ justify-content: space-evenly;
 
   .active>span:after{
     content: "-";
+}
+
+.salutation{
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.error{
+    outline: none;
+    border:2px solid red;
+}
+.errorText{
+    margin-top: 10px;
+    display: none;
 }
