@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="http://localhost:8080/static/css/style.css" rel="stylesheet">
     <title>Metacube Parking System</title>
 </head>
 
@@ -31,10 +31,10 @@
             <div class="content">
                 <label id="label-with-name" class="salutation hide"></label>
                 <input placeholder="Full name" type="text" class="textInput" id="fullName"
-                    onkeypress="employee.handlePress(event)" />
+                    onkeypress="employee.handlePress(event,'fullName','gender')" />
                 <span style="font-size:10px;color: red;" class="errorText" id="nameError">Name should contain at least 2
                     characters and numbers are not allowed.</span>
-                <div class="radioContainer hide" id="gender" onkeypress="employee.handlePress(KeyboardEvent,HTMLInputElement)">
+                <div class="radioContainer hide" id="gender" onkeypress="employee.handlePress(event,'gender','email')">
                     Gender &ThickSpace;&ThickSpace;&ThickSpace;
                     <label>Male<input type="radio" name="gender" value="male" /><span class="checkmark"></span>
                     </label>
@@ -42,21 +42,22 @@
                     </label>
                 </div>
                 <input type="email" id="email" placeholder="Email" class="textInput hide"
-                    onkeypress="employee.handlePress(event)" />
+                    onkeypress="employee.handlePress(event,'email','password')" />
                 <span style="font-size:10px;color: red;" class="errorText" id="mailError">Please enter valid
                     email.</span>
                 <input type="password" id="password" placeholder="Password" class="textInput  hide"
-                    onkeypress="employee.handlePress(event)" />
+                    onkeypress="employee.handlePress(event,'password','confirm password')" />
                 <span style="font-size:10px;color: red;" class="errorText" id="passError">Password should contain at
                     least one uppercase , one lowercase ,one number and a symbol and at least 8 charaters.</span>
                 <input type="password" id="confirm password" placeholder="Re-enter password" class="textInput hide"
-                    onkeypress="employee.handlePress(event)" />
+                    onkeypress="employee.handlePress(event,'confirm password','contact')"  />
                 <span id="cnpError" style="font-size:10px;color: red;" class="errorText">Password doesn't match</span>
                 <input type="number" id="contact" placeholder="Contact Number" class="textInput hide"
-                    onkeypress="employee.handlePress(event)" />
+                    onkeypress="employee.handlePress(event,'contact','empSubmit')"  />
                 <span id="contactError" style="font-size:10px;color: red;" class="errorText">Please enter valid conatct
                     number</span>
-                <button type="submit" class="hide" onclick="handleSubmit(event)">Add Employee</button>
+                <button type="submit" class="hide" id="empSubmit" 
+                onclick="helper.handleSubmit('addEmployeeSection','addVehicleSection')">Add Employee</button>
             </div>
         </center>
     </div>
@@ -69,27 +70,27 @@
                 <span class="show"></span>
             </div>
             <div class="content">
-                <input placeholder="Model Name" type="text" class="textInput" onkeypress="vehicle.handlePress(event)"
+                <input placeholder="Model Name" id="model" type="text" class="textInput" onkeypress="vehicle.handlePress(event,'model','type')"
                     id="name" />
-                <div class="radioContainer hide" id="type" onkeypress="vehicle.handlePress(event)">
+                <div class="radioContainer hide" id="type" onkeypress="vehicle.handlePress(event,'type','vno')">
                     <p>What is your vehicle Type?</p>
                     <label>Cycle<input type="radio" name="type" value="cycle"
-                            onchange="vehicle.updatePriceSection(event)" /><span class="checkmark"></span>
+                            onchange="vehicle.updatePriceSection('cycle')" /><span class="checkmark"></span>
                     </label>
                     <label>Motor Cycle<input type="radio" name="type" value="bike"
-                            onchange="vehicle.updatePriceSection(event)" /><span class="checkmark"></span>
+                            onchange="vehicle.updatePriceSection('bike')" /><span class="checkmark"></span>
                     </label>
                     <label>Four Wheeler<input type="radio" name="type" value="car"
-                            onchange="vehicle.updatePriceSection(event)" /><span class="checkmark"></span>
+                            onchange="vehicle.updatePriceSection('car')" /><span class="checkmark"></span>
                     </label>
                 </div>
-                <input placeholder="Vehicle Number" type="text" class="textInput hide"
-                    onkeypress="vehicle.handlePress(event)" id="vehNum" />
-                <input placeholder="Employee Id" type="text" class="textInput hide"
-                    onkeypress="vehicle.handlePress(event)" id="empId" />
-                <textarea rows="5" placeholder="Identification" class="hide" onkeypress="vehicle.handlePress(event)"
+                <input placeholder="Vehicle Number" id="vno" type="text" class="textInput hide"
+                    onkeypress="vehicle.handlePress(event,'vno','empId')" id="vehNum" />
+                <input placeholder="Employee Id" type="text" class="textInput hide" id='empId'
+                    onkeypress="vehicle.handlePress(event,'empId','ident')" id="empId" />
+                <textarea rows="5" placeholder="Identification" id='ident' class="hide" onkeypress="vehicle.handlePress(event,'ident','addVeh')"
                     id="ident"></textarea>
-                <button type="submit" class="hide" onclick="handleSubmit()">Add Vehicle</button>
+                <button type="submit" class="hide" id="addVeh" onclick="handleSubmit('addVehicleSection','priceSection')">Add Vehicle</button>
             </div>
         </center>
     </div>
@@ -103,9 +104,9 @@
             </div>
             <div class="content">
                 <div class="currencyCov">
-                    <button class="switchCur selected" onclick="payment.convertPricesTo(event)">INR</button>
-                    <button class="switchCur" onclick="payment.convertPricesTo(event,'\u{00024}',73.29)">DOLLAR</button>
-                    <button class="switchCur" onclick="payment.convertPricesTo(event,'\u{000A5}',1.51)">YEN</button>
+                    <button class="switchCur selected" id="inr" onclick="pass.convertPricesTo('inr')">INR</button>
+                    <button class="switchCur" id="dollar" onclick="pass.convertPricesTo('dollar','\u{00024}',73.29)">DOLLAR</button>
+                    <button class="switchCur" id="yen" onclick="pass.convertPricesTo('yen','\u{000A5}',1.51)">YEN</button>
                 </div>
                 <div id="pricingSection" class="pricingSection">
                     <div class="priceCard" id="cycle">
@@ -144,25 +145,10 @@
         </center>
     </div>
 </body>
-<script src="assets/js/helper.js"></script>
-<script src="assets/js/Vehicle.js"></script>
-<script src="assets/js/Employee.js"></script>
-<script src="assets/js/payment.js"></script>
-<script src="assets/js/app.js"></script>
-<script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-    }
-</script>
+<script src="http://localhost:8080/static/Ts/js/helper.js"></script>
+<script src="http://localhost:8080/static/Ts/js/Vehicle.js"></script>
+<script src="http://localhost:8080/static/Ts/js/Employee.js"></script>
+<script src="http://localhost:8080/static/Ts/js/pass.js"></script>
+<script src="http://localhost:8080/static/Ts/js/collapsible.js"></script>
 
 </html>

@@ -13,10 +13,12 @@
     },
     "watch": [
       "test/fixtures/",
-      "test/samples/"
+      "test/samples/",
+      "./"
     ],
     "env": {
       "NODE_ENV": "development"
     },
-    "ext": "js,json,ts,css"
+    "ext": "json,ts,css,.html",
+    "exec":"ts-node ./index.ts"
   }
